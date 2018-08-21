@@ -245,8 +245,8 @@ function init(){
 	var ratio = window.devicePixelRatio || 1;
 var w = screen.width * ratio;
 var h = screen.height * ratio;
-alert("height----"+h);
-alert("height----"+w);
+//alert("height----"+h);
+//alert("height----"+w);
 console.log("navigator.userAgent  ----browser or os info--- "+navigator.userAgent);
 var isMobile = {
     Android: function() {
@@ -296,7 +296,7 @@ else{
 
 <body onload="init(); clientInclude(&#39;newsfile&#39;, &#39;ctcb/eng/News.html&#39;);clientInclude(&#39;Mequee&#39;, &#39;MarqueeEng.html&#39;);clientInclude(&#39;CTCBLinks&#39;, &#39;ctcb/eng/Links.html&#39;);clientInclude(&#39;DWCenter&#39;, &#39;ctcb/eng/Download.html&#39;);clientInclude(&#39;Product&#39;, &#39;ctcb/eng/Product.html&#39;);clientInclude(&#39;ContactUS&#39;, &#39;ctcb/eng/ContactUS.html&#39;);PopWin(&#39;PopMessageEng.html&#39;,&#39;Notice&#39;);alert(&#39;Hi&#39;);">
 <form name="frmLogon" method="post" action="http://10.184.214.177:7005/tw/internet" autocomplete="off" target="CORPTEST1">
-<table width="100%" border="0" cellpadding="0" cellspacing="0" class="WorkArea">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="WorkArea" colspan="1">
   <tbody><tr>
     <td align="left" valign="top" background="./Chinatrust eTrust Netbanking_files/header_05.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tbody><tr>
@@ -335,11 +335,11 @@ else{
     <td align="left" valign="top" width="901"><table width="882" border="0" cellspacing="0" cellpadding="0">
       <tbody><tr>
         <td width="18" align="left" valign="top"></td>
-        <td align="left" valign="top" width="879"><table width="863" border="0" cellspacing="0" cellpadding="0">
+        <td align="left" valign="top" width="879"><table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tbody><tr>
-            <td width="238" align="left" valign="top" colspan="4"><table width="238" border="0" cellspacing="0" cellpadding="0">
+            <td width="100%" align="left" valign="top" colspan="4"><table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tbody><tr>
-                <td height="28" colspan="2" align="left" valign="bottom" background="./Chinatrust eTrust Netbanking_files/in_03.jpg"><table width="238" border="0" cellspacing="0" cellpadding="0">
+                <td height="28" colspan="2" align="left" valign="bottom" background="./Chinatrust eTrust Netbanking_files/in_03.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tbody><tr>
                     <td width="26" height="20" align="left" valign="middle">&nbsp;</td>
                     <td width="148" align="left" valign="middle"><p class="style1">NetBanking Login</p></td>                                                                                                             
@@ -348,31 +348,44 @@ else{
                 </tbody></table></td>
                 </tr>
               <tr>
-                <td height="72" colspan="2" align="left" valign="top" background="./Chinatrust eTrust Netbanking_files/in_07.jpg"><table width="238" border="0" cellspacing="2" cellpadding="0">
+                <td height="72" colspan="0" align="middle" valign="top" bgcolor="red" style="background-image:url('./Chinatrust eTrust Netbanking_files/in_21.jpg'); background-repeat:no-repeat;background-size:cover;">
+				<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
                     <tbody><tr>
                       <td width="17" align="left" valign="middle">&nbsp;</td>
-                      <td width="215" align="left" valign="middle"><table width="215" border="0" cellspacing="0" cellpadding="0">
+                      <td width="100%" align="middle" valign="middle" ><table width="700" border="0" cellspacing="0" cellpadding="0">
                         <tbody><tr>
+						<tr>
                           <td width="75" align="left" valign="middle"><span class="title_2">Customer ID</span></td>                                                                                                           
-                          <td width="100%" align="left" valign="middle"><input name="fldCustomerId" type="text" class="welcom_font" onkeyup="value=value.toUpperCase();value=value.replace(/[^\s-_A-Z0-9]/g,&#39;&#39;)"></td>
+                          </tr>
+						  <tr>
+						  <td width="100%" align="middle" valign="middle"><input name="fldCustomerId" type="text" class="welcom_font" onkeyup="value=value.toUpperCase();value=value.replace(/[^\s-_A-Z0-9]/g,&#39;&#39;)"></td>
+                        </tr>
+						</tr>
+                      </tbody></table></td>
+                    </tr>
+                    <tr>
+                      <td align="middle" valign="middle">&nbsp;</td>
+                      <td align="middle" valign="middle"><table width="700" border="0" cellspacing="0" cellpadding="0">
+                        <tbody><tr align="middle">
+						<tr>
+                          <td width="75" align="left" valign="middle"><span class="title_2">User ID</span></td>  
+							</tr>
+							<tr>
+                          <td width="100%" align="middle" valign="middle"><input name="fldLoginUserId" type="text" class="welcom_font"></td>
+						  </tr>
                         </tr>
                       </tbody></table></td>
                     </tr>
                     <tr>
-                      <td align="left" valign="middle">&nbsp;</td>
-                      <td align="left" valign="middle"><table width="215" border="0" cellspacing="0" cellpadding="0">
+                      <td align="middle" valign="middle">&nbsp;</td>
+                      <td align="middle" valign="middle"><table width="700" border="0" cellspacing="0" cellpadding="0">
                         <tbody><tr>
-                          <td width="75" align="left" valign="middle"><span class="title_2">User ID</span></td>                                                                                                          
-                          <td width="140" align="left" valign="middle"><input name="fldLoginUserId" type="text" class="welcom_font" size="23"></td>
-                        </tr>
-                      </tbody></table></td>
-                    </tr>
-                    <tr>
-                      <td align="left" valign="middle">&nbsp;</td>
-                      <td align="left" valign="middle"><table width="215" border="0" cellspacing="0" cellpadding="0">
-                        <tbody><tr>
+						<tr>
                           <td width="75" align="left" valign="middle" class="title_2">Password</td>    
-                          <td width="140" align="left" valign="middle"><input name="fldPassword" type="password" class="welcom_font" size="23"></td>
+                          </tr>
+						  <tr>
+						  <td width="100%" align="middle" valign="middle"><input name="fldPassword" type="password" class="welcom_font"></td>
+						  </tr>
                         </tr>
                       </tbody></table></td>
                     </tr>
@@ -380,29 +393,31 @@ else{
                 </tr>
               
               <tr>
-                <td width="220" align="left" valign="top"><table width="220" border="0" cellspacing="0" cellpadding="0">
+                <td width="500" align="left" valign="top"><table width="500" border="0" cellspacing="0" cellpadding="0">
                   <tbody><tr>
                     <td width="116" align="center" valign="top"><img src="./Chinatrust eTrust Netbanking_files/in_17.jpg" width="116" height="23"></td>
-                    <td width="52" align="left" valign="top"><a onclick=" return fLogon()" href="javascript:void(0);"><img src="./Chinatrust eTrust Netbanking_files/in_18.jpg" width="52" height="23" border="0"></a></td>
-                    <td width="52" align="left" valign="top"><a onclick=" return freset()" href="javascript:void(0);"><img src="./Chinatrust eTrust Netbanking_files/in_19.jpg" width="52" height="23" border="0"></a></td>
+                    <td width="250" align="left" valign="top"><a onclick=" return fLogon()" href="javascript:void(0);"><img src="./Chinatrust eTrust Netbanking_files/in_18.jpg" width="100%" height="230" border="0"></a></td>
+                    <td width="250" align="left" valign="top"><a onclick=" return freset()" href="javascript:void(0);"><img src="./Chinatrust eTrust Netbanking_files/in_19.jpg" width="100%" height="230" border="0"></a></td>
                   </tr>
                 </tbody></table></td>
                 <td width="18" align="left" valign="top"><img src="./Chinatrust eTrust Netbanking_files/in_20.gif" width="18" height="23"></td>
               </tr>
               <tr>
-                <td colspan="2" align="left" valign="top"><img src="./Chinatrust eTrust Netbanking_files/in_21.jpg" width="238" height="79"></td>
+                <td colspan="2" align="left" valign="top"><img src="./Chinatrust eTrust Netbanking_files/in_21.jpg" width="100%" height="79"></td>
                 </tr>
             </tbody></table></td>
             <td width="5" align="left" valign="top"><img src="./Chinatrust eTrust Netbanking_files/in_04.jpg" width="5" height="202"></td>
-            <td width="620" align="left" valign="top"><table width="620" border="0" cellspacing="0" cellpadding="0">
+            
+          </tr>
+		  <tr>
+		  <td width="620" align="left" valign="top"><table width="620" border="0" cellspacing="0" cellpadding="0">
               <tbody><tr>
                 <td align="left" valign="top"><img src="./Chinatrust eTrust Netbanking_files/banner_tai.jpg" width="620" height="155"></td>
               </tr>
               <tr>
                 <td align="left" valign="top"><img src="./Chinatrust eTrust Netbanking_files/in_22.jpg" width="620" height="47"></td>
               </tr>
-            </tbody></table></td>
-          </tr>
+            </tbody></table></td></tr>
         </tbody></table></td>
         </tr>
       <tr>
