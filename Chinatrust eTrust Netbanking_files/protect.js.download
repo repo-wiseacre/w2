@@ -1,0 +1,17 @@
+﻿<!-- Begin
+function right(e) {
+if (navigator.appName =='Netscape'&&
+(e.which ==3|| e.which ==2))
+//return false;
+return true;
+else if (navigator.appName == 'Microsoft Internet Explorer' &&
+(event.button == 2|| event.button ==3)) {
+alert("版權所有中國信託");
+//return false;
+return true;
+} return true;
+}
+document.onmousedown=right;
+if (document.layers) window.captureEvents(Event.MOUSEDOWN);
+window.onmousedown=right;
+file://End -->

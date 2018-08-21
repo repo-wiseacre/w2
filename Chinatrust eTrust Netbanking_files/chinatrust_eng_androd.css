@@ -1,0 +1,308 @@
+ body
+{
+	font-family: Arial, Helvetica, sans-serif;
+	margin:0px;
+	font-size:11px;
+	overflow-y:hidden;
+	overflow-x:hidden;
+	margin-bottom:0px;
+	margin-top:0px;
+}
+.header_bgcolor
+{
+	background:#00655B;
+}
+.welcom_bgcolor
+{
+	background:#C7DBDA;
+	line-height: 20px;
+}
+.welcom_font
+{
+	line-height: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #333333;
+	width: 100%;
+}
+.welcom_font2
+{
+	line-height: 20px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #660033;
+}
+.SystemMaintain_font
+{
+	line-height: 20px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FF0000;
+}
+.bar_bgcolor
+{
+	background-color: #EBF3F5;
+}
+.top_bgcolor
+{
+	background:#80AFA5;
+	line-height: 20px;
+}
+.left_font a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 20px;
+}
+.left_font a:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 20px;
+}
+.left_font a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #217970;
+	text-decoration: underline;
+	line-height: 20px;
+	font-weight: bold;
+}
+.left_font a:active {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 20px;
+}
+.left_font_2 a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #006666;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 20px;
+}
+.left_font_2 a:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #006666;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 20px;
+}
+.left_font_2 a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: underline;
+	line-height: 20px;
+	font-weight: bold;
+	background-color: #336666;
+}
+.left_font_2 a:active {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #006666;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 20px;
+}
+.link_con a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-decoration: none;
+}
+.link_con a:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-decoration: none;
+}
+.link_con a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #217970;
+	text-decoration: underline;
+}
+.link_con a:active {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-decoration: none;
+}
+.WorkArea
+{
+	overflow-y:auto;
+	margin: 0px;
+	padding-top: 0px;
+	padding-right: 20px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+.title
+{
+	line-height: 20px;
+	font-size: 15px;
+	color: #006666;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.title_2
+{
+	line-height: 20px;
+	font-size: 12px;
+	color: #006666;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.date
+{
+	font-size: 10px;
+	color: #CC3300;
+	font-weight: normal;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.Heading
+{
+	line-height: 20px;
+	font-size: 12px;
+	color: #006666;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #DBEBEB;
+}
+.Heading_black
+{
+	font-size: 11px;
+	color: #000000;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 16px;
+}
+.buttons
+{
+	BORDER-RIGHT: #000000 1px outset;
+	BORDER-TOP: #00655B 1px outset;
+	FONT-SIZE: 11px;
+	padding-left: 0px;
+	padding-right:0px;
+	padding-top:1px;
+	padding-bottom:2px;
+	BORDER-LEFT: #00655B 1px outset;
+	BORDER-BOTTOM: #000000 1px outset;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	BACKGROUND-COLOR: #66A39D;
+	height:19px;
+	text-transform:Capitalize;
+	color:#FFFFFF;
+}
+.page a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #CC3300;
+	text-decoration: none;
+	font-weight: normal;
+	line-height: 20px;
+}
+.page a:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #CC3300;
+	text-decoration: none;
+	font-weight: normal;
+	line-height: 20px;
+}
+.page a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #CC0000;
+	text-decoration: underline;
+	line-height: 11px;
+	font-weight: normal;
+}
+.page a:active {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #CC3300;
+	text-decoration: none;
+	font-weight: normal;
+	line-height: 20px;
+}
+.in_link a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-decoration: none;
+	line-height: 16px;
+}
+.in_link a:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-decoration: none;
+	line-height: 16px;
+}
+.in_link a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #217970;
+	text-decoration: underline;
+	line-height: 16px;
+}
+.in_link a:active {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-decoration: none;
+	line-height: 16px;
+}
+.newsDate
+{
+	font-size: 11px;
+	color: #CC9933;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 16px;
+}
+.log
+{
+	font-size: 11px;
+	color: #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 16px;
+	border: 1px solid #3D8A82;
+}
+.lan_link a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-decoration: none;
+	line-height: 16px;
+}
+.lan_link a:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-decoration: none;
+	line-height: 16px;
+}
+.lan_link a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #E4B21D;
+	text-decoration: underline;
+	line-height: 16px;
+}
+.lan_link a:active {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-decoration: none;
+	line-height: 16px;
+}
