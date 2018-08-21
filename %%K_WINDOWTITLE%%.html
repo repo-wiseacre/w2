@@ -1,0 +1,244 @@
+
+<!-- saved from url=(0038)http://10.184.214.177:7005/tw/internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta content="NO-CACHE" http-equiv="PRAGMA"><meta content="NO-CACHE" http-equiv="CACHE-CONTROL"><meta content="NO-STORE" http-equiv="CACHE-CONTROL"><title>%%K_WINDOWTITLE%%</title><script src="./%%K_WINDOWTITLE%%_files/common.js.download" language="JavaScript" type="text/JavaScript"></script><script src="./%%K_WINDOWTITLE%%_files/Ajax.js.download" language="JavaScript" type="text/JavaScript"></script><script language="JavaScript" type="text/JavaScript">
+//-----------------------------------------------------------------------------
+var	eos				= false;
+var baseuserType 	= "";
+var userType 		= "ECU";
+var proxyFlag		= "";
+var defaulttxn 		= "";
+var perscss 		= "";
+
+var idsession		= 'WJMJGYQHQALHCFRUXW';
+var dataid			= 'WJMJGYQHQALHCFRUXWBKEZLBRZXHD';
+
+var iduser			= '35307';
+var datetime		= '19-08-2018 15:24:20';
+var fname	    	= 'Corp';
+var lname    		= 'Test';
+var focussedObj		= null;
+var currTxnId       = null;
+var langId          = 'eng';
+//-----------------------------------------------------------------------------
+
+var sessionTimeOut	=	'7200';
+var warningPeriod;
+var t;
+var l_alert_warning_window;
+var returncode = '0';
+var retVal;
+var warningmsg = "%%K_SESSION_OUT_WARNING%%";
+var flgaftercoutdown = true;
+var popup;
+function showTimeout(){
+	window.frames ['frame_menu'].showTimeout ();
+}
+function close() {
+window.frames ['frame_menu'].close();
+}
+	
+
+//------------------------------------------------------------------------------
+	function callStartTimer () {		
+		stopTimer();
+		startSessionTimer ();		
+		return false;		
+	}
+//-----------------------------------------------------------------------------	
+	function callStartTimerAgain () {
+		stopTimer();
+		setTimer(sessionTimeOut,warningPeriod);
+		return false;
+	}
+//------------------------------------------------------------------------------
+	function stopTimer() {
+		flgaftercoutdown = false;
+		
+		close();
+		
+		if (t != "undefined"  ||  t != null) {		
+			clearTimeout (t);
+			t = null;
+		}
+		return false;
+	}
+//------------------------------------------------------------------------------
+	function startSessionTimer ()
+	{
+		sessionTimeOut		=	'7200';
+		warningPeriod		=	'70';
+		setTimer(sessionTimeOut ,warningPeriod);
+		return false;
+	}
+//------------------------------------------------------------------------------
+	function setTimer(p_session_time_out, p_session_warning){
+		if (trim(p_session_warning) != 0)
+		{
+			var l_reqStr = new Array();
+			iduser		=	'35307';
+			sessionid	=	'WJMJGYQHQALHCFRUXW';
+			l_reqStr.push('fldiduser='+iduser);
+			l_alert_warning_window = p_session_time_out - p_session_warning;
+			t = setTimeout("checkTimeout()", l_alert_warning_window*1000);
+		}
+		return false;
+	}
+//-----------------------------------------------------------------------------	
+	function checkTimeout(){
+		var l_reqStr = new Array();
+		iduser		=	'35307';
+		sessionid	=	'WJMJGYQHQALHCFRUXW';
+		l_reqStr.push('fldiduser='+iduser);
+		SendAjaxRequest(l_reqStr,"RRMNU04",updateBrowser,null, null, false);
+	}
+	
+	function okay(){
+		var l_reqStr = new Array();
+				
+		SendAjaxRequest(l_reqStr,"RRMNU03",updateBrowserMNU03, null, null, false);
+	}
+	
+	function completingwarningperiod(){
+		
+		flgaftercoutdown = true;
+		var l_reqStr = new Array();
+		iduser		=	'35307';
+		sessionid	=	'WJMJGYQHQALHCFRUXW';
+		
+		l_reqStr.push('fldiduser='+iduser);
+		
+		SendAjaxRequest(l_reqStr,"RRMNU04",updateBrowser,null, null, false);
+	}
+//------------------------------------------------------------------------------
+function updateBrowserOnError(p_xml,p_text){
+}
+//-----------------------------------------------------------------------------
+function updateBrowser(p_xml,p_text){
+		try{
+		if (window.DOMParser) {
+  			parser = new DOMParser();
+  			xmlDoc = parser.parseFromString(p_text,"text/xml");
+		} else {
+			xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+  			xmlDoc.async = false;
+  			xmlDoc.loadXML(p_text); 
+		}
+		returncode = xmlDoc.getElementsByTagName("fldreturncode")[0].childNodes[0].nodeValue;
+		sessionTimeOut = xmlDoc.getElementsByTagName("fldtime")[0].childNodes[0].nodeValue;
+		if(returncode === '1'){
+			if(sessionTimeOut==0 && flgaftercoutdown){
+				window.frames ['frame_menu'].close();
+				logoff();
+			}else{
+				showTimeout();
+				
+			}
+		}else if(returncode === '0'){
+			
+			setTimeout("callStartTimerAgain()", 1000);
+		}else{
+			logoff();
+		}
+		}catch(e){logoff(); returncode = '0';}
+}
+//-----------------------------------------------------------------------------
+function updateBrowserMNU03(p_xml, p_text){
+	var res =  p_text.match(/880002/);
+	if(res ){
+	callStartTimer ();
+	}else{
+		logoff();
+	}
+}
+//-----------------------------------------------------------------------------
+function getApplicantDetails(p_node_nm,p_xml){
+    var l_tmp = p_xml.getElementsByTagName(p_node_nm);
+    if(l_tmp.length > 0 & l_tmp[0].childNodes.length > 0){
+        return l_tmp[0].childNodes[0].text;
+    }
+	return '';
+}
+
+var msgs = ''+'';
+if (msgs.length > 0) {
+ alert (msgs);
+}
+//-----------------------------------------------------------------------------
+function logoff (){
+	if (eos) {
+		return;
+	}
+	window.frames ['frame_menu'].fireLogOut ();
+	return false;
+}
+//-----------------------------------------------------------------------------
+function  addFocus (){ 
+	var  p = window.frames["frame_txn"].window.document.forms.length;	
+	for (var k = 0; k < p ; k++){
+		var  q = window.frames["frame_txn"].window.document.forms[k].elements;	
+		for( var l = 0; l < q.length; l++){
+			if (q[l].type == 'text') {
+				q[l].onfocus =	function(){
+					focussedObj =  this;	
+				}
+				
+			}
+		} 
+	}
+}
+//-----------------------------------------------------------------------------
+function checkFrameValidity_frame_txn(){
+callStartTimer();
+	try {
+		var l_frame_txn = frame_txn.location.href;
+	} catch (e) {
+		window.frames ['frame_menu'].fireLogOut();
+		window.location.href = "Security.html";
+	}
+}
+//-----------------------------------------------------------------------------
+function checkFrameValidity_frame_menu(){
+	callStartTimer();
+	try {
+		var l_frame_menu = frame_menu.location.href;
+	} catch (e) {
+		window.frames ['frame_menu'].fireLogOut();
+		window.location.href = "Security.html";
+	}
+}
+//-----------------------------------------------------------------------------
+function checkFrameValidity_messageFrame(){
+	try {
+		var l_messageFrame = messageFrame.location.href;
+	} catch (e) {
+		window.frames ['frame_menu'].fireLogOut();
+		window.location.href = "Security.html";
+	}
+}
+//-----------------------------------------------------------------------------
+function checkFrameValidity_frame_top(){
+	try {
+		var l_frame_top = frame_top.location.href;
+	} catch (e) {
+		window.frames ['frame_menu'].fireLogOut();
+		window.location.href = "Security.html";
+	}
+}
+//-----------------------------------------------------------------------------
+function checkFrameValidity_breadcrumbs(){
+	try {
+		var l_frame_top = breadCrumbs.location.href;
+	} catch (e) {
+		window.frames ['frame_menu'].fireLogOut();
+		window.location.href = "Security.html";
+	}
+}
+//-----------------------------------------------------------------------------
+// Added method to refresh frame for language change effect.
+function refreshRframe ()
+	{
+		window.frames ['frame_top'].refreshSelf ();
+		return false;
+	}
+//-----------------------------------------------------------------------------
+</script></head><frameset border="0" framespacing="0" frameborder="0" rows="0,98,22,0,*,25"><frame frameborder="0" src="./%%K_WINDOWTITLE%%_files/def_blank.html" scrolling="no" noresize="noresize" name="frame_download"><frame onload="checkFrameValidity_frame_top();" title="top menu frame" marginheight="0" marginwidth="0" scrolling="no" noresize="noresize" src="./%%K_WINDOWTITLE%%_files/defaultflexcube@_top_frame.html" name="frame_top"><frame onload="checkFrameValidity_breadcrumbs();" frameborder="0" src="./%%K_WINDOWTITLE%%_files/BreadCrumbs.html" scrolling="no" noresize="noresize" name="breadCrumbs"><frame frameborder="0" src="./%%K_WINDOWTITLE%%_files/CustSearch.html" scrolling="no" noresize="noresize" name="custSearchFrame"><frameset cols="179, *"><frame onload="checkFrameValidity_frame_menu();" src="./%%K_WINDOWTITLE%%_files/def_blank(1).html" title="left menu frame" scrolling="no" marginheight="0" marginwidth="0" noresize="true" target="main" name="frame_menu"><frameset id="dataframe" rows="0,*"><frame onload="checkFrameValidity_messageFrame();" frameborder="0" noresize="true" scrolling="no" marginheight="0" marginwidth="0" name="messageFrame" src="./%%K_WINDOWTITLE%%_files/display_message.html"><frame onload="checkFrameValidity_frame_txn();addFocus();" border="0" marginheight="0" marginwidth="0" scrolling="auto" src="./%%K_WINDOWTITLE%%_files/defaultflexcube@_main_frame.html" name="frame_txn"></frameset></frameset><frame frameborder="0" src="./%%K_WINDOWTITLE%%_files/defaultcopyright.html" scrolling="no" noresize="noresize" name="custSearchFrame"></frameset></html>

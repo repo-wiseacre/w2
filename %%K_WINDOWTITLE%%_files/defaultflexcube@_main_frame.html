@@ -1,0 +1,1727 @@
+
+<!-- saved from url=(0038)http://10.184.214.177:7005/tw/internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/JavaScript" language="JavaScript">
+function displayStatusMessage () {
+	
+	cnt = 0;
+	totalcnt  = 0;
+	returnCode = '0';
+	var arrErrorCode = new Array();
+	var arrErrorDesc = new Array();
+	var arrWarningCode = new Array();
+	var arrWarningDesc = new Array();
+	var arrInfoCode = new Array();
+	var arrInfoDesc = new Array();
+	var arrSuccessCode = new Array();
+	var arrSuccessDesc = new Array();
+	
+	totalcnt = totalcnt  + cnt;
+	cnt = 0;
+	
+	
+	totalcnt = totalcnt  + cnt;
+	cnt = 0;
+	
+	totalcnt = totalcnt  + cnt;
+	
+	if(totalcnt > 0) {
+		try {
+			window.parent.frames['messageFrame'].displayMessages(arrErrorDesc,arrWarningDesc,arrInfoDesc,arrSuccessDesc);
+		}  catch (e) {
+			window.top.frames['messageFrame'].displayMessages(arrErrorDesc,arrWarningDesc,arrInfoDesc,arrSuccessDesc);
+		}
+	} else {
+		try {
+			window.parent.frames['messageFrame'].resetErrors();
+		} catch (e) {
+            try {
+			window.top.frames['messageFrame'].resetErrors();
+            } catch (e) {
+            }
+		}		
+	}
+	displayDetailsOnload ();	
+}
+//-----------------------------------------------------------------------------
+function displayErrorMessage () {
+	cnt = 0;
+	totalcnt  = 0;
+	var arrErrorCode = new Array();
+	var arrErrorDesc = new Array();
+	var arrWarningCode = new Array();
+	var arrWarningDesc = new Array();
+	var arrInfoCode = new Array();
+	var arrInfoDesc = new Array();
+	var arrSuccessCode = new Array();
+	var arrSuccessDesc = new Array();
+	
+	totalcnt = totalcnt  + cnt;
+	cnt = 0;
+	
+	totalcnt = totalcnt  + cnt;
+
+	if(totalcnt > 0) {	
+		try {
+			window.parent.frames['messageFrame'].displayMessages(arrErrorDesc,arrWarningDesc,arrInfoDesc,arrSuccessDesc);
+		} catch (e) {
+			window.top.frames['messageFrame'].displayMessages(arrErrorDesc,arrWarningDesc,arrInfoDesc,arrSuccessDesc);	
+		}
+	} else {
+		try {
+			window.parent.frames['messageFrame'].resetErrors();		
+		} catch (e) {
+            try {
+			window.top.frames['messageFrame'].resetErrors();		
+            } catch (e) {
+            }
+		}
+	}	
+}
+//-----------------------------------------------------------------------------
+function displayBulkStatusMessage () {
+
+	cnt = 0;
+	totalcnt  = 0;
+	returnCode = "";
+	var arrErrorCode = new Array();
+	var arrErrorDesc = new Array();
+	var arrWarningCode = new Array();
+	var arrWarningDesc = new Array();
+	var arrInfoCode = new Array();
+	var arrInfoDesc = new Array();
+	var arrSuccessCode = new Array();
+	var arrSuccessDesc = new Array();
+	
+	totalcnt = totalcnt  + cnt;
+	cnt = 0;
+	
+	totalcnt = totalcnt  + cnt;
+/*	cnt = 0;
+	
+	totalcnt = totalcnt  + cnt;
+		  */
+	if(totalcnt > 0) {
+		try {
+			window.parent.frames['messageFrame'].displayMessages(arrErrorDesc,arrWarningDesc,arrInfoDesc,arrSuccessDesc);
+		} catch (e) {
+			window.top.frames['messageFrame'].displayMessages(arrErrorDesc,arrWarningDesc,arrInfoDesc,arrSuccessDesc);			
+		}
+	} else {
+		try {
+			window.parent.frames['messageFrame'].resetErrors();
+		} catch (e) {
+            try {
+			window.top.frames['messageFrame'].resetErrors();
+            } catch (e) {
+            }
+		}
+	}	
+}
+//-----------------------------------------------------------------------------
+function Draft(p_SeqNo , P_idTxn) {
+  
+ if(document.frmmain.fldnextactionseq){
+			if(document.frmmain.fldnextactionseq.value!='')	 {
+				document.frmmain.fldnextaction.value=document.frmmain.fldnextactionseq.value;
+			
+			}else{
+				document.frmmain.fldnextaction.value ='DF';
+			 }  
+		}
+	 else{
+		document.frmmain.fldnextaction.value ='DF';
+	}
+
+
+	
+	document.frmmain.fldauthaction.value ='VO';
+	
+	SendTxnRequest(p_SeqNo,P_idTxn);
+}
+//-----------------------------------------------------------------------------
+function PrintPopup(p_request_id , p_section_id, p_form) {
+
+	var features	=	"dependant=no,directories=no,location=no,menubar=no"
+					+	",resizable=yes,scrollbars=yes,titlebar=no,toolbar=no"
+					+	",height=600,width=600,top=0,left=0,status=yes";
+	var addlistWindow = window.open ("", "PrintPopup", features) ;
+	p_form.fldSectionId.value = p_section_id;	
+	
+	p_form.fldRequestId.value = p_request_id;
+	p_form.fldSessionId.value = parent.idsession;
+
+	p_form.target = "PrintPopup";
+	p_form.submit();
+	addlistWindow.focus();
+}
+//------------------------------------------------------------------------------
+function DowloadPopup(p_request_id , p_section_id, p_form) {
+
+	var features	=	"dependant=no,directories=no,location=no,menubar=no"
+					+	",resizable=yes,scrollbars=yes,titlebar=no,toolbar=no"
+					+	",height=600,width=600,top=0,left=0,status=yes";
+	var addlistWindow = window.open ("", "DowloadPopup", features) ;
+	p_form.fldSectionId.value = p_section_id;	
+	
+	p_form.fldRequestId.value = p_request_id;
+	p_form.fldSessionId.value = parent.idsession;
+
+	p_form.target = "DowloadPopup";
+	p_form.submit();
+	addlistWindow.focus();
+}
+//-----------------------------------------------------------------------------
+function getChangeFieldColor(){
+	var arr_fldchanged	= new Array ();
+	var arr_prevval		= new Array ();
+	var arr_idx			= 0;
+	var len = 0;
+	var i;
+	
+	
+	arr_idx = 0;
+	
+	len =arr_fldchanged.length;
+
+	for(i=0;i<len;i++){
+		
+		if(document.getElementById(arr_fldchanged[i]) != null && document.getElementById(arr_fldchanged[i]) != "undefined"){
+			
+			document.getElementById(arr_fldchanged[i]).className = "ColHeadingLeftAlignedBold";
+		}
+	}
+}
+//-----------------------------------------------------------------------------
+function displayDetails (obj) {
+	if (obj.options == null || obj.options.length == 0 || obj.options.selectedIndex == -1) {
+		return;
+	}
+	var tbody = obj.parentNode.parentNode.parentNode;
+	var cellcount = obj.parentNode.parentNode.childNodes.length;
+	var span, span_prefix;
+	var selelement = obj.options[obj.options.selectedIndex];	 	
+	
+	var l_value = trim (selelement.text);
+
+	var l_final_value;
+	var parent = selelement.parentNode;
+
+	if (obj.id == null || obj.id == "") {
+		span_prefix = obj.name;
+	} else {
+		span_prefix = obj.id;
+	}
+	
+	span = document.getElementById (span_prefix + "displayspan");
+	if (parent.nodeName == "SELECT") {
+		if (span != null) {
+			span.style.display = "none";
+		}
+		return;
+	}
+	if (parent.tagName == "OPTGROUP") {
+		l_final_value = trim (parent.label) + " &raquo; " + trim (l_value);
+		l_value = l_final_value;
+	}
+
+	parent = getParentOptgroupElement (parent);
+	if (parent != null) {
+		l_value = trim (parent.label) + " &raquo; " + trim (l_value);
+//        l_value = trim (l_value);
+	}
+
+	if (span == null) {
+		span = document.createElement ("span");
+		span.style.display = "block";
+		span.id = span_prefix + "displayspan";
+		span.innerHTML = l_value;
+		obj.parentNode.appendChild (span);
+	} else {
+		span.style.display = "block";
+		span.innerHTML = l_value;
+	}
+}
+//-----------------------------------------------------------------------------
+function getParentOptgroupElement (element) {
+	var prevSibling = element.previousSibling;
+	if (prevSibling == null) {
+		return null;
+	}
+	if (prevSibling.nodeName == "OPTGROUP") {
+		if (prevSibling.childNodes.length == 0) {
+			if (prevSibling.label.indexOf (" ") != 0) {
+				return prevSibling;
+			} else {
+				return getParentOptgroupElement (prevSibling);
+			}
+		} else if (prevSibling.childNodes.length == 1) {
+			if (prevSibling.childNodes [0].nodeType == 3) {
+				if (prevSibling.label.indexOf (" ") != 0) {
+					return prevSibling;
+				} else {
+					return getParentOptgroupElement (prevSibling);
+				}
+			} else if (prevSibling.childNodes [0].nodeType == 1) {
+				return null;
+			} else {
+				return prevSibling;
+			}
+		} else {
+			return getParentOptgroupElement (prevSibling);
+		}
+	} else {
+		 return getParentOptgroupElement (prevSibling);
+	}
+	return null;
+}
+//-----------------------------------------------------------------------------
+function displayDetailsOnload  () {
+	if(document.frmmain == null){
+		return;
+	}
+	if(document.frmmain.elements.length == 0){
+		return;
+	}
+	var l_elems = document.frmmain.elements;
+	for (l_i = 0; l_i < l_elems.length; l_i++) {
+		if (l_elems [l_i].type == "select-one") {
+			displayDetails (l_elems [l_i]);
+		}
+	}
+}
+
+//-----------------------------------------------------------------------------
+function checkAccounts(obj,accountno){
+  var l_acct='';
+  var l_acctarray = accountno.split("~");
+  var l_flag=true;
+  var arrErrorCode = new Array();
+  var arrErrorDesc = new Array();
+  var cnt=0;
+ for (l_i = 0; l_i < obj.length; l_i++) {
+     l_acct = obj[l_i]
+    if (l_acct.country == l_acctarray[0] && l_acct.customer == l_acctarray[1] && l_acct.account == l_acctarray[2]  &&    
+	    l_acct.customer == l_acctarray[1] ){
+	      l_flag=false;
+	}
+ }
+  if(l_flag){
+    try {
+			arrErrorCode [cnt] = '';
+			arrErrorDesc [cnt] = "Account unmapped";
+		  	window.parent.frames['messageFrame'].displayMessages(arrErrorDesc,'','','');
+		} catch (e) {
+			window.parent.frames['messageFrame'].displayMessages(arrErrorDesc,'','','');		
+		}
+  }
+}
+//-----------------------------------------------------------------------------
+String.prototype.trim = function () {
+	a = this.replace(/^\s+/, '');
+	return a.replace(/\s+$/, '');
+};
+//-----------------------------------------------------------------------------
+function displaySelectedDetails (obj) {
+	if (obj.options == null || obj.options.length == 0 || obj.options.selectedIndex == -1) {
+		return;
+	}
+	var span, span_prefix;
+	var  selelement = obj.options[obj.options.selectedIndex];
+	if(selelement.value == ''){
+		l_value = '';
+	}else{
+		var l_value = trim (selelement.text);
+	}
+	var parent = selelement.parentNode;
+
+	if (obj.id == null || obj.id == "") {
+		span_prefix = obj.name;
+	} else {
+		span_prefix = obj.id;
+	}
+	span = document.getElementById (span_prefix + "displayselectedspan");
+	
+	if (span == null) {
+		span = document.createElement ("span");
+		span.style.display = "block";
+		span.id = span_prefix + "displayselectedspan";
+		span.innerHTML = l_value;
+		obj.parentNode.appendChild (span);
+	} else {
+		span.style.display = "block";
+		span.innerHTML = l_value;
+	}
+}
+//-----------------------------------------------------------------------------
+window.onload = displayDetailsOnload;
+</script><meta http-equiv="no-cache"><link rel="stylesheet" href="./ECU_eng_01.css" type="text/css"><link rel="stylesheet" href="./ECU_eng_01.css" type="text/css"><link rel="stylesheet" href="./print.css" type="text/css" media="print"><script language="JavaScript" src="./udf.js.download" type="text/JavaScript"></script><script src="./common.js.download" type="text/JavaScript" language="JavaScript"></script><script type="text/JavaScript" language="JavaScript">
+//-------------------------------------------------------------------------------
+var l_isprimarycustid	=	'';
+var l_cust_accounts		=	new Array ();
+var l_txn_currs			=	new Array ();
+var l_count				=	0;
+var l_cust_account		=	null,
+	l_txn_curr			=	null;
+var l_debitBU			=	null;
+
+
+		l_cust_account = new Object ();
+		l_cust_account.country = "B101";
+		l_cust_account.customer = "23609668";
+		l_cust_account.account = "107119900826";
+		l_cust_account.currency = "CNY";
+		l_cust_accounts [l_count++] = l_cust_account;
+	
+		l_cust_account = new Object ();
+		l_cust_account.country = "B108";
+		l_cust_account.customer = "500971";
+		l_cust_account.account = "904135009713";
+		l_cust_account.currency = "CNY";
+		l_cust_accounts [l_count++] = l_cust_account;
+	
+		l_cust_account = new Object ();
+		l_cust_account.country = "B108";
+		l_cust_account.customer = "500971";
+		l_cust_account.account = "904135009713";
+		l_cust_account.currency = "EUR";
+		l_cust_accounts [l_count++] = l_cust_account;
+	
+		l_cust_account = new Object ();
+		l_cust_account.country = "B108";
+		l_cust_account.customer = "500971";
+		l_cust_account.account = "904135009713";
+		l_cust_account.currency = "USD";
+		l_cust_accounts [l_count++] = l_cust_account;
+	
+		l_cust_account = new Object ();
+		l_cust_account.country = "B101";
+		l_cust_account.customer = "84429175";
+		l_cust_account.account = "107540390791";
+		l_cust_account.currency = "TWD";
+		l_cust_accounts [l_count++] = l_cust_account;
+	
+
+l_count = 0;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B108";
+	l_txn_curr.codCurrency	=	"AUD";
+	l_txn_curr.namCurrency	=	"AUD";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B101";
+	l_txn_curr.codCurrency	=	"AUD";
+	l_txn_curr.namCurrency	=	"AUD";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B102";
+	l_txn_curr.codCurrency	=	"AUD";
+	l_txn_curr.namCurrency	=	"AUD";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B101";
+	l_txn_curr.codCurrency	=	"CAD";
+	l_txn_curr.namCurrency	=	"CAD";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B102";
+	l_txn_curr.codCurrency	=	"CAD";
+	l_txn_curr.namCurrency	=	"CAD";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B101";
+	l_txn_curr.codCurrency	=	"CHF";
+	l_txn_curr.namCurrency	=	"CHF";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B102";
+	l_txn_curr.codCurrency	=	"CHF";
+	l_txn_curr.namCurrency	=	"CHF";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B102";
+	l_txn_curr.codCurrency	=	"CNH";
+	l_txn_curr.namCurrency	=	"CNH";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B108";
+	l_txn_curr.codCurrency	=	"CNY";
+	l_txn_curr.namCurrency	=	"CNY";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B101";
+	l_txn_curr.codCurrency	=	"CNY";
+	l_txn_curr.namCurrency	=	"CNY";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B102";
+	l_txn_curr.codCurrency	=	"CNY";
+	l_txn_curr.namCurrency	=	"CNY";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B108";
+	l_txn_curr.codCurrency	=	"EUR";
+	l_txn_curr.namCurrency	=	"EUR";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B101";
+	l_txn_curr.codCurrency	=	"EUR";
+	l_txn_curr.namCurrency	=	"EUR";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B102";
+	l_txn_curr.codCurrency	=	"EUR";
+	l_txn_curr.namCurrency	=	"EUR";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B108";
+	l_txn_curr.codCurrency	=	"GBP";
+	l_txn_curr.namCurrency	=	"GBP";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B101";
+	l_txn_curr.codCurrency	=	"GBP";
+	l_txn_curr.namCurrency	=	"GBP";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B102";
+	l_txn_curr.codCurrency	=	"GBP";
+	l_txn_curr.namCurrency	=	"GBP";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B101";
+	l_txn_curr.codCurrency	=	"HKD";
+	l_txn_curr.namCurrency	=	"HKD";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B102";
+	l_txn_curr.codCurrency	=	"HKD";
+	l_txn_curr.namCurrency	=	"HKD";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B101";
+	l_txn_curr.codCurrency	=	"IDR";
+	l_txn_curr.namCurrency	=	"IDR";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B102";
+	l_txn_curr.codCurrency	=	"IDR";
+	l_txn_curr.namCurrency	=	"IDR";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B108";
+	l_txn_curr.codCurrency	=	"INR";
+	l_txn_curr.namCurrency	=	"INR";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B101";
+	l_txn_curr.codCurrency	=	"JPY";
+	l_txn_curr.namCurrency	=	"JPY";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B102";
+	l_txn_curr.codCurrency	=	"JPY";
+	l_txn_curr.namCurrency	=	"JPY";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B101";
+	l_txn_curr.codCurrency	=	"NZD";
+	l_txn_curr.namCurrency	=	"NZD";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B102";
+	l_txn_curr.codCurrency	=	"NZD";
+	l_txn_curr.namCurrency	=	"NZD";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B101";
+	l_txn_curr.codCurrency	=	"PHP";
+	l_txn_curr.namCurrency	=	"PHP";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B102";
+	l_txn_curr.codCurrency	=	"PHP";
+	l_txn_curr.namCurrency	=	"PHP";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B101";
+	l_txn_curr.codCurrency	=	"PLN";
+	l_txn_curr.namCurrency	=	"PLN";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B101";
+	l_txn_curr.codCurrency	=	"SEK";
+	l_txn_curr.namCurrency	=	"SEK";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B101";
+	l_txn_curr.codCurrency	=	"SGD";
+	l_txn_curr.namCurrency	=	"SGD";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B102";
+	l_txn_curr.codCurrency	=	"SGD";
+	l_txn_curr.namCurrency	=	"SGD";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B101";
+	l_txn_curr.codCurrency	=	"THB";
+	l_txn_curr.namCurrency	=	"THB";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B102";
+	l_txn_curr.codCurrency	=	"THB";
+	l_txn_curr.namCurrency	=	"THB";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B101";
+	l_txn_curr.codCurrency	=	"TWD";
+	l_txn_curr.namCurrency	=	"TWD";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B108";
+	l_txn_curr.codCurrency	=	"USD";
+	l_txn_curr.namCurrency	=	"USD";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B101";
+	l_txn_curr.codCurrency	=	"USD";
+	l_txn_curr.namCurrency	=	"USD";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B102";
+	l_txn_curr.codCurrency	=	"USD";
+	l_txn_curr.namCurrency	=	"USD";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B108";
+	l_txn_curr.codCurrency	=	"VND";
+	l_txn_curr.namCurrency	=	"VND";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B101";
+	l_txn_curr.codCurrency	=	"ZAR";
+	l_txn_curr.namCurrency	=	"ZAR";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+	l_txn_curr = new Object (); 
+	l_txn_curr.country		=	"B102";
+	l_txn_curr.codCurrency	=	"ZAR";
+	l_txn_curr.namCurrency	=	"ZAR";
+	l_txn_currs	[l_count++] =	l_txn_curr;
+
+
+//-------------------------------------------------------------------------------
+   var requestId_flag = 'RRFTI01';
+   var arr = new Array();
+   var dat = new Array();
+
+function default_dat(){  
+	
+	
+	var hostdate = '2018-07-31';
+	  
+	if (requestId_flag == 'RRFTI01'){
+		arr =hostdate.split("-");
+		dat =arr[2].split(" ");
+	}
+	else{
+		arr[0]='';
+		arr[1]='';
+		dat[0]='';
+	}
+}
+//-------------------------------------------------------------------------------
+function populateYear() {
+	var l_yearstart	= parseFloat("2018");
+	var l_yearend	= parseFloat("2020");
+
+	for(var l_i=l_yearstart,l_ctr=1; l_i <= l_yearend ;l_i++,l_ctr++) {
+		if(l_i == parseFloat('')) {
+			document.frmmain.year.options[l_ctr] = new Option(l_i,l_i, true, true);
+		} else {
+			document.frmmain.year.options[l_ctr] = new Option(l_i,l_i, false, false);
+		}
+	}
+	if(''==''){
+	  document.frmmain.year.value=getNumber(arr[0]); 
+	}
+}
+//-------------------------------------------------------------------------------
+function populateMonth() {
+	for(var l_i=1,l_ctr=1;l_i <= 12;l_i++,l_ctr++) {
+		if(l_i == parseFloat('')) {
+			document.frmmain.month.options[l_ctr] = new Option((l_i < 10)?'0'+l_i:l_i,l_i, true, true);
+		} else {
+			document.frmmain.month.options[l_ctr] = new Option((l_i < 10)?'0'+l_i:l_i,l_i, false, false);
+		}
+	}
+	if(''==''){
+	document.frmmain.month.value=getNumber(arr[1]);
+	}
+}
+//-------------------------------------------------------------------------------
+function populateDates() {
+var l_startadte = 1;
+var l_enddate	= 31;
+	for(var l_i=l_startadte,l_ctr=1;l_i <= l_enddate;l_i++,l_ctr++) {
+		if(l_i == parseFloat('')) {
+			document.frmmain.date.options[l_ctr] = new Option((l_i < 10)?'0'+l_i:l_i,l_i, true, true);
+		} else {
+			document.frmmain.date.options[l_ctr] = new Option((l_i < 10)?'0'+l_i:l_i,l_i, false, false);
+		}
+	}
+	if(''==''){
+	document.frmmain.date.value=getNumber(dat[0]);
+	}
+}
+//-------------------------------------------------------------------------------
+function fnCallCalendar(p_num,p_obj) {
+	if(eval('document.frmmain.'+p_obj+'.disabled == true')) {
+		return false;
+	}
+	showDate(p_num);
+}
+//-------------------------------------------------------------------------------
+function fnSetBankDetails() {	//setting bank details for currently selected account number
+	var l_existdebtaccntval,
+		l_currdebtaccntval;
+
+    if(document.frmmain.fldbebitaccount.selectedIndex >= 0){
+        l_existdebtaccntval = document.frmmain.fldbebitaccount.options[document.frmmain.fldbebitaccount.selectedIndex].value;
+    }else{
+		document.frmmain.fldbebitaccount.value='';
+    }
+	if (l_existdebtaccntval != ''){
+		l_currdebtaccntval = l_existdebtaccntval;
+	}
+	else{
+		l_currdebtaccntval = document.frmmain.fldbebitaccount.value;
+	}
+
+	if(l_currdebtaccntval != '' && l_currdebtaccntval != undefined) {
+		var l_arr = l_currdebtaccntval.split('~');
+		document.frmmain.fldbankcode.value		= l_arr[3];
+        document.frmmain.fldbranchcode.value	= l_arr[3];
+		//document.frmmain.fldnambranch.value		= l_arr[3];
+		document.frmmain.fldacctno.value		= l_arr[2];
+		document.frmmain.fldcustid.value		= l_arr[1];
+		document.frmmain.fldcodcountry.value	= l_arr[0];
+		setl_entity(document.frmmain.fldcodcountry.value);
+	} else {
+		document.frmmain.fldbankcode.value	    = '';
+        document.frmmain.fldbranchcode.value	= '';
+		//document.frmmain.fldnambranch.value		= '';
+		document.frmmain.fldacctno.value		= '';
+		document.frmmain.fldcustid.value		= '';
+		document.frmmain.fldcodcountry.value	= '';
+	}
+}
+//-------------------------------------------------------------------------------
+function fnSetCurrencyLists() {
+	var l_acct,l_curr;
+	var l_str = new Array();
+	//------  Debit account currency ------
+    if(document.frmmain.fldbebitaccount.selectedIndex >= 0){
+	    l_str = document.frmmain.fldbebitaccount.options[document.frmmain.fldbebitaccount.options.selectedIndex].value.split("~");
+    }
+	document.frmmain.flddbtaccntcurr.options.length = 0;
+	document.frmmain.flddbtaccntcurr.options [0] = new Option ("Select", "");
+
+	for (l_i = 0; l_i < l_cust_accounts.length; l_i++) {
+		l_acct = l_cust_accounts [l_i];
+		if (l_acct.country == l_str[0] && l_acct.customer == l_str[1] && l_acct.account == l_str[2]) {
+			document.frmmain.flddbtaccntcurr.options [document.frmmain.flddbtaccntcurr.options.length] = new Option (l_acct.currency, l_acct.currency);
+		}
+	}
+	for (l_i = 0; l_i < document.frmmain.flddbtaccntcurr.options.length; l_i++) {
+		if(l_i == 1){
+			document.frmmain.flddbtaccntcurr.options[l_i].selected = "true";
+		}
+	}
+	//------  Transaction currency ------
+	document.frmmain.fldtxncurr.options.length = 0;
+	document.frmmain.fldtxncurr.options [0] = new Option ('-----Select-----', "");
+
+	for (l_i = 0; l_i < l_txn_currs.length; l_i++) {
+		l_curr = l_txn_currs [l_i];
+		if (l_curr.country == l_str[0] ) {
+			document.frmmain.fldtxncurr.options [document.frmmain.fldtxncurr.options.length] = new Option (l_curr.codCurrency,l_curr.codCurrency);
+		}
+	}
+	fnShowHideDealDetails();
+}
+//-------------------------------------------------------------------------------
+function fnResetValues() { //this function will be called on form load only for reseting the field's values with a request values
+        
+	var l_fldEntityId= "B101";
+	var L_allowedbeneentity = "B108~B102~";
+	var L_allowedtxnprirityentity = "B108~B102~";
+	if(""==''){
+		document.frmmain.fldcreditdebitflag.value='D';
+	}
+	//document.frmmain.idudfremark.value = document.frmmain.fldpaymentdetails.value;
+
+	var l_fldtxncurr= "";
+	if(l_fldtxncurr != '') {
+		document.frmmain.fldtxncurr.value = l_fldtxncurr;
+	}
+	
+	var l_fldprioritymode= "";
+	if(l_fldbenetype != ''  && L_allowedtxnprirityentity.indexOf(l_fldEntityId)>=0) {
+		document.frmmain.fldprioritymode.value = l_fldprioritymode;
+	}
+	
+	var l_fldbenetype= "";
+	if(l_fldbenetype != ''  &&  l_fldEntityId=='B108' ) {
+		document.frmmain.fldbenetype.value = l_fldbenetype;
+	}
+
+	var l_flddbtaccntcurr= "";
+	if(l_flddbtaccntcurr != '') {
+		document.frmmain.flddbtaccntcurr.value = l_flddbtaccntcurr;
+	}
+	if(""!='')
+	{
+		if(document.frmmain.fldcreditdebitflag.value=="D")
+		{
+			document.frmmain.fldamounttype[0].checked = true;
+			document.frmmain.fldcreditamount.disabled=true;
+			document.frmmain.flddebitamount.disabled=false;
+			document.frmmain.flddebitamount.value="";
+			document.frmmain.fldcreditamount.value='';
+		} else if(document.frmmain.fldcreditdebitflag.value=="C")
+		{
+			document.frmmain.fldamounttype[1].checked = true;
+			document.frmmain.flddebitamount.disabled=true;
+			document.frmmain.fldcreditamount.disabled=false;
+			document.frmmain.fldcreditamount.value="";
+			document.frmmain.flddebitamount.value='';
+		}
+	}
+}
+//-------------------------------------------------------------------------------
+function fnInitiate() {
+	var l_frmmain = document.frmmain;
+	var l_fldEntityId= "B101";
+	var L_allowedbeneentity = "B108~B102~";
+	var L_allowedtxnprirityentity = "B108~B102~";
+	
+	if ( L_allowedtxnprirityentity.indexOf(l_fldEntityId)>=0 && l_frmmain.fldprioritymode.value != '') {
+        var myDate = Number(document.frmmain.date.value)+'-'+Number(document.frmmain.month.value)+'-'+Number(document.frmmain.year.value);
+	 
+		 var str = document.frmmain.fldnextvaluedate.value;
+		 var res = str.split("-");
+		 var resyear = res[2].split(" ");
+	 var l_nextvaluedate = Number(res[0])+'-'+Number(res[1])+'-'+ Number(resyear[0]);
+	
+		 if(l_frmmain.fldprioritymode.value == 'NV'){
+		 
+		     if (myDate != l_nextvaluedate) {
+	         alert("Entered transaction date is not equal to the next business date.");
+		         return false;
+		     }
+		}
+	}
+	if(l_frmmain.fldbebitaccount.value == '') {
+		alert("Please select the debit account number");
+		return false;
+	} else if (l_frmmain.flddbtaccntcurr.value == '') {
+		alert("Please select currency.");
+		return false;		
+	} else if(l_frmmain.year.value == '') {
+		alert('Please select transaction date year');
+		return false;
+	} else if (l_frmmain.month.value == '') {
+		alert('Please select transaction date month');
+		return false;
+	} else if (l_frmmain.date.value == '') {
+		alert('Please select transaction date ');
+		return false;
+	} else if (l_frmmain.fldtxncurr.value == '') {
+		alert("Please select transaction currency.");
+		return false;
+	} else if (l_fldEntityId == 'B108' && l_frmmain.fldprioritymode.value == '') {
+		alert("Please select the transaction priority mode.");
+		return false;
+	}
+	if (l_fldEntityId == 'B108' && l_frmmain.fldbenetype.value == '') {
+		alert("Kindly select beneficiary type");
+		return false;
+	}else if (l_fldEntityId == 'B108' && l_frmmain.fldbenetype.value != ''){
+		document.frmmain.fldbenecusttype.value=document.frmmain.fldbenetype.value;
+	}
+	document.frmmain.flddebitbu.value = l_debitBU;
+	if(document.frmmain.fldexistingpymt.value!=''){
+		document.frmmain.fldtemplatename.value=document.frmmain.fldexistingpymt.value;
+	}else if(document.frmmain.fldnewtempname.value!=''){
+		document.frmmain.fldtemplatename.value=document.frmmain.fldnewtempname.value;
+	}else{
+		document.frmmain.fldtemplatename.value='';
+	}
+	//document.frmmain.fldpaymentdetails.value = document.frmmain.idudfremark.value;
+
+	document.frmmain.fldtemplateflag.value="initreq";
+
+	/*if(!debitCreditCalc())
+	{
+		return false;
+	}*/
+
+	if(document.frmmain.date.value!='' && document.frmmain.month.value!='' &&
+		   document.frmmain.year.value!='' ){
+		l_frmmain.fldtxndate.value=l_frmmain.date.value+'-'+l_frmmain.month.value+'-'+l_frmmain.year.value;
+	}
+	if(document.frmmain.fldbenename.value == '' && l_fldEntityId=='B108'){
+		alert("Please enter the Beneficiary Name");
+		return false;
+	}
+	var crdbflag=document.frmmain.fldcreditdebitflag.value	;
+	if(crdbflag=='D'){
+		document.frmmain.flddebitamt.value = document.frmmain.flddebitamount.value;
+	}
+
+	if(crdbflag=='C'){
+		document.frmmain.fldcreditamt.value = document.frmmain.fldcreditamount.value;
+	}
+
+	l_frmmain.target="";
+	document.frmmain.fldServiceType.value='FTI';
+	SendRequest('20','FTI');
+}
+//-------------------------------------------------------------------------------
+function fnCallOnFormLoad () {
+	//alert("hi i am in fncallonformload ");
+	default_dat();
+	populateYear ();
+	populateMonth ();
+	populateDates ();
+	fnSetCurrencyLists ();
+	fnResetValues ();
+	setSaveTemp ();
+    checkAcct();
+	fnSetBankDetails();
+	unitTypeConf('Y');
+	displayStatusMessage ();
+	populateamount();			// Added for CTCB Issue no. 21884
+	loadpopup();
+}
+
+function unitTypeConf(onLoad){
+	//var payDtlLb	= eval('document.getElementById("paymentDetailsLabel")');
+	var debitCustomer	= null;
+	
+	if(onLoad = 'N'){
+		debitCustomer = document.frmmain.fldbebitaccount.options[document.frmmain.fldbebitaccount.selectedIndex].value.split("~")[1];
+		if(debitCustomer!=null){
+			
+				if(debitCustomer == '84429175'){
+					l_debitBU = 'D';
+				}
+				
+				if(debitCustomer == '16159928'){
+					l_debitBU = 'D';
+				}
+				
+				if(debitCustomer == '23609668'){
+					l_debitBU = 'D';
+				}
+				
+				if(debitCustomer == '300331'){
+					l_debitBU = '';
+				}
+				
+				if(debitCustomer == '33196700'){
+					l_debitBU = 'D';
+				}
+				
+				if(debitCustomer == '33196716'){
+					l_debitBU = 'D';
+				}
+				
+				if(debitCustomer == '33196716  1'){
+					l_debitBU = 'D';
+				}
+				
+				if(debitCustomer == '500703'){
+					l_debitBU = '';
+				}
+				
+				if(debitCustomer == '500703'){
+					l_debitBU = '';
+				}
+				
+				if(debitCustomer == '500971'){
+					l_debitBU = 'D';
+				}
+				
+		}
+	}else{
+		debitCustomer 		= ''.split("~")[1];
+		l_debitBU			= '';
+	}
+	
+	//l_creditBU			= '';
+	//l_creditBU = 'D';
+	//if(l_debitBU != null && l_debitBU == 'D' && l_creditBU == 'O'){
+	//	payDtlLb.style.display="block";
+	//}else{
+	//	payDtlLb.style.display="none";
+//	}
+}
+//-------------------------------------------------------------------------------
+function fnradioChange(){
+	var s = document.frmmain.debitAmt.checked;
+	if(s==true)
+	{
+		document.frmmain.fldcreditamount.disabled=true;
+		document.frmmain.fldcreditamount.value='';
+		document.frmmain.flddebitamount.disabled=false;
+		document.frmmain.flddebitamount.value='';
+		document.frmmain.fldcreditdebitflag.value='D';
+	}else
+	{		
+		document.frmmain.fldcreditamount.disabled=false;
+		document.frmmain.fldcreditamount.value='';
+		document.frmmain.flddebitamount.disabled=true;
+		document.frmmain.flddebitamount.value='';
+		document.frmmain.fldcreditdebitflag.value='C';
+	}
+}
+//-------------------------------------------------------------------------------
+function setSaveTemp () {	
+	if(document.frmmain.fldsavetemp.checked == true) {
+		document.getElementById('savetemplate').style.display='block';
+	} else {
+		document.getElementById('savetemplate').style.display='none';
+	}
+}
+//-------------------------------------------------------------------------------
+function fnShowHideDealDetails(){
+	for (l_i = 0; l_i < l_txn_currs.length; l_i++) {
+		l_curr = l_txn_currs [l_i];	
+		if (l_curr.codCurrency == document.frmmain.flddbtaccntcurr.value) {
+			document.frmmain.fldtxncurr.value=document.frmmain.flddbtaccntcurr.value;
+			break;
+		}else{		
+			document.frmmain.fldtxncurr.value='';
+		}
+	}
+}
+
+//-------------------------------------------------------------------------------
+function fnOnChangefldbenecusttype(){
+	
+	document.frmmain.fldbenecusttype.value=document.frmmain.fldbenetype.value;
+}
+
+//-------------------------------------------------------------------------------
+
+function fnonchangeprioritymode(){
+
+	document.frmmain.fldtxnprioritymode.value=document.frmmain.fldprioritymode.value;
+	
+            
+
+}
+
+
+//-------------------------------------------------------------------------------
+function fnCallDraft(){	
+   	var l_fldEntityId= "B101";
+	if(document.frmmain.date.value!='' && document.frmmain.month.value!='' &&
+		   document.frmmain.year.value!='' ){
+		document.frmmain.fldtxndate.value=document.frmmain.date.value+'-'+document.frmmain.month.value+'-'+document.frmmain.year.value;
+	} 
+    
+	if(document.frmmain.fldbenename.value == '' && l_fldEntityId=='B108'){
+		alert("Please enter the Beneficiary Name");
+		return false;
+	}
+  	document.frmmain.flddebitamt.value = document.frmmain.flddebitamount.value;
+	document.frmmain.fldcreditamt.value = document.frmmain.fldcreditamount.value;
+
+	document.frmmain.target="";
+	//document.frmmain.fldSectionId.value='RRFTI01';
+	if(document.frmmain.fldSectionId.value=='RRFTI20' || document.frmmain.fldSectionId.value=='RRFTI03'){
+		document.frmmain.fldSectionId.value='RRFTI01';
+	}
+	Draft('03','FTI');
+}
+//-------------------------------------------------------------------------------
+var showBeneTemplateWindow;
+function fnSearchForBene(){// Bene Tamplate look up
+    var features	=	"dependant=no,directories=no,location=no,menubar=no"
+					+	",resizable=yes,scrollbars=yes,titlebar=no,toolbar=no"
+					+	",height=510,width=830,top=0,left=0,status=yes";
+	
+	showBeneTemplateWindow	=	window.open ("defaultflexcubepopup.html", "PrintAct", features);
+	document.frmmain.fldSessionId.value = parent.idsession;
+	document.frmmain.fldRequestId.value = "RRBTM66";
+	document.frmmain.fldSectionId.value = "RRBTM66";
+	document.frmmain.fldServiceType.value = "FTI";
+	document.frmmain.target = "txn";
+	setTimeout("fnsubmitreq ()",2000);
+}
+//-------------------------------------------------------------------------------
+function fnsubmitreq () {
+	if (!showBeneTemplateWindow.top.frames ["txn"].loaded) {
+		setTimeout ("fnsubmitreq ()", 100);
+	} else {
+		document.frmmain.submit ();
+	}
+}
+//-------------------------------------------------------------------------------
+
+function savePaymentTemplate(){//for saving payment template
+	var l_frmmain = document.frmmain;
+	var l_paymenttemplateid='';
+   	var l_fldEntityId= "B101";
+	var L_allowedtxnprirityentity = "B108~B102~";
+	var L_allowedbeneentity = "B108~B102~";
+	if(document.frmmain.existingtemplate.checked==true){
+		document.frmmain.fldtemplatename.value=document.frmmain.fldexistingpymt.value;
+		document.frmmain.fldactionflag.value='2';
+	}else{
+		if(document.frmmain.fldnewtempname.value!=''){
+			document.frmmain.fldtemplatename.value=document.frmmain.fldnewtempname.value;
+			document.frmmain.fldactionflag.value='1';
+	    }else if(l_paymenttemplateid=='ET'){
+			document.frmmain.fldtemplatename.value=document.frmmain.fldexistingpymt.value;
+			document.frmmain.fldactionflag.value='2';
+		}else{
+            alert("Please Enter Template Name");
+            return false;
+		}
+	}
+	
+	if(document.frmmain.date.value!='' && document.frmmain.month.value!='' &&
+		   document.frmmain.year.value!='' ){
+		document.frmmain.fldtxndate.value=document.frmmain.date.value+'-'+document.frmmain.month.value+'-'+document.frmmain.year.value;
+	} 
+	if(document.frmmain.fldbenename.value == '' && l_fldEntityId=='B108'){
+		alert("Please enter the Beneficiary Name");
+		return false;
+	} else if (l_fldEntityId == 'B108' && l_frmmain.fldprioritymode.value == '') {
+		alert("Please select the transaction priority mode.");
+		return false;
+	} else if (l_fldEntityId == 'B108' && l_frmmain.fldbenetype.value == '') {
+		alert("Kindly select beneficiary type");
+		return false;
+	}
+
+	document.frmmain.fldtemplateflag.value="savetemplatereq";
+	
+	var crdbflag=document.frmmain.fldcreditdebitflag.value	;
+	if(crdbflag=='D'){
+		document.frmmain.flddebitamt.value = document.frmmain.flddebitamount.value;
+	}
+
+	if(crdbflag=='C'){
+		document.frmmain.fldcreditamt.value = document.frmmain.fldcreditamount.value;
+	}
+	document.frmmain.target="";
+
+	if(document.frmmain.fldSectionId.value=='RRFTI20' || document.frmmain.fldSectionId.value=='RRFTI05'){
+		document.frmmain.fldSectionId.value='RRFTI01';
+	}
+	SendTxnRequest('05','FTI');
+}
+//--------------------------------------------------------------------------------
+var showPaymentTemplateWindow;
+
+function fnSearchForPaymentTemplate(){// Existing Payment Template look up
+    var tempflg=document.frmmain.fldimgflag.value;
+	if(tempflg=="true"){
+		fnPaymntTemplateRadioChange();
+		
+		var features1	=	"dependant=no,directories=no,location=no,menubar=no"
+						+	",resizable=yes,scrollbars=yes,titlebar=no,toolbar=no"
+						+	",height=510,width=830,top=0,left=0,status=yes";
+		
+		showPaymentTemplateWindow = window.open ("defaultflexcubepopup.html", "PrintAct", features1);
+		document.frmmain.target = "txn";
+		document.frmmain.fldSessionId.value = parent.idsession;
+        document.frmmain.fldtypetemp.value = 'T';
+		document.frmmain.fldRequestId.value = "RRBTM77";
+		document.frmmain.fldSectionId.value = "RRFTI01";
+		document.frmmain.fldServiceType.value = "FTI";
+		setTimeout("fnsubmitreqest ()",2000);
+	}else{
+		return false;
+	}
+}
+//-------------------------------------------------------------------------------
+function fnsubmitreqest () {
+	if (!showPaymentTemplateWindow.top.frames ["txn"].loaded) {
+		setTimeout ("fnsubmitreqest ()", 100);
+	} else {
+		document.frmmain.submit ();
+	}
+}
+//-------------------------------------------------------------------------------
+function fnPaymntTemplateRadioChange(){// Function is used for Existing and new payment template
+	var l_temp = document.frmmain.fldradiogrp1[1].checked;
+	if(l_temp==true){
+		document.frmmain.fldbebitaccount.value='';
+		document.frmmain.flddbtaccntcurr.value='';
+		document.frmmain.fldbenename.value='';
+		document.frmmain.fldbeneacctno.value='';
+		document.frmmain.flddebitamount.value='';
+		document.frmmain.fldexistingpymt.value='';
+		document.frmmain.fldtxncurr.value='';
+		document.frmmain.idudfremark.value='';
+
+		document.frmmain.fldpaymenttemplate[1].checked=true;
+		document.frmmain.fldimgflag.value="false";
+		document.frmmain.fldbeneimgflag.value="true";
+		document.frmmain.fldradiogrp1[0].checked=false;
+		document.frmmain.fldexistingpymt.readonly=true;
+		document.frmmain.fldpaymenttemplate[0].checked=false;
+		document.frmmain.fldpaymenttemplate[0].disabled=true;
+
+		if(document.frmmain.fldpaymenttemplate[0].checked==true){
+			document.frmmain.fldtemplatename.value=document.frmmain.fldexistingpymt.value;
+		}else{
+			document.frmmain.fldtemplatename.value=document.frmmain.fldnewtempname.value;
+		}
+	}
+	else{
+		document.frmmain.fldbebitaccount.value='';
+		document.frmmain.flddbtaccntcurr.value='';
+		document.frmmain.fldbenename.value='';
+		document.frmmain.fldbeneacctno.value='';
+		document.frmmain.flddebitamount.value='';
+		document.frmmain.fldexistingpymt.value='';
+		document.frmmain.fldtxncurr.value='';
+		document.frmmain.idudfremark.value='';
+		document.frmmain.fldimgflag.value="true";
+		document.frmmain.fldbeneimgflag.value="false";
+		document.frmmain.fldradiogrp1[1].readonly=true;
+		document.frmmain.fldpaymenttemplate[0].disabled=false;
+		document.frmmain.fldpaymenttemplate[0].checked=true;
+		document.frmmain.fldpaymenttemplate[1].checked=false;
+        document.frmmain.fldnewtempname.value='';
+		document.frmmain.fldtemplatename.value=document.frmmain.fldexistingpymt.value;
+	}
+	displayDetails(document.frmmain.fldbebitaccount);
+}
+//-------------------------------------------------------------------------------
+function fnTemplateRadioChange(){// Function is used for Save As Template
+	var l_template = document.frmmain.fldpaymenttemplate[0].checked;
+
+	if(l_template==true){
+		document.frmmain.fldpaymenttemplate[0].readonly=true;
+		document.frmmain.fldpaymenttemplate[0].checked=true;
+		document.frmmain.fldnewtempname.readonly=true;
+		document.frmmain.fldnewtempname.value='';
+		document.frmmain.fldtemplatename.value=document.frmmain.fldexistingpymt.value;
+        document.frmmain.fldradiogrp1[1].checked=false;
+        document.frmmain.fldradiogrp1[0].checked=true;
+	}
+	else{
+		document.frmmain.fldpaymenttemplate[1].checked=true;
+		document.frmmain.fldnewtempname.readonly=false;
+		document.frmmain.fldnewtempname.readonly=false;
+		document.frmmain.fldtemplatename.value=document.frmmain.fldnewtempname.value;
+        document.frmmain.fldradiogrp1[1].checked=true;
+        document.frmmain.fldradiogrp1[0].checked=false;
+        document.frmmain.fldexistingpymt.value='';
+	}
+}
+//-------------------------------------------------------------------------------
+function checkAcct(){
+	if('' != '') {
+	   checkAccounts(l_cust_accounts,'');
+	}
+}
+function loadpopup(){
+	
+}
+//------------------------------------------------------------------------------------------
+function loadSpclLimPopup () {
+	if (!showSpclLimitPopupWindow.top.frames ["txn"].loaded) {
+		setTimeout ("loadSpclLimPopup ()", 100);
+	} else {
+		document.frmmain.submit ();
+	}
+}
+//-------------------------------------------------------------------------------
+function populateamount() {
+	if('' != '') {
+		var accCurr = '';
+		var debitamount='' ;
+		document.frmmain.flddebitamount.value = debitamount;
+	} else if ('' != '') {
+		var accCurr = '';
+		var creditamount='' ;
+		document.frmmain.fldcreditamount.value = creditamount;
+	}
+}
+//-------------------------------------------------------------------------------
+</script><script language="JavaScript" src="./AnchorPosition.js.download"></script><script language="JavaScript" src="./PopupWindow.js.download"></script><script language="JavaScript" src="./date.js.download"></script><script language="JavaScript" src="./CalendarPopup.js.download"></script><script language="JavaScript" src="./AnchorPosition.js.download"></script><script language="JavaScript" src="./PopupWindow.js.download"></script><script language="JavaScript" src="./date.js.download"></script><script language="JavaScript" src="./CalendarPopup.js.download"></script><script type="text/JavaScript" language="JavaScript">
+		var cal = new CalendarPopup('testdiv1');
+		cal.setCssPrefix("CAL");
+		cal.showNavigationDropdowns (true);
+
+		var l_entity = '';
+			 
+		var test = '31-07-2018 00:00:00';	
+		//alert("hostdate  "+test+"::");
+		
+		
+		var hostdate = '2018-07-31';
+
+		var day =  parseInt('31',10);
+		var mon =  parseInt('07',10);
+		var year = parseInt('2018',10);
+		
+		var now = new Date();
+			now.setDate(day);
+			now.setMonth(mon-1);
+			now.setYear(year);	
+		
+		cal.todaydate = new Date();
+		cal.serverdate = now;  
+		//alert(now+"   "+		cal.todaydate+"   "+cal.serverdate);
+
+	/**
+		global variables for selecting the date fields
+	**/
+	var l_fldyr="",l_fldmon="",l_flddate="";
+	/**
+		function   fnCalendar_business(anchor,p_flddate,p_fldmon,p_fldyear)
+			anchor : to show div relative to anchor (calendar image)
+			p_flddate : id for select field where calendar date will be stored 
+			p_fldmon : id for select field where calendar month will be stored 
+			p_fldyear :id for select field where calendar year will be stored 
+	**/
+//-----------------------------------------------------------------------------
+function fnCalendar_business(anchor,p_flddate,p_fldmon,p_fldyear)
+{
+	var cal = new CalendarPopup("testdiv1");
+	cal.setCssPrefix("CAL");
+	cal.showNavigationDropdowns (true);
+
+	l_flddate	= document.getElementById(p_flddate) ;
+	l_fldmon	= document.getElementById(p_fldmon) ;
+	l_fldyear	= document.getElementById(p_fldyear) ;
+	
+		 
+	var test = '31-07-2018 00:00:00';	
+	//alert("hostdate  "+test+"::");
+	
+
+	var hostdate = '2018-07-31';
+
+	//cal.initiateCalendar(hostdate);
+	var now = new Date(); 
+	//cal.initiateForwardDirection(3,3,true,null);
+	var  val = "";
+	/********* to create argument list for weekly offs  **********/
+	
+	
+	
+	var st_day = "";
+	
+	
+	var weekly_off = ""; 
+	
+	cal.setReturnFunction("setMultipleValues3"); 
+	cal.showCalendar(anchor);
+	//cal.select(flddat, anchor ,format);
+}
+//-----------------------------------------------------------------------------
+//Function sets the entity to cahnge the calendar
+function setl_entity(p_entity){
+	try{
+		if(p_entity!='') 
+			l_entity = p_entity;
+	}
+	catch(e){
+		//alert('identity not set ');
+		l_entity = 'B101';
+    }
+}
+//-----------------------------------------------------------------------------
+/**
+function   fnCalendar_business2(anchor,p_flddate,p_fldmon,p_fldyear)
+	anchor : to show div relative to anchor (calendar image)
+	p_flddate : id for select field where calendar date will be stored 
+	p_fldmon : id for select field where calendar month will be stored 
+	p_fldyear :id for select field where calendar year will be stored 
+**/
+function fnCalendar_business2(anchor,p_flddate,p_fldmon,p_fldyear)
+{
+	//var cal = new CalendarPopup('testdiv1');
+	cal.todaydate = now;
+	cal.setCssPrefix("CAL");
+	cal.showNavigationDropdowns (true);
+	cal.initiateForwardDirection(3,3,true,null);	  // Added for default disabling of past dates in business calendar
+	
+	l_flddate = document.getElementById(p_flddate) ;
+	l_fldmon = document.getElementById(p_fldmon) ;
+	l_fldyear    = document.getElementById(p_fldyear) ;
+	cal.setCalendarOffsets(0,1);
+	cal.initiateCalendar(hostdate);
+		
+	//cal.initiateForwardDirection(3,3,true,null);
+	var  val = "";
+	/********* to create argument list for weekly offs  **********/
+	
+			  
+		//alert("test");
+		var id = 'B101';
+		//alert(id+" "+l_entity);
+		if(id==l_entity)
+		{
+			cal = new CalendarPopup('testdiv1');
+			cal.setCssPrefix("CAL");
+			cal.showNavigationDropdowns (true);
+			cal.serverdate = now;  
+			cal.todaydate = now;
+			cal.setCalendarOffsets(0,1);
+			cal.initiateForwardDirection(3,3,true,null);
+			cal.initiateCalendar(hostdate);	
+				
+			
+				 
+			var st_day = "";
+			
+			
+			var weekly_off = ""; 
+			
+		} //End of if 
+			  
+		//alert("test");
+		var id = 'B102';
+		//alert(id+" "+l_entity);
+		if(id==l_entity)
+		{
+			cal = new CalendarPopup('testdiv1');
+			cal.setCssPrefix("CAL");
+			cal.showNavigationDropdowns (true);
+			cal.serverdate = now;  
+			cal.todaydate = now;
+			cal.setCalendarOffsets(0,1);
+			cal.initiateForwardDirection(3,3,true,null);
+			cal.initiateCalendar(hostdate);	
+				
+			
+				 
+			var st_day = "";
+			
+			
+			var weekly_off = ""; 
+			
+		} //End of if 
+			  
+		//alert("test");
+		var id = 'B108';
+		//alert(id+" "+l_entity);
+		if(id==l_entity)
+		{
+			cal = new CalendarPopup('testdiv1');
+			cal.setCssPrefix("CAL");
+			cal.showNavigationDropdowns (true);
+			cal.serverdate = now;  
+			cal.todaydate = now;
+			cal.setCalendarOffsets(0,1);
+			cal.initiateForwardDirection(3,3,true,null);
+			cal.initiateCalendar(hostdate);	
+				
+			
+				 
+			var st_day = "";
+			
+			
+			var weekly_off = ""; 
+			
+		} //End of if 
+	
+	cal.setReturnFunction("setMultipleValues3"); 
+	cal.showCalendar(anchor);
+   //cal.select(flddat, anchor ,format);
+}
+//-----------------------------------------------------------------------------
+/**
+function   fnCalendar_normal2(anchor,p_flddate,p_fldmon,p_fldyear)
+	anchor : to show div relative to anchor (calendar image)
+	p_flddate : id for select field where calendar date will be stored 
+	p_fldmon : id for select fieldt where calendar month will be stored 
+	p_fldyear : id for select field where calendar year will be stored 
+**/
+function fnCalendar_normal2(anchor,p_flddate,p_fldmon,p_fldyear){
+	//alert("inside fnCalendar_normal2 "+cal);
+//	var cal = new CalendarPopup('testdiv1');
+	if (p_flddate.disabled) { 
+		return; 
+	}
+	
+	cal.todaydate = new Date();
+	cal.setCssPrefix("CAL");
+	cal.showNavigationDropdowns (true);
+	document.getElementById("testdiv1").focus();
+
+	l_flddate = document.getElementById(p_flddate) ;
+	l_fldmon = document.getElementById(p_fldmon) ;
+	l_fldyear    = document.getElementById(p_fldyear) ;
+	//alert("inside fnCalendar_normal2 1 ");
+	cal.setReturnFunction("setMultipleValues3"); 
+	//alert("inside fnCalendar_normal2 2 ");
+	cal.showCalendar(anchor);
+	//alert("inside fnCalendar_normal2 3 ");
+}
+//-----------------------------------------------------------------------------
+/**
+function   fnCalendar_normal(anchor,p_flddate,p_fldmon,p_fldyear)
+	anchor : to show div relative to anchor (calendar image)
+	p_flddate : id for select field where calendar date will be stored 
+	p_fldmon : id for select fieldt where calendar month will be stored 
+	p_fldyear : id for select field where calendar year will be stored 
+**/
+function fnCalendar_normal(anchor,p_flddate,p_fldmon,p_fldyear){
+	if (p_flddate.disabled) { 
+		return; 
+	}
+	var cal = new CalendarPopup("testdiv1");
+	cal.setCssPrefix("CAL");
+	cal.showNavigationDropdowns (true);
+
+	l_flddate = document.getElementById(p_flddate);
+	l_fldmon = document.getElementById(p_fldmon);
+	l_fldyear    = document.getElementById(p_fldyear);
+	
+	cal.setReturnFunction("setMultipleValues3");
+	cal.showCalendar(anchor);
+}
+//-----------------------------------------------------------------------------
+function setMultipleValues3(y,m,d) {
+	l_fldyear.value =y; 
+	l_fldmon.value =m; 
+	l_flddate.value =d;
+	if (l_fldmon.value=="" && l_flddate.value=="")
+	{
+		l_fldmon.value =""; 
+		l_flddate.value ="";
+	}
+	//alert("after setmultiple "+"year "+l_fldyear.value + " month  "+ l_fldmon.value+ "  date "+l_flddate.value);
+}
+//-----------------------------------------------------------------------------
+/**
+	function   calendarsetup_business(flddat, anchor ,format)
+		flddat : field name where calendar date will be stored 
+		anchor : to show div relative to anchor (calendar image)
+		format : date format
+**/
+function calendarsetup_business(flddat, anchor ,format)
+{
+	if (flddat.disabled) { 
+		return; 
+	}
+		 
+	var test = '31-07-2018 00:00:00';	
+	//alert("hostdate  "+test+"::");
+	
+	
+	var hostdate = '2018-07-31';
+
+	cal.initiateCalendar(hostdate);
+	//cal.setYearSelectStartOffset(3);
+	var now = new Date(); 
+	//cal.initiateForwardDirection(3,3,true,null);
+	var  val = "";
+	
+	
+	
+	var st_day = "";
+	
+	
+	var weekly_off = ""; 
+	
+   cal.select(flddat, anchor ,format);
+}
+//-----------------------------------------------------------------------------
+/**
+function   calendarsetup(flddat, anchor ,format, flag)
+	flddat : field name where calendar date will be stored 
+	anchor : to show div relative to anchor (calendar image)
+	format : date format
+**/
+function calendarsetup(flddat, anchor ,format)
+{
+	if (flddat.disabled) { 
+		return; 
+	}
+	var hostDate = '2018-08-19 17:55:02';
+  	cal.initiateCalendar(hostDate);
+	cal.setWeekStartDay('');
+	cal.select(flddat, anchor ,format);
+}
+//-----------------------------------------------------------------------------
+/**
+function   fnCalendar_normal3(anchor,p_flddate,p_fldmon,p_fldyear,p_frmyear,p_toyear)
+	anchor : to show div relative to anchor (calendar image)
+	p_flddate : id for select field where calendar date will be stored 
+	p_fldmon : id for select fieldt where calendar month will be stored 
+	p_fldyear : id for select field where calendar year will be stored
+	p_frmyear : previous range of years to show in year dropdown
+	p_toyear : future range of years to show in year dropdown
+**/
+function fnCalendar_normal3(anchor,p_flddate,p_fldmon,p_fldyear,p_frmyear,p_toyear){
+	//var cal = new CalendarPopup('testdiv1');
+	cal.todaydate = new Date();
+	cal.setCssPrefix("CAL");
+	cal.showNavigationDropdowns (true);
+
+	l_flddate = document.getElementById(p_flddate) ;
+	l_fldmon = document.getElementById(p_fldmon) ;
+	l_fldyear    = document.getElementById(p_fldyear) ;
+
+	cal.setCalendarOffsets(p_frmyear,p_toyear);
+	cal.setReturnFunction("setMultipleValues3"); 
+	cal.showCalendar(anchor);
+}
+//-----------------------------------------------------------------------------
+/**
+function   calendarsetup(flddat, anchor ,format, offsetyrs)
+	flddat : field name where calendar date will be stored 
+	anchor : to show div relative to anchor (calendar image)
+	format : date format
+	prevyrs : number of previous years  to display
+	nextyrs : number of next years  to display
+**/
+function calendarsetup(flddat, anchor ,format,prevyrs,nextyrs)
+{
+	if (flddat.disabled) { 
+		return; 
+	}
+	cal.todaydate = new Date();
+  	var l_dat;
+	var dattxn = '2018-08-19';
+	var hostDate = '31-07-2018';
+	if (hostDate != null  && hostDate!='') {
+		l_dat	= hostDate;
+	} else if (dattxn != null  && dattxn!='') {
+		l_dat	= dattxn;
+	} else {
+		l_dat		='19-08-2018 15:25:01';
+		var day1	= l_dat.substring(0,2);
+		var year1	= l_dat.substring(6,10);
+		var month1	= l_dat.substring(3,5);
+		var time1   = l_dat.substring(11,19);
+		l_dat		= year1+"-"+month1+"-"+day1+" "+time1;		
+	}
+  	cal.initiateCalendar(l_dat);
+	cal.setWeekStartDay('');
+	cal.setCalendarOffsets(prevyrs,nextyrs);
+	cal.select(flddat, anchor ,format);
+}
+//-----------------------------------------------------------------------------
+/**
+function   fnCalendar_business_futureDatesDisabled(anchor,p_flddate,p_fldmon,p_fldyear)
+	anchor : to show div relative to anchor (calendar image)
+	p_flddate : id for select field where calendar date will be stored 
+	p_fldmon : id for select field where calendar month will be stored 
+	p_fldyear :id for select field where calendar year will be stored 
+**/
+function fnCalendar_business_futureDatesDisabled(anchor,p_flddate,p_fldmon,p_fldyear)
+{
+  	if (p_flddate.disabled) { 
+		return; 
+	} 
+	 cal.todaydate = new Date();
+	cal.setCssPrefix("CAL");
+	cal.showNavigationDropdowns (true);
+	cal.initiateBackwordDirection(3,3,true,null);	  // Added for default disabling of past dates in business calendar
+	// cal.initiateForwardDirection(2,6,true,null);
+	l_flddate = document.getElementById(p_flddate) ;
+	l_fldmon = document.getElementById(p_fldmon) ;
+	l_fldyear    = document.getElementById(p_fldyear) ;
+	
+	cal.initiateCalendar(hostdate);
+	//cal.initiateForwardDirection(3,3,true,null);
+	var  val = "";
+	/********* to create argument list for weekly offs  **********/
+	
+	
+	
+	var st_day = "";
+	
+	
+	var weekly_off = ""; 
+	
+			
+		cal.setReturnFunction("setMultipleValues3"); 
+		  //alert("inside"); 	
+		cal.showCalendar(anchor);
+
+	   //cal.select(flddat, anchor ,format);
+}
+// Added (08-12-2008) 
+// Helper function for the date dropdowns  to parse the dates 
+// Kaustubh B Jalvi
+//-----------------------------------------------------------------------------
+function getNumber(dat)
+{
+	//alert(dat+"    "+parseInt(dat,10));
+	if(trim(dat) == "" )
+		return "";
+	else	
+		return parseFloat(dat,10);
+}
+</script></head><body onload="fnCallOnFormLoad();displayStatusMessage();checkAcct();" class="WorkArea" marginwidth="0" marginheight="0">
+    idudfiscbcinterface
+    
+        idudfforeignexchange
+    
+aaaaaa
+    <form name="frmmain" method="post" action="http://10.184.214.177:7005/tw/internet" autocomplete="off"><table id="MainTable" align="center" width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr class="noscreen"><td class="srink" align="center"><img border="0" src="./LOGO.gif"></td></tr><tr><td valign="top"><table id="PageHeadingTable" align="center" width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td nowrap="true" id="PageHeading">Internal Transfer</td><td id="PageHeadingDate"></td><td id="PageHeadingDate">2018-08-19 17:55:02</td></tr></tbody></table></td></tr><tr><td height="100%"><div class="y_scroll"><table width="100%" class="TableBorder" cellpadding="1" cellspacing="1" border="0" align="center"><tbody><tr><td class="DataLeftAligned" width="20%">Country:</td><td colspan="3" class="DataLeftAligned" width="80%">TAIWAN</td><input value="TAIWAN" name="headerCountry" type="hidden"></tr><tr><td class="DataLeftAligned">Customer Id:</td><td class="DataLeftAligned">84429175</td><input value="84429175" name="headerIdcustomer" type="hidden"><td class="DataLeftAligned" width="20%">Customer Name:</td><td class="DataLeftAligned" width="30%">JACQUES</td><input value="JACQUES" name="headerCustomername" type="hidden"></tr><tr><td colspan="3" class="DataLeftAligned">&nbsp;</td><td class="DataLeftAligned">JACQUES</td><input value="JACQUES" name="headerCustomername2" type="hidden"></tr></tbody></table><table width="100%" class="TableBorder" cellpadding="1" cellspacing="1" border="0" align="center"><tbody><tr><td class="DataLeftAligned" width="3%"><input readonly="true" onclick="fnPaymntTemplateRadioChange();" value="EPT" id="existingpaymnttemplate" name="fldradiogrp1" type="radio"></td><td class="DataLeftAligned" width="17%">Existing Transaction Template:</td><td align="left" width="80%" class="DataLeftAligned"><input readonly="true" size="20" value="" id="fldexistingpymt" name="fldexistingpymt" type="text">
+										&nbsp;<img style="cursor:pointer" onclick="fnSearchForPaymentTemplate();" src="./lookup.gif" name="paymenttemplatlookup"></td></tr><tr><td class="DataLeftAligned" width="3%"><input onclick="fnPaymntTemplateRadioChange();" checked="true" value="NPT" id="newpaymnttemplate" name="fldradiogrp1" type="radio"></td><td class="DataLeftAligned" colspan="4">Make New Payment</td></tr></tbody></table><table width="100%" class="TableBorder" cellpadding="1" cellspacing="1" border="0" align="center"><tbody><tr><td class="DataLeftAligned" width="20%">Debit Account:*</td><td class="DataLeftAligned" width="30%"><select style="width:220px" name="fldbebitaccount" onchange="fnSetBankDetails();fnSetCurrencyLists();unitTypeConf(&#39;N&#39;);;displayDetails (this);"><option value="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-----Select-----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option><optgroup label="TAIWAN"></optgroup><optgroup label="  23609668 - MAKALOT INDUSTRIAL CO., LTD."><option value="B101~23609668~107119900826~111">107119900826</option></optgroup><optgroup label="  84429175 - JACQUES"><option selected="selected" value="B101~84429175~107540390791~0107">107540390791</option></optgroup><optgroup label="Mainland China"></optgroup><optgroup label="  500971 - CUSTOMER_500971"><option value="B108~500971~904135009713~904">904135009713</option></optgroup></select><span id="fldbebitaccountdisplayspan" style="display: block;">84429175 - JACQUES » 107540390791</span></td><td class="DataLeftAligned" width="20%">Currency:*</td><td class="DataLeftAligned" width="30%"><select name="flddbtaccntcurr" onchange="fnShowHideDealDetails();;displayDetails (this);"><option value="">Select</option><option value="TWD">TWD</option></select></td></tr><tr><td class="DataLeftAligned">Transaction Date:*</td><td colspan="4" nowrap="true" class="DataLeftAligned"><select id="byear1" name="year" onchange="displayDetails (this);"><option value="">Select</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option></select> <select id="bmonth1" name="month" onchange="displayDetails (this);"><option value="">Select</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select> <select id="bdate1" name="date" onchange="displayDetails (this);"><option value="">Select</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select> <img onclick="fnCalendar_business2( &#39;anchor1&#39; ,&#39;bdate1&#39;, &#39;bmonth1&#39;, &#39;byear1&#39;);" align="absMiddle" id="anchor1" src="./calander.gif" name="anchor1"><div style="position:absolute;visibility:hidden;background-color:white;layer-background-color:white;" id="testdiv1"></div></td></tr></tbody></table>B108~B102~<table width="100%" class="TableBorder" cellpadding="1" cellspacing="1" border="0" align="center"><tbody><tr><td width="20%" class="DataLeftAligned">Beneficiary Account:*</td><td align="left" class="DataLeftAligned"><input maxlength="16" value="" size="30" name="fldbeneacctno" type="text">
+									&nbsp;<img style="cursor:pointer" onclick="fnSearchForBene();" src="./lookup.gif" name="benelookup"></td><td rowspan="7" colspan="2" width="50%" class="DataLeftAligned"></td></tr><tr><td class="DataLeftAligned" width="20%">Beneficiary Name:</td><td class="DataLeftAligned"><input maxlength="140" value="" size="30" name="fldbenename" type="text"></td></tr><tr><td class="DataLeftAligned" width="20%">Transaction Currency:*</td><td class="DataLeftAligned"><select name="fldtxncurr" onchange="displayDetails (this);"><option value="">-----Select-----</option><option value="AUD">AUD</option><option value="CAD">CAD</option><option value="CHF">CHF</option><option value="CNY">CNY</option><option value="EUR">EUR</option><option value="GBP">GBP</option><option value="HKD">HKD</option><option value="IDR">IDR</option><option value="JPY">JPY</option><option value="NZD">NZD</option><option value="PHP">PHP</option><option value="PLN">PLN</option><option value="SEK">SEK</option><option value="SGD">SGD</option><option value="THB">THB</option><option value="TWD">TWD</option><option value="USD">USD</option><option value="ZAR">ZAR</option></select></td></tr><tr><td width="20%" class="DataLeftAligned"><input onclick="fnradioChange()" id="debitAmt" value="DA" checked="true" name="fldamounttype" type="radio">Debit Amount:</td><td class="DataLeftAligned"><input maxlength="15" value="" size="20" id="flddebitamount" name="flddebitamount" type="text"></td></tr><tr><td width="20%" class="DataLeftAligned"><input onclick="fnradioChange()" id="creditAmt" value="CA" name="fldamounttype" type="radio">Credit/Remittance Amount:</td><td class="DataLeftAligned"><input maxlength="15" disabled="true" value="" size="20" id="fldcreditamount" name="fldcreditamount" type="text"></td></tr><tr><td valign="top"></td></tr><tr><td class="DataLeftAligned" width="20%">Payment Details:
+										</td><td class="DataLeftAligned"><input type="text" id="idudfremark" name="idudfremark" size="35" maxlength="140" value=""></td></tr><tr><td class="DataLeftAligned" width="20%">Invoice Number:
+										</td><td class="DataLeftAligned"><input type="text" id="idudfinvoiceno" name="idudfinvoiceno" size="35" maxlength="50" value=""></td></tr><tr><td class="DataLeftAligned" width="20%">Email Address:
+										</td><td class="DataLeftAligned"><input type="text" id="idudfemailid" name="idudfemailid" size="35" maxlength="255" value=""></td></tr><input value="idudfiscbcinterface~idudfforeignexchange~idudfsub_item~idudfremark~idudfinvoiceno~idudfemailid" name="fldudfnames" type="hidden"><input value="" name="idudfiscbcinterface" type="hidden"><input value="" name="idudfforeignexchange" type="hidden"><input value="" name="idudfsub_item" type="hidden"><input value="idudfiscbcinterface~idudfforeignexchange~idudfsub_item" name="fldrempurposeudfnames" type="hidden"></tbody></table><table width="100%" class="TableBorder" cellpadding="1" cellspacing="1" border="0" align="center"><tbody><tr><td class="DataLeftAligned" width="4%"><input onclick="setSaveTemp();" value="on" name="fldsavetemp" type="checkbox"></td><td class="DataLeftAligned">Save As Template</td></tr><tr><td colspan="2"><div style="display:none" id="savetemplate"><table><tbody><tr><td class="DataLeftAligned" width="3%"><input readonly="true" onclick="fnTemplateRadioChange();" value="ET" id="existingtemplate" name="fldpaymenttemplate" type="radio"></td><td class="DataLeftAligned" colspan="3">Existing Transaction Template</td></tr><tr><td class="DataLeftAligned" width="3%"><input readonly="true" onclick="fnTemplateRadioChange();" value="NT" id="newtemplate" name="fldpaymenttemplate" type="radio"></td><td class="DataLeftAligned" width="17%">New Template:</td><td class="DataLeftAligned" width="80%"><input value="" maxlength="15" size="30" name="fldnewtempname" type="text"></td></tr></tbody></table></div></td></tr></tbody></table><table width="100%" class="ButtonArea" cellpadding="0" cellspacing="0" border="0" align="center"><tbody><tr><td class="NavBold"><input style="width:70px" type="button" class="buttons" value="Next" onclick="fnInitiate();" name="fldnext" alt=" Next ">
+											&nbsp;
+											<input maxlength="16" type="button" size="16" class="buttons" value="Save as Template" onclick="savePaymentTemplate();" name="fldsaveastemplate" alt=" Save as Template ">
+											&nbsp;
+											<input maxlength="16" type="button" size="16" class="buttons" value="Save as Draft" onclick="fnCallDraft();" name="fldsaveasdraft" alt=" Save as Draft "></td></tr></tbody></table></div></td></tr></tbody></table><ul class="DataLeftAlignedFooter"><li>Payment should be fully authorized before the cut-off time/day of the transaction. It will be postponed to the following business date after cut-off time. </li> <br> "Cut-off time: HK: 16:30 (FX transaction);TW(FX transaction)/IN/SG: 15:30;CN: 15:00; VN: 14:30; JP: 12:00", which may be modified by the Bank from time to time. Please make sure there is sufficient fund in the account before Cut-off time or it will result in failed transaction.<li>TW/HK same currency internal transfer Cut-off time: 17:30.</li><li>If the payment is transferred between branches in different countries, please use Internal Remittance instead. </li><li>Beneficiary account number has to be verified, account name will NOT be examined for Internal Fund-Transfer.</li><li>If need any instruction for transaction,please input in "Payment Details"field.The quot;Invoice Number"field is for your reference only.</li></ul><ul></ul><input value="" type="hidden" name="fldInitiationDateFrom" maxlength="10" class="" id="DateText1"><input value="107540390791" name="fldacctno" type="hidden"><input value="B101" name="fldcodcountry" type="hidden"><input value="84429175" name="fldcustid" type="hidden"><input value="0107" name="fldbankcode" type="hidden"><input value="0107" name="fldbranchcode" type="hidden"><input value="" name="fldnambranch" type="hidden"><input value="" name="fldRequestId" type="hidden"><input value="" name="fldSessionId" type="hidden"><input value="FTI" name="fldServiceType" type="hidden"><input value="RRFTI01" name="fldudfrequestid" type="hidden"><input value="" name="fldreferenceno" type="hidden"><input value="" name="fldauthaction" type="hidden"><input value="" name="fldnextaction" type="hidden"><input value="" name="fldstatebit" type="hidden"><input value="WJMJGYQHQALHCFRUXWBKEZLBRZXHD" name="fldDataId" type="hidden"><input value="RRFTI01" name="fldSectionId" type="hidden"><input value="" name="fldcreditamt" type="hidden"><input value="" name="flddebitamt" type="hidden"><input value="D" name="fldcreditdebitflag" type="hidden"><input value="FTI" name="fldDealRequestId" type="hidden"><input value="FTI" name="fldBeneTempRequestId" type="hidden"><input value="" name="fldactionflag" type="hidden"><input value="C" name="fldvisibilityflag" type="hidden"><input value="" name="fldtemplatename" type="hidden"><input value="FTI" name="fldtransfermode" type="hidden"><input value="35307" name="fldiduser" type="hidden"><input value="false" name="fldimgflag" type="hidden"><input value="true" name="fldbeneimgflag" type="hidden"><input value="" name="fldtemplateflag" type="hidden"><input value="" name="fldtxndate" type="hidden"><input value="" name="fldidsequence" type="hidden"><input value="" name="fldbankcharge" type="hidden"><input value="FTI" name="fldPaymentTempRequestId" type="hidden"><input value="" name="fldtypetemp" type="hidden"><input value="" name="fldnextactionseq" type="hidden"><input value="" name="fldremittancepurposetext" type="hidden"><input value="" name="fldremittancepurpose" type="hidden"><input value="" name="fldremittancedesc" type="hidden"><input value="" name="fldotherpurpose" type="hidden"><input value="" name="fldotherpurposetype" type="hidden"><input value="" name="flddebitbu" type="hidden"><input value="" name="fldrmbtxncode" type="hidden"><input value="" name="fldfxdeallimit" type="hidden"><input value="" name="fldrmbsavepprno" type="hidden"><input value="" name="fldpaygt" type="hidden"><input value="" name="fldrelatedccy" type="hidden"><input value="" name="fldtxncode1" type="hidden"><input value="" name="fldrelatedamt1" type="hidden"><input value="" name="fldtxnremark1" type="hidden"><input value="" name="fldtxncode2" type="hidden"><input value="" name="fldrelatedamt2" type="hidden"><input value="" name="fldtxnremark2" type="hidden"><input value="" name="fldsavepprno" type="hidden"><input value="" name="fldrescountry" type="hidden"><input value="" name="fldpaymentdetails" type="hidden"><input value="" name="fldnextvaluedate" type="hidden"><input value="" name="fldbenetypetext" type="hidden"><input value="" name="popupdisp" type="hidden"><input value="" name="flderrormsg" type="hidden"><input value="" name="accumulatedcnt" type="hidden"><input value="" name="accumulatedamt" type="hidden"><input value="" name="accumulatedcur" type="hidden"><input value="" name="limitamt" type="hidden"></form></body></html>

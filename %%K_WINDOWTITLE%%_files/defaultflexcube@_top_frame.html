@@ -1,0 +1,3661 @@
+
+<!-- saved from url=(0038)http://10.184.214.177:7005/tw/internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="./ECU_eng_01.css" type="text/css"><link rel="stylesheet" href="./ECU_eng_01.css" type="text/css"><link rel="stylesheet" href="./print.css" type="text/css" media="print"><script src="./common.js.download" language="JavaScript" type="text/JavaScript"></script><script language="JavaScript">
+	var defAppId		= "RR";
+	var l_pref 			= false;
+	var l_group			= "";
+	var l_defTxn		= "";
+	var arr_txns		= null;
+	var l_arr_txns		= null;
+	var namtoken		= "";
+	var xslLoaded		= false;
+	var arr_type		= new Array ();
+	var arr_init_req_id	= new Array ();
+	var arr_type_desc	= new Array ();
+	var arr_type_txn_map	= new Array ();
+	var l_arr_type_txn_map	= new Array ();
+	var arr_init_req_id_not_menutxn	= new Array ();
+	var count 			= 1;
+	var l_itr 			= 0, l_itr1 = 0;
+	var l_favtxncnt 	= 0;
+	var l_tokenarr		= new Array();
+	var l_grp_txn 		= new Array ();
+	var l_grp_txn_desc	= new Array ();
+	var l_txnarr		= new Array();
+	var l_txndescarr	= new Array();
+	var l_favtxnarr		= new Array();
+	var l_favtokenarr	= new Array();
+	var l_favdescarr	= new Array();
+	var l_favgrouparr	= new Array();
+	var l_subgroup		= new Array ();
+	var l_reqid 		= "RRMNU05";
+	var namgroup;
+	var perscss			= "";
+	var l_landingTxn	= "LCI";
+    var l_landingsubgroup = "";
+	var l_menusubgroup	= "";
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="A") {
+			arr_type [count] = "A";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Cash Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="B") {
+			arr_type [count] = "B";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Loan Management";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="C") {
+			arr_type [count] = "C";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Trade Finance";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="C") {
+			arr_type [count] = "C";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Trade Finance";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="C") {
+			arr_type [count] = "C";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Trade Finance";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="C") {
+			arr_type [count] = "C";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Trade Finance";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="C") {
+			arr_type [count] = "C";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Trade Finance";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="C") {
+			arr_type [count] = "C";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Trade Finance";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="C") {
+			arr_type [count] = "C";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Trade Finance";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="D") {
+			arr_type [count] = "D";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Stock Agent";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="D") {
+			arr_type [count] = "D";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Stock Agent";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="D") {
+			arr_type [count] = "D";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Stock Agent";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="E") {
+			arr_type [count] = "E";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "E-Factoring";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="E") {
+			arr_type [count] = "E";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "E-Factoring";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="E") {
+			arr_type [count] = "E";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "E-Factoring";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="E") {
+			arr_type [count] = "E";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "E-Factoring";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="E") {
+			arr_type [count] = "E";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "E-Factoring";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="F") {
+			arr_type [count] = "F";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Authorization";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="F") {
+			arr_type [count] = "F";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Authorization";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="F") {
+			arr_type [count] = "F";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Authorization";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="G") {
+			arr_type [count] = "G";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Customer Service";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="G") {
+			arr_type [count] = "G";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Customer Service";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="G") {
+			arr_type [count] = "G";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Customer Service";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="G") {
+			arr_type [count] = "G";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Customer Service";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="G") {
+			arr_type [count] = "G";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Customer Service";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="G") {
+			arr_type [count] = "G";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Customer Service";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="G") {
+			arr_type [count] = "G";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Customer Service";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="G") {
+			arr_type [count] = "G";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Customer Service";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="G") {
+			arr_type [count] = "G";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Customer Service";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="G") {
+			arr_type [count] = "G";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Customer Service";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="G") {
+			arr_type [count] = "G";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Customer Service";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="G") {
+			arr_type [count] = "G";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Customer Service";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="G") {
+			arr_type [count] = "G";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Customer Service";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="G") {
+			arr_type [count] = "G";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Customer Service";
+			count++;
+		}
+	
+		if (arr_type [count-1]!="H") {
+			arr_type [count] = "H";
+			arr_type_desc [count] = "";
+
+			arr_type_desc [count] = "Other Service";
+			count++;
+		}
+	
+		arr_init_req_id ["AAT"] = "RRAAT01";
+	
+		arr_init_req_id ["ACQ"] = "RRACQ01";
+	
+		arr_init_req_id ["ASS"] = "RRASS01";
+	
+		arr_init_req_id ["ATD"] = "RRATD01";
+	
+		arr_init_req_id ["STD"] = "RRSTD01";
+	
+		arr_init_req_id ["STS"] = "RRSTS01";
+	
+		arr_init_req_id ["VTD"] = "RRVTD01";
+	
+		arr_init_req_id ["CCO"] = "RRCCO01";
+	
+		arr_init_req_id ["FCO"] = "RRFCO01";
+	
+		arr_init_req_id ["MRI"] = "RRMRI01";
+	
+		arr_init_req_id ["ORI"] = "RRORI01";
+	
+		arr_init_req_id ["VMI"] = "RRVMI01";
+	
+		arr_init_req_id ["AEI"] = "RRAEI01";
+	
+		arr_init_req_id ["CTD"] = "RRCTD01";
+	
+		arr_init_req_id ["FDI"] = "RRFDI01";
+	
+		arr_init_req_id ["FRT"] = "RRFRT01";
+	
+		arr_init_req_id ["FTI"] = "RRFTI01";
+	
+		arr_init_req_id ["IRT"] = "RRIRT01";
+	
+		arr_init_req_id ["LRT"] = "RRLRT01";
+	
+		arr_init_req_id ["MLT"] = "RRMLT01";
+	
+		arr_init_req_id ["OTD"] = "RROTD01";
+	
+		arr_init_req_id ["PAT"] = "RRPAT01";
+	
+		arr_init_req_id ["BFU"] = "RRBFU01";
+	
+		arr_init_req_id ["BVF"] = "RRBVF01";
+	
+		arr_init_req_id ["LDI"] = "RRLDI01";
+	
+		arr_init_req_id ["EBV"] = "RREBV01";
+	
+		arr_init_req_id ["ELC"] = "RRELC01";
+	
+		arr_init_req_id ["IBV"] = "RRIBV01";
+	
+		arr_init_req_id ["ILC"] = "RRILC01";
+	
+		arr_init_req_id ["ALD"] = "RRALD01";
+	
+		arr_init_req_id ["LCA"] = "RRLCA01";
+	
+		arr_init_req_id ["LCI"] = "RRLCI03";
+	
+		arr_init_req_id ["CPW"] = "RRCPW01";
+	
+		arr_init_req_id ["IMS"] = "RRIMS03";
+	
+		arr_init_req_id ["SSR"] = "RRSSR01";
+	
+		arr_init_req_id ["UPS"] = "RRUPS01";
+	
+		arr_init_req_id ["IAI"] = "RRIAI01";
+	
+		arr_init_req_id ["IAO"] = "RRIAO01";
+	
+		arr_init_req_id ["SAT"] = "RRSAT01";
+	
+		arr_init_req_id ["CLL"] = "RRCLL01";
+	
+		arr_init_req_id ["EFE"] = "RREFE01";
+	
+		arr_init_req_id ["FEQ"] = "RRFEQ01";
+	
+		arr_init_req_id ["IEQ"] = "RRIEQ01";
+	
+		arr_init_req_id ["REQ"] = "RRREQ01";
+	
+		arr_init_req_id ["FEA"] = "RRFEA01";
+	
+		arr_init_req_id ["PAI"] = "RRPAI01";
+	
+		arr_init_req_id ["VAT"] = "RRVAT23";
+	
+		arr_init_req_id ["FER"] = "RRFER01";
+	
+		arr_init_req_id ["IIR"] = "RRIIR01";
+	
+		arr_init_req_id ["BTM"] = "RRBTM01";
+	
+		arr_init_req_id ["CFA"] = "RRCFA01";
+	
+		arr_init_req_id ["EFI"] = "RREFI01";
+	
+		arr_init_req_id ["UMN"] = "RRUMN01";
+	
+		arr_init_req_id ["ICA"] = "RRICA01";
+	
+		arr_init_req_id ["SCA"] = "RRSCA01";
+	
+		arr_init_req_id ["TCA"] = "RRTCA01";
+	
+		arr_init_req_id ["TOV"] = "RRTOV01";
+	
+		arr_init_req_id ["CU2"] = "RRCU201";
+	
+			namtoken = "G";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "TOV";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "ACQ";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "FTI";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "BFU";
+
+				
+			}
+		
+			namtoken = "C";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "ILC";
+
+				
+			}
+		
+			namtoken = "C";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "LCI";
+
+				
+			}
+		
+			namtoken = "G";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "CPW";
+
+				
+			}
+		
+			namtoken = "E";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "EFE";
+
+				
+			}
+		
+			namtoken = "F";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "VAT";
+
+				
+			}
+		
+			namtoken = "G";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "IIR";
+
+				
+			}
+		
+			namtoken = "G";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "BTM";
+
+				
+			}
+		
+			namtoken = "G";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "ICA";
+
+				
+			}
+		
+			namtoken = "G";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "TCA";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "ASS";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "IRT";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "BVF";
+
+				
+			}
+		
+			namtoken = "C";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "ELC";
+
+				
+			}
+		
+			namtoken = "D";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "IAI";
+
+				
+			}
+		
+			namtoken = "E";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "FEQ";
+
+				
+			}
+		
+			namtoken = "F";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "FEA";
+
+				
+			}
+		
+			namtoken = "F";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "PAI";
+
+				
+			}
+		
+			namtoken = "G";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "FER";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "AAT";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "CCO";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "LRT";
+
+				
+			}
+		
+			namtoken = "C";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "IBV";
+
+				
+			}
+		
+			namtoken = "C";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "LCA";
+
+				
+			}
+		
+			namtoken = "D";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "IAO";
+
+				
+			}
+		
+			namtoken = "E";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "REQ";
+
+				
+			}
+		
+			namtoken = "G";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "CFA";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "ATD";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "FCO";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "FRT";
+
+				
+			}
+		
+			namtoken = "C";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "EBV";
+
+				
+			}
+		
+			namtoken = "E";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "IEQ";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "AEI";
+
+				
+			}
+		
+			namtoken = "E";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "CLL";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "MLT";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "PAT";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "FDI";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "MRI";
+
+				
+			}
+		
+			namtoken = "B";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "LDI";
+
+				
+			}
+		
+			namtoken = "D";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "SAT";
+
+				
+			}
+		
+			namtoken = "G";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "UMN";
+
+				
+			}
+		
+			namtoken = "C";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "ALD";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "OTD";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "CTD";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "ORI";
+
+				
+			}
+		
+			namtoken = "G";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "IMS";
+
+				
+			}
+		
+			namtoken = "G";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "UPS";
+
+				
+			}
+		
+			namtoken = "G";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "SCA";
+
+				
+			}
+		
+			namtoken = "G";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "SSR";
+
+				
+			}
+		
+			namtoken = "H";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "CU2";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "VTD";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "VMI";
+
+				
+			}
+		
+			namtoken = "G";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "EFI";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "STS";
+
+				
+			}
+		
+			namtoken = "A";
+			if ((arr_type_txn_map [namtoken] == null) ||
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "STD";
+
+				
+			}
+		
+		arr_init_req_id_not_menutxn ["CPW"] = "RRCPW01";
+	
+		arr_init_req_id_not_menutxn ["SSR"] = "RRSSR01";
+	
+		arr_init_req_id_not_menutxn ["ASS"] = "RRASS01";
+	
+		arr_init_req_id_not_menutxn ["CLL"] = "RRCLL01";
+	
+		arr_init_req_id_not_menutxn ["FER"] = "RRFER01";
+	
+		arr_init_req_id_not_menutxn ["IIR"] = "RRIIR01";
+	
+		arr_init_req_id_not_menutxn ["STD"] = "RRSTD01";
+	
+		arr_init_req_id_not_menutxn ["LCI"] = "RRLCI03";
+	
+		arr_init_req_id_not_menutxn ["BFU"] = "RRBFU01";
+	
+		arr_init_req_id_not_menutxn ["BD4"] = "RRBD401";
+	
+		arr_init_req_id_not_menutxn ["CFA"] = "RRCFA01";
+	
+		arr_init_req_id_not_menutxn ["ICA"] = "RRICA01";
+	
+		arr_init_req_id_not_menutxn ["SCA"] = "RRSCA01";
+	
+		arr_init_req_id_not_menutxn ["TOV"] = "RRTOV01";
+	
+		arr_init_req_id_not_menutxn ["FDI"] = "RRFDI01";
+	
+		arr_init_req_id_not_menutxn ["OTD"] = "RROTD01";
+	
+		arr_init_req_id_not_menutxn ["YA5"] = "RRYA501";
+	
+		arr_init_req_id_not_menutxn ["YA1"] = "RRYA101";
+	
+		arr_init_req_id_not_menutxn ["DRN"] = "RRDRN01";
+	
+		arr_init_req_id_not_menutxn ["ELC"] = "RRELC01";
+	
+		arr_init_req_id_not_menutxn ["ILC"] = "RRILC01";
+	
+		arr_init_req_id_not_menutxn ["IAO"] = "RRIAO01";
+	
+		arr_init_req_id_not_menutxn ["MNU"] = "RRMNU01";
+	
+		arr_init_req_id_not_menutxn ["FS3"] = "RRFS301";
+	
+		arr_init_req_id_not_menutxn ["PAI"] = "RRPAI01";
+	
+		arr_init_req_id_not_menutxn ["ALD"] = "RRALD01";
+	
+		arr_init_req_id_not_menutxn ["CTD"] = "RRCTD01";
+	
+		arr_init_req_id_not_menutxn ["FS6"] = "RRFS601";
+	
+		arr_init_req_id_not_menutxn ["DLP"] = "RRDLP01";
+	
+		arr_init_req_id_not_menutxn ["LDI"] = "RRLDI01";
+	
+		arr_init_req_id_not_menutxn ["IRT"] = "RRIRT01";
+	
+		arr_init_req_id_not_menutxn ["FTI"] = "RRFTI01";
+	
+		arr_init_req_id_not_menutxn ["BD1"] = "RRBD101";
+	
+		arr_init_req_id_not_menutxn ["FS1"] = "RRFS101";
+	
+		arr_init_req_id_not_menutxn ["FS5"] = "RRFS501";
+	
+		arr_init_req_id_not_menutxn ["VAT"] = "RRVAT23";
+	
+		arr_init_req_id_not_menutxn ["AAT"] = "RRAAT01";
+	
+		arr_init_req_id_not_menutxn ["ORI"] = "RRORI01";
+	
+		arr_init_req_id_not_menutxn ["SAT"] = "RRSAT01";
+	
+		arr_init_req_id_not_menutxn ["EFE"] = "RREFE01";
+	
+		arr_init_req_id_not_menutxn ["REQ"] = "RRREQ01";
+	
+		arr_init_req_id_not_menutxn ["ACQ"] = "RRACQ01";
+	
+		arr_init_req_id_not_menutxn ["STS"] = "RRSTS01";
+	
+		arr_init_req_id_not_menutxn ["FEQ"] = "RRFEQ01";
+	
+		arr_init_req_id_not_menutxn ["IEQ"] = "RRIEQ01";
+	
+		arr_init_req_id_not_menutxn ["US1"] = "RRUS101";
+	
+		arr_init_req_id_not_menutxn ["IMS"] = "RRIMS03";
+	
+		arr_init_req_id_not_menutxn ["US3"] = "RRUS301";
+	
+		arr_init_req_id_not_menutxn ["AS1"] = "RRAS101";
+	
+		arr_init_req_id_not_menutxn ["AEI"] = "RRAEI01";
+	
+		arr_init_req_id_not_menutxn ["FRT"] = "RRFRT01";
+	
+		arr_init_req_id_not_menutxn ["BEU"] = "RRBEU01";
+	
+		arr_init_req_id_not_menutxn ["AS3"] = "RRAS301";
+	
+		arr_init_req_id_not_menutxn ["FS2"] = "RRFS201";
+	
+		arr_init_req_id_not_menutxn ["FCP"] = "RRFCP01";
+	
+		arr_init_req_id_not_menutxn ["ND1"] = "RRND101";
+	
+		arr_init_req_id_not_menutxn ["FEA"] = "RRFEA01";
+	
+		arr_init_req_id_not_menutxn ["LCA"] = "RRLCA01";
+	
+		arr_init_req_id_not_menutxn ["FS4"] = "RRFS401";
+	
+		arr_init_req_id_not_menutxn ["UPS"] = "RRUPS01";
+	
+		arr_init_req_id_not_menutxn ["MFI"] = "RRMFI01";
+	
+		arr_init_req_id_not_menutxn ["BVF"] = "RRBVF01";
+	
+		arr_init_req_id_not_menutxn ["ATD"] = "RRATD01";
+	
+		arr_init_req_id_not_menutxn ["VTD"] = "RRVTD01";
+	
+		arr_init_req_id_not_menutxn ["EFI"] = "RREFI01";
+	
+		arr_init_req_id_not_menutxn ["LRT"] = "RRLRT01";
+	
+		arr_init_req_id_not_menutxn ["BTM"] = "RRBTM01";
+	
+		arr_init_req_id_not_menutxn ["VMI"] = "RRVMI01";
+	
+		arr_init_req_id_not_menutxn ["DDT"] = "RRDDT01";
+	
+		arr_init_req_id_not_menutxn ["CCO"] = "RRCCO01";
+	
+		arr_init_req_id_not_menutxn ["EBV"] = "RREBV01";
+	
+		arr_init_req_id_not_menutxn ["IBV"] = "RRIBV01";
+	
+		arr_init_req_id_not_menutxn ["FCO"] = "RRFCO01";
+	
+		arr_init_req_id_not_menutxn ["MRI"] = "RRMRI01";
+	
+		arr_init_req_id_not_menutxn ["IAI"] = "RRIAI01";
+	
+		arr_init_req_id_not_menutxn ["UMN"] = "RRUMN01";
+	
+		arr_init_req_id_not_menutxn ["AVC"] = "RRAVC01";
+	
+		arr_init_req_id_not_menutxn ["CHI"] = "RRCHI01";
+	
+		arr_init_req_id_not_menutxn ["YA2"] = "RRYA201";
+	
+		arr_init_req_id_not_menutxn ["F10"] = "RRF1001";
+	
+		arr_init_req_id_not_menutxn ["F09"] = "RRF0901";
+	
+		arr_init_req_id_not_menutxn ["MLT"] = "RRMLT01";
+	
+		arr_init_req_id_not_menutxn ["TCA"] = "RRTCA01";
+	
+		arr_init_req_id_not_menutxn ["PAT"] = "RRPAT01";
+	
+		arr_init_req_id_not_menutxn ["CU2"] = "RRCU201";
+	
+		arr_init_req_id_not_menutxn ["LS1"] = "RRLS101";
+	
+		l_tokenarr[l_itr] = "G";
+		l_txnarr[l_itr]	  =	"TOV";
+		l_txndescarr[l_itr]	  =	"Token Validation";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"ACQ";
+		l_txndescarr[l_itr]	  =	"Account Overview";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"FTI";
+		l_txndescarr[l_itr]	  =	"Internal Transfer";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"BFU";
+		l_txndescarr[l_itr]	  =	"Bulk File Upload";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "C";
+		l_txnarr[l_itr]	  =	"ILC";
+		l_txndescarr[l_itr]	  =	"View Import LC";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "C";
+		l_txnarr[l_itr]	  =	"LCI";
+		l_txndescarr[l_itr]	  =	"LC  Issuance ";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "G";
+		l_txnarr[l_itr]	  =	"CPW";
+		l_txndescarr[l_itr]	  =	"Change Password";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "E";
+		l_txnarr[l_itr]	  =	"EFE";
+		l_txndescarr[l_itr]	  =	"Assignment Inquiry";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "F";
+		l_txnarr[l_itr]	  =	"VAT";
+		l_txndescarr[l_itr]	  =	"Transactions ";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "G";
+		l_txnarr[l_itr]	  =	"IIR";
+		l_txndescarr[l_itr]	  =	"Interest Rate Inquiry";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "G";
+		l_txnarr[l_itr]	  =	"BTM";
+		l_txndescarr[l_itr]	  =	"Beneficiary and Template Maintenance";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "G";
+		l_txnarr[l_itr]	  =	"ICA";
+		l_txndescarr[l_itr]	  =	"CA Issuance";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "G";
+		l_txnarr[l_itr]	  =	"TCA";
+		l_txndescarr[l_itr]	  =	"CA Issuance";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"ASS";
+		l_txndescarr[l_itr]	  =	"Account Summary";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"IRT";
+		l_txndescarr[l_itr]	  =	"Internal Remittance";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"BVF";
+		l_txndescarr[l_itr]	  =	"Bulk File View";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "C";
+		l_txnarr[l_itr]	  =	"ELC";
+		l_txndescarr[l_itr]	  =	"View Export LC";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "D";
+		l_txnarr[l_itr]	  =	"IAI";
+		l_txndescarr[l_itr]	  =	"Investor Account Inquiry";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "E";
+		l_txnarr[l_itr]	  =	"FEQ";
+		l_txndescarr[l_itr]	  =	"Financing Inquiry";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "F";
+		l_txnarr[l_itr]	  =	"FEA";
+		l_txndescarr[l_itr]	  =	"FEDI Authorization";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "F";
+		l_txnarr[l_itr]	  =	"PAI";
+		l_txndescarr[l_itr]	  =	"Prepay Amount Inquiry";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "G";
+		l_txnarr[l_itr]	  =	"FER";
+		l_txndescarr[l_itr]	  =	"Foreign Exchange Rate Inquiry";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"AAT";
+		l_txndescarr[l_itr]	  =	"Account Activity";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"CCO";
+		l_txndescarr[l_itr]	  =	"Cheque Collection Inquiry";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"LRT";
+		l_txndescarr[l_itr]	  =	"LCY Remittance";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "C";
+		l_txnarr[l_itr]	  =	"IBV";
+		l_txndescarr[l_itr]	  =	"View Import Bill";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "C";
+		l_txnarr[l_itr]	  =	"LCA";
+		l_txndescarr[l_itr]	  =	"LC Amendment";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "D";
+		l_txnarr[l_itr]	  =	"IAO";
+		l_txndescarr[l_itr]	  =	"Investor Account Opening Inquiry";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "E";
+		l_txnarr[l_itr]	  =	"REQ";
+		l_txndescarr[l_itr]	  =	"Repayment Inquiry";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "G";
+		l_txnarr[l_itr]	  =	"CFA";
+		l_txndescarr[l_itr]	  =	"File Download";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"ATD";
+		l_txndescarr[l_itr]	  =	"TD Account Summary";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"FCO";
+		l_txndescarr[l_itr]	  =	"Clean Bill Collection/ Purchase Inquiry";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"FRT";
+		l_txndescarr[l_itr]	  =	"FCY Remittance";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "C";
+		l_txnarr[l_itr]	  =	"EBV";
+		l_txndescarr[l_itr]	  =	"View Export Bill";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "E";
+		l_txnarr[l_itr]	  =	"IEQ";
+		l_txndescarr[l_itr]	  =	"Invoice Inquiry";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"AEI";
+		l_txndescarr[l_itr]	  =	"Alliance Express (MT101)";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "E";
+		l_txnarr[l_itr]	  =	"CLL";
+		l_txndescarr[l_itr]	  =	"Credit Limit Inquiry";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"MLT";
+		l_txndescarr[l_itr]	  =	"LCY Remittance(Multiple)";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"PAT";
+		l_txndescarr[l_itr]	  =	"Private Account Transfer";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"FDI";
+		l_txndescarr[l_itr]	  =	"FCY Demand Draft";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"MRI";
+		l_txndescarr[l_itr]	  =	"Inward Remittance Inquiry";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "B";
+		l_txnarr[l_itr]	  =	"LDI";
+		l_txndescarr[l_itr]	  =	"Loan Details";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "D";
+		l_txnarr[l_itr]	  =	"SAT";
+		l_txndescarr[l_itr]	  =	"Stock Agent Transaction Inquiry";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "G";
+		l_txnarr[l_itr]	  =	"UMN";
+		l_txndescarr[l_itr]	  =	"User Manuals";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "C";
+		l_txnarr[l_itr]	  =	"ALD";
+		l_txndescarr[l_itr]	  =	"LC Documents Attachment";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"OTD";
+		l_txndescarr[l_itr]	  =	"Open Term Deposits";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"CTD";
+		l_txndescarr[l_itr]	  =	"Term Deposits Closure";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"ORI";
+		l_txndescarr[l_itr]	  =	"Outward Remittance Inquiry";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "G";
+		l_txnarr[l_itr]	  =	"IMS";
+		l_txndescarr[l_itr]	  =	"Bulletin";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "G";
+		l_txnarr[l_itr]	  =	"UPS";
+		l_txndescarr[l_itr]	  =	"Set User Preference";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "G";
+		l_txnarr[l_itr]	  =	"SCA";
+		l_txndescarr[l_itr]	  =	"CA Management";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "G";
+		l_txnarr[l_itr]	  =	"SSR";
+		l_txndescarr[l_itr]	  =	"Session Summary";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "H";
+		l_txnarr[l_itr]	  =	"CU2";
+		l_txndescarr[l_itr]	  =	"Missing data map entry for app A1, data name TXN_DESC, datavalue CU2, lang eng, device 01";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"VTD";
+		l_txndescarr[l_itr]	  =	"TD Details";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"VMI";
+		l_txndescarr[l_itr]	  =	"Virtual account inquiry";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "G";
+		l_txnarr[l_itr]	  =	"EFI";
+		l_txndescarr[l_itr]	  =	"Electronic Form";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"STS";
+		l_txndescarr[l_itr]	  =	"Investment Product Summary";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_tokenarr[l_itr] = "A";
+		l_txnarr[l_itr]	  =	"STD";
+		l_txndescarr[l_itr]	  =	"Investment Product Details";
+
+		//To load Bulletin as Default Txn
+		if(l_landingTxn=='' && l_txnarr[l_itr]=='IMS'){
+			 l_landingTxn ='IMS';
+		}
+		l_itr++;
+	
+		l_grp_txn[l_itr1] = "A";
+		l_grp_txn_desc[l_itr1++] = "Cash Management";
+		count = 0;
+		l_arr_type_txn_map ["A"] = new Array ();
+		
+			l_arr_type_txn_map ["A"][count++] = "AAT";
+		
+			l_arr_type_txn_map ["A"][count++] = "ACQ";
+		
+			l_arr_type_txn_map ["A"][count++] = "ASS";
+		
+			l_arr_type_txn_map ["A"][count++] = "ATD";
+		
+			l_arr_type_txn_map ["A"][count++] = "STD";
+		
+			l_arr_type_txn_map ["A"][count++] = "STS";
+		
+			l_arr_type_txn_map ["A"][count++] = "VTD";
+		
+			l_arr_type_txn_map ["A"][count++] = "CCO";
+		
+			l_arr_type_txn_map ["A"][count++] = "FCO";
+		
+			l_arr_type_txn_map ["A"][count++] = "MRI";
+		
+			l_arr_type_txn_map ["A"][count++] = "ORI";
+		
+			l_arr_type_txn_map ["A"][count++] = "VMI";
+		
+			l_arr_type_txn_map ["A"][count++] = "AEI";
+		
+			l_arr_type_txn_map ["A"][count++] = "CTD";
+		
+			l_arr_type_txn_map ["A"][count++] = "FDI";
+		
+			l_arr_type_txn_map ["A"][count++] = "FRT";
+		
+			l_arr_type_txn_map ["A"][count++] = "FTI";
+		
+			l_arr_type_txn_map ["A"][count++] = "IRT";
+		
+			l_arr_type_txn_map ["A"][count++] = "LRT";
+		
+			l_arr_type_txn_map ["A"][count++] = "MLT";
+		
+			l_arr_type_txn_map ["A"][count++] = "OTD";
+		
+			l_arr_type_txn_map ["A"][count++] = "PAT";
+		
+			l_arr_type_txn_map ["A"][count++] = "BFU";
+		
+			l_arr_type_txn_map ["A"][count++] = "BVF";
+		
+		l_grp_txn[l_itr1] = "B";
+		l_grp_txn_desc[l_itr1++] = "Loan Management";
+		count = 0;
+		l_arr_type_txn_map ["B"] = new Array ();
+		
+			l_arr_type_txn_map ["B"][count++] = "LDI";
+		
+		l_grp_txn[l_itr1] = "C";
+		l_grp_txn_desc[l_itr1++] = "Trade Finance";
+		count = 0;
+		l_arr_type_txn_map ["C"] = new Array ();
+		
+			l_arr_type_txn_map ["C"][count++] = "EBV";
+		
+			l_arr_type_txn_map ["C"][count++] = "ELC";
+		
+			l_arr_type_txn_map ["C"][count++] = "IBV";
+		
+			l_arr_type_txn_map ["C"][count++] = "ILC";
+		
+			l_arr_type_txn_map ["C"][count++] = "ALD";
+		
+			l_arr_type_txn_map ["C"][count++] = "LCA";
+		
+			l_arr_type_txn_map ["C"][count++] = "LCI";
+		
+		l_grp_txn[l_itr1] = "G";
+		l_grp_txn_desc[l_itr1++] = "Customer Service";
+		count = 0;
+		l_arr_type_txn_map ["G"] = new Array ();
+		
+			l_arr_type_txn_map ["G"][count++] = "CPW";
+		
+			l_arr_type_txn_map ["G"][count++] = "IMS";
+		
+			l_arr_type_txn_map ["G"][count++] = "SSR";
+		
+			l_arr_type_txn_map ["G"][count++] = "UPS";
+		
+			l_arr_type_txn_map ["G"][count++] = "FER";
+		
+			l_arr_type_txn_map ["G"][count++] = "IIR";
+		
+			l_arr_type_txn_map ["G"][count++] = "BTM";
+		
+			l_arr_type_txn_map ["G"][count++] = "CFA";
+		
+			l_arr_type_txn_map ["G"][count++] = "EFI";
+		
+			l_arr_type_txn_map ["G"][count++] = "UMN";
+		
+			l_arr_type_txn_map ["G"][count++] = "ICA";
+		
+			l_arr_type_txn_map ["G"][count++] = "SCA";
+		
+			l_arr_type_txn_map ["G"][count++] = "TCA";
+		
+			l_arr_type_txn_map ["G"][count++] = "TOV";
+		
+		l_grp_txn[l_itr1] = "D";
+		l_grp_txn_desc[l_itr1++] = "Stock Agent";
+		count = 0;
+		l_arr_type_txn_map ["D"] = new Array ();
+		
+			l_arr_type_txn_map ["D"][count++] = "IAI";
+		
+			l_arr_type_txn_map ["D"][count++] = "IAO";
+		
+			l_arr_type_txn_map ["D"][count++] = "SAT";
+		
+		l_grp_txn[l_itr1] = "E";
+		l_grp_txn_desc[l_itr1++] = "E-Factoring";
+		count = 0;
+		l_arr_type_txn_map ["E"] = new Array ();
+		
+			l_arr_type_txn_map ["E"][count++] = "CLL";
+		
+			l_arr_type_txn_map ["E"][count++] = "EFE";
+		
+			l_arr_type_txn_map ["E"][count++] = "FEQ";
+		
+			l_arr_type_txn_map ["E"][count++] = "IEQ";
+		
+			l_arr_type_txn_map ["E"][count++] = "REQ";
+		
+		l_grp_txn[l_itr1] = "F";
+		l_grp_txn_desc[l_itr1++] = "Authorization";
+		count = 0;
+		l_arr_type_txn_map ["F"] = new Array ();
+		
+			l_arr_type_txn_map ["F"][count++] = "FEA";
+		
+			l_arr_type_txn_map ["F"][count++] = "PAI";
+		
+			l_arr_type_txn_map ["F"][count++] = "VAT";
+		
+		l_grp_txn[l_itr1] = "H";
+		l_grp_txn_desc[l_itr1++] = "Other Service";
+		count = 0;
+		l_arr_type_txn_map ["H"] = new Array ();
+		
+			l_arr_type_txn_map ["H"][count++] = "CU2";
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.01";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.01";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="ACQ"){
+					l_landingsubgroup ="A.01";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.01";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.01";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="ASS"){
+					l_landingsubgroup ="A.01";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.01";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.01";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="AAT"){
+					l_landingsubgroup ="A.01";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.01";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.01";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="ATD"){
+					l_landingsubgroup ="A.01";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.01";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.01";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="VTD"){
+					l_landingsubgroup ="A.01";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.01";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.01";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="STS"){
+					l_landingsubgroup ="A.01";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.01";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.01";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="STD"){
+					l_landingsubgroup ="A.01";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.02";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.02";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="CCO"){
+					l_landingsubgroup ="A.02";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.02";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.02";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="FCO"){
+					l_landingsubgroup ="A.02";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.02";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.02";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="MRI"){
+					l_landingsubgroup ="A.02";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.02";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.02";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="ORI"){
+					l_landingsubgroup ="A.02";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.02";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.02";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="VMI"){
+					l_landingsubgroup ="A.02";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.03";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.03";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="FTI"){
+					l_landingsubgroup ="A.03";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.03";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.03";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="IRT"){
+					l_landingsubgroup ="A.03";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.03";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.03";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="LRT"){
+					l_landingsubgroup ="A.03";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.03";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.03";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="FRT"){
+					l_landingsubgroup ="A.03";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.03";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.03";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="AEI"){
+					l_landingsubgroup ="A.03";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.03";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.03";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="MLT"){
+					l_landingsubgroup ="A.03";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.03";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.03";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="PAT"){
+					l_landingsubgroup ="A.03";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.03";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.03";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="FDI"){
+					l_landingsubgroup ="A.03";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.03";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.03";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="OTD"){
+					l_landingsubgroup ="A.03";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.03";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.03";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="CTD"){
+					l_landingsubgroup ="A.03";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.04";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.04";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="BFU"){
+					l_landingsubgroup ="A.04";
+				}
+			}
+		
+			namgroup = "A";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "A.04";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "A.04";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="BVF"){
+					l_landingsubgroup ="A.04";
+				}
+			}
+		
+			namgroup = "B";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "B.01";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "B.01";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="LDI"){
+					l_landingsubgroup ="B.01";
+				}
+			}
+		
+			namgroup = "C";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "C.01";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "C.01";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="ILC"){
+					l_landingsubgroup ="C.01";
+				}
+			}
+		
+			namgroup = "C";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "C.01";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "C.01";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="ELC"){
+					l_landingsubgroup ="C.01";
+				}
+			}
+		
+			namgroup = "C";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "C.01";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "C.01";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="IBV"){
+					l_landingsubgroup ="C.01";
+				}
+			}
+		
+			namgroup = "C";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "C.01";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "C.01";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="EBV"){
+					l_landingsubgroup ="C.01";
+				}
+			}
+		
+			namgroup = "C";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "C.02";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "C.02";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="LCI"){
+					l_landingsubgroup ="C.02";
+				}
+			}
+		
+			namgroup = "C";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "C.02";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "C.02";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="LCA"){
+					l_landingsubgroup ="C.02";
+				}
+			}
+		
+			namgroup = "C";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "C.02";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "C.02";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="ALD"){
+					l_landingsubgroup ="C.02";
+				}
+			}
+		
+			namgroup = "G";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "CS";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "CS";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="CPW"){
+					l_landingsubgroup ="CS";
+				}
+			}
+		
+			namgroup = "G";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "CS";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "CS";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="IMS"){
+					l_landingsubgroup ="CS";
+				}
+			}
+		
+			namgroup = "G";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "CS";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "CS";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="UPS"){
+					l_landingsubgroup ="CS";
+				}
+			}
+		
+			namgroup = "G";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "CS";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "CS";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="SSR"){
+					l_landingsubgroup ="CS";
+				}
+			}
+		
+			namgroup = "D";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "D.01";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "D.01";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="IAI"){
+					l_landingsubgroup ="D.01";
+				}
+			}
+		
+			namgroup = "D";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "D.01";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "D.01";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="IAO"){
+					l_landingsubgroup ="D.01";
+				}
+			}
+		
+			namgroup = "D";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "D.01";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "D.01";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="SAT"){
+					l_landingsubgroup ="D.01";
+				}
+			}
+		
+			namgroup = "E";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "EF";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "EF";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="EFE"){
+					l_landingsubgroup ="EF";
+				}
+			}
+		
+			namgroup = "E";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "EF";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "EF";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="FEQ"){
+					l_landingsubgroup ="EF";
+				}
+			}
+		
+			namgroup = "E";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "EF";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "EF";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="REQ"){
+					l_landingsubgroup ="EF";
+				}
+			}
+		
+			namgroup = "E";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "EF";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "EF";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="IEQ"){
+					l_landingsubgroup ="EF";
+				}
+			}
+		
+			namgroup = "E";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "EF";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "EF";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="CLL"){
+					l_landingsubgroup ="EF";
+				}
+			}
+		
+			namgroup = "F";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "F.02";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "F.02";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="VAT"){
+					l_landingsubgroup ="F.02";
+				}
+			}
+		
+			namgroup = "F";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "F.02";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "F.02";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="FEA"){
+					l_landingsubgroup ="F.02";
+				}
+			}
+		
+			namgroup = "F";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "F.02";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "F.02";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="PAI"){
+					l_landingsubgroup ="F.02";
+				}
+			}
+		
+			namgroup = "G";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "G.01";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "G.01";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="IIR"){
+					l_landingsubgroup ="G.01";
+				}
+			}
+		
+			namgroup = "G";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "G.01";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "G.01";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="FER"){
+					l_landingsubgroup ="G.01";
+				}
+			}
+		
+			namgroup = "G";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "G.02";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "G.02";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="BTM"){
+					l_landingsubgroup ="G.02";
+				}
+			}
+		
+			namgroup = "G";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "G.02";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "G.02";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="CFA"){
+					l_landingsubgroup ="G.02";
+				}
+			}
+		
+			namgroup = "G";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "G.02";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "G.02";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="EFI"){
+					l_landingsubgroup ="G.02";
+				}
+			}
+		
+			namgroup = "G";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "G.03";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "G.03";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="UMN"){
+					l_landingsubgroup ="G.03";
+				}
+			}
+		
+			namgroup = "G";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "G.04";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "G.04";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="TOV"){
+					l_landingsubgroup ="G.04";
+				}
+			}
+		
+			namgroup = "G";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "G.04";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "G.04";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="ICA"){
+					l_landingsubgroup ="G.04";
+				}
+			}
+		
+			namgroup = "G";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "G.04";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "G.04";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="TCA"){
+					l_landingsubgroup ="G.04";
+				}
+			}
+		
+			namgroup = "G";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "G.04";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "G.04";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="SCA"){
+					l_landingsubgroup ="G.04";
+				}
+			}
+		
+			namgroup = "H";
+			if ((l_subgroup[namgroup]) &&
+					(l_subgroup[namgroup] != null) &&
+						(l_subgroup[namgroup] != undefined)) {
+				l_subgroup[namgroup] [l_subgroup[namgroup].length] = "H.01";
+
+			} else {
+				l_subgroup[namgroup] = new Array ();
+				l_subgroup[namgroup] [0] = "H.01";
+			}
+			if(l_landingTxn!=""){
+				if(	l_landingTxn =="CU2"){
+					l_landingsubgroup ="H.01";
+				}
+			}
+		
+
+	if(l_reqid == "RRUPS05") {
+		
+	}else{
+		
+	}
+	//-------------------------------------------------------------------------
+	function getMenuTxn(l_menuTxn){
+		
+				if(	l_menuTxn =="ACQ"){
+					l_menusubgroup ="A.01";
+				}
+			
+				if(	l_menuTxn =="ASS"){
+					l_menusubgroup ="A.01";
+				}
+			
+				if(	l_menuTxn =="AAT"){
+					l_menusubgroup ="A.01";
+				}
+			
+				if(	l_menuTxn =="ATD"){
+					l_menusubgroup ="A.01";
+				}
+			
+				if(	l_menuTxn =="VTD"){
+					l_menusubgroup ="A.01";
+				}
+			
+				if(	l_menuTxn =="STS"){
+					l_menusubgroup ="A.01";
+				}
+			
+				if(	l_menuTxn =="STD"){
+					l_menusubgroup ="A.01";
+				}
+			
+				if(	l_menuTxn =="CCO"){
+					l_menusubgroup ="A.02";
+				}
+			
+				if(	l_menuTxn =="FCO"){
+					l_menusubgroup ="A.02";
+				}
+			
+				if(	l_menuTxn =="MRI"){
+					l_menusubgroup ="A.02";
+				}
+			
+				if(	l_menuTxn =="ORI"){
+					l_menusubgroup ="A.02";
+				}
+			
+				if(	l_menuTxn =="VMI"){
+					l_menusubgroup ="A.02";
+				}
+			
+				if(	l_menuTxn =="FTI"){
+					l_menusubgroup ="A.03";
+				}
+			
+				if(	l_menuTxn =="IRT"){
+					l_menusubgroup ="A.03";
+				}
+			
+				if(	l_menuTxn =="LRT"){
+					l_menusubgroup ="A.03";
+				}
+			
+				if(	l_menuTxn =="FRT"){
+					l_menusubgroup ="A.03";
+				}
+			
+				if(	l_menuTxn =="AEI"){
+					l_menusubgroup ="A.03";
+				}
+			
+				if(	l_menuTxn =="MLT"){
+					l_menusubgroup ="A.03";
+				}
+			
+				if(	l_menuTxn =="PAT"){
+					l_menusubgroup ="A.03";
+				}
+			
+				if(	l_menuTxn =="FDI"){
+					l_menusubgroup ="A.03";
+				}
+			
+				if(	l_menuTxn =="OTD"){
+					l_menusubgroup ="A.03";
+				}
+			
+				if(	l_menuTxn =="CTD"){
+					l_menusubgroup ="A.03";
+				}
+			
+				if(	l_menuTxn =="BFU"){
+					l_menusubgroup ="A.04";
+				}
+			
+				if(	l_menuTxn =="BVF"){
+					l_menusubgroup ="A.04";
+				}
+			
+				if(	l_menuTxn =="LDI"){
+					l_menusubgroup ="B.01";
+				}
+			
+				if(	l_menuTxn =="ILC"){
+					l_menusubgroup ="C.01";
+				}
+			
+				if(	l_menuTxn =="ELC"){
+					l_menusubgroup ="C.01";
+				}
+			
+				if(	l_menuTxn =="IBV"){
+					l_menusubgroup ="C.01";
+				}
+			
+				if(	l_menuTxn =="EBV"){
+					l_menusubgroup ="C.01";
+				}
+			
+				if(	l_menuTxn =="LCI"){
+					l_menusubgroup ="C.02";
+				}
+			
+				if(	l_menuTxn =="LCA"){
+					l_menusubgroup ="C.02";
+				}
+			
+				if(	l_menuTxn =="ALD"){
+					l_menusubgroup ="C.02";
+				}
+			
+				if(	l_menuTxn =="CPW"){
+					l_menusubgroup ="CS";
+				}
+			
+				if(	l_menuTxn =="IMS"){
+					l_menusubgroup ="CS";
+				}
+			
+				if(	l_menuTxn =="UPS"){
+					l_menusubgroup ="CS";
+				}
+			
+				if(	l_menuTxn =="SSR"){
+					l_menusubgroup ="CS";
+				}
+			
+				if(	l_menuTxn =="IAI"){
+					l_menusubgroup ="D.01";
+				}
+			
+				if(	l_menuTxn =="IAO"){
+					l_menusubgroup ="D.01";
+				}
+			
+				if(	l_menuTxn =="SAT"){
+					l_menusubgroup ="D.01";
+				}
+			
+				if(	l_menuTxn =="EFE"){
+					l_menusubgroup ="EF";
+				}
+			
+				if(	l_menuTxn =="FEQ"){
+					l_menusubgroup ="EF";
+				}
+			
+				if(	l_menuTxn =="REQ"){
+					l_menusubgroup ="EF";
+				}
+			
+				if(	l_menuTxn =="IEQ"){
+					l_menusubgroup ="EF";
+				}
+			
+				if(	l_menuTxn =="CLL"){
+					l_menusubgroup ="EF";
+				}
+			
+				if(	l_menuTxn =="VAT"){
+					l_menusubgroup ="F.02";
+				}
+			
+				if(	l_menuTxn =="FEA"){
+					l_menusubgroup ="F.02";
+				}
+			
+				if(	l_menuTxn =="PAI"){
+					l_menusubgroup ="F.02";
+				}
+			
+				if(	l_menuTxn =="IIR"){
+					l_menusubgroup ="G.01";
+				}
+			
+				if(	l_menuTxn =="FER"){
+					l_menusubgroup ="G.01";
+				}
+			
+				if(	l_menuTxn =="BTM"){
+					l_menusubgroup ="G.02";
+				}
+			
+				if(	l_menuTxn =="CFA"){
+					l_menusubgroup ="G.02";
+				}
+			
+				if(	l_menuTxn =="EFI"){
+					l_menusubgroup ="G.02";
+				}
+			
+				if(	l_menuTxn =="UMN"){
+					l_menusubgroup ="G.03";
+				}
+			
+				if(	l_menuTxn =="TOV"){
+					l_menusubgroup ="G.04";
+				}
+			
+				if(	l_menuTxn =="ICA"){
+					l_menusubgroup ="G.04";
+				}
+			
+				if(	l_menuTxn =="TCA"){
+					l_menusubgroup ="G.04";
+				}
+			
+				if(	l_menuTxn =="SCA"){
+					l_menusubgroup ="G.04";
+				}
+			
+				if(	l_menuTxn =="CU2"){
+					l_menusubgroup ="H.01";
+				}
+			
+	}
+	//-------------------------------------------------------------------------
+	function fireDefaults  ()
+	{
+		document.frmbc.submit ();
+		parent.langId = "eng";
+		loop:	for (var i=1; i <= arr_type.length; i++)
+		{
+			if ((document.getElementById("tab"+i)) &&
+					(document.getElementById("tab"+i) != null) &&
+						(document.getElementById("tab"+i) != undefined)) {
+							if(l_landingTxn != "" &&  document.frmmain.fldMenuChange.value != "true"){
+								for(var j=0; j < l_txnarr.length; j++){
+									if(l_landingTxn == l_txnarr [j]){
+										//fireMenuTxn (l_tokenarr [j], l_txnarr [j], j);
+										if(l_reqid != "RRUPS05") {
+											fireMenuTxnLanding (l_tokenarr [j], l_txnarr [j], l_tokenarr [j],l_landingsubgroup);
+										}
+										break loop;
+									}
+								}
+							 }else if(document.frmmain.fldMenuChange.value== "true"){
+							    getMenuTxn(document.frmmain.fldMenuTxn.value);
+							   for(var m=0; m < l_txnarr.length; m++){
+							    	if(document.frmmain.fldMenuTxn.value == l_txnarr [m]){
+										if(l_reqid != "RRUPS05") {
+											fireMenuTxnLanding (l_tokenarr [m], l_txnarr [m], l_tokenarr [m],l_menusubgroup);
+										}
+										break loop;
+									}
+							   }
+							}else{
+								fireMenuTxn (arr_type [i], arr_type_txn_map [arr_type [i]] [0], i);
+								break;
+							}
+						}
+		}
+		xslLoaded = true;
+	}
+	//-------------------------------------------------------------------------
+	function fireMenuTxnLanding (
+		p_type
+	,	p_def_txn
+	,	p_selected_element
+	,   subgroup
+	) {
+		document.frmmain.TabTitle.value= arr_type_desc [p_selected_element];
+		for (var a=1; a<=arr_type.length; a++)
+		{
+            if (arr_type [a] == p_selected_element) {
+			if ((document.getElementById("tab"+a)) &&
+					document.getElementById("tab"+a) != "null" &&
+						document.getElementById("tab"+a) != "undefined") {
+                    document.getElementById("tab"+a).className="TabMenuLevelClick";
+                }
+            } else if ((document.getElementById("tab"+a)) &&
+					document.getElementById("tab"+a) != "null" &&
+						document.getElementById("tab"+a) != "undefined") {
+				document.getElementById("tab"+a).className="TabMenuLevel";
+			}
+		}
+		//document.getElementById("tab"+p_selected_element).className="TabMenuLevelClick";
+		l_group	= p_type;
+		l_defTxn= p_def_txn;
+	
+		document.frmmain.fldDefTxnId.value	= p_def_txn;
+		document.frmmain.fldGroup.value		= subgroup;
+		document.frmmain.fldBaseGroup.value	= p_type ;
+		document.frmmain.fldRequestId.value	= defAppId + "MNU02";
+		document.frmmain.fldDataId.value	= parent.dataid;
+		document.frmmain.target				= "frame_menu";
+		
+		if(document.frmmain.fldMenuChange.value ==''){
+			document.frmmain.fldLanding.value	= "true";
+		}
+		document.frmmain.fldpdeftxn.value		= p_def_txn;
+		document.frmmain.fldpselectedelement.value	= p_selected_element;
+		document.frmmain.fldptype.value			= p_type;
+		document.frmTxn.fldServiceType.value	= p_def_txn;
+	    document.frmmain.submit ();
+
+		return false;
+	}
+	//-------------------------------------------------------------------------
+	function fireTxn (
+		p_txn
+	) {
+		if ( p_txn == "SSR" || p_txn == "PRF") {
+			alert ("This function is under construction ...");
+			return;
+		}
+		//document.frmmain.fldRequestId.value	= defAppId + p_txn + "01";
+		document.frmmain.fldRequestId.value	= arr_init_req_id [p_txn];
+		if(document.frmmain.fldRequestId.value == "undefined"){
+			document.frmmain.fldRequestId.value	= arr_init_req_id_not_menutxn [p_txn];
+		}
+		document.frmmain.target			= "frame_txn";
+		document.frmmain.submit();
+	
+		return closeTransaction();
+		return;
+	}
+	//-------------------------------------------------------------------------
+	function closeTransaction()
+	{
+		var p_type
+		var p_def_txn
+		var p_selected_element
+	
+		l_group	= p_type;
+		l_defTxn= p_def_txn;
+
+		document.frmmain.fldDefTxnId.value	= p_def_txn;
+		document.frmmain.fldGroup.value		= p_type ;
+		document.frmmain.fldRequestId.value	= defAppId + "MNU02";
+		
+
+		document.frmTxn.fldRequestId.value	= arr_init_req_id [p_def_txn];
+		document.frmTxn.fldServiceType.value	= p_def_txn;
+		document.frmmain.target			= "frame_menu";
+		document.frmmain.submit();
+	}
+	//-------------------------------------------------------------------------
+	function fireLogOut ()
+	{
+		parent.eos = "true";
+		document.frmmain.fldRequestId.value	= defAppId + "LGF01";
+		document.frmmain.target			= "_top";
+		document.frmmain.submit ();
+		return;
+	}
+	//-------------------------------------------------------------------------
+	function fireMenuTxn (
+		p_type
+	,	p_def_txn
+	,	p_selected_element
+	) {
+		document.frmmain.TabTitle.value= arr_type_desc [p_selected_element];
+	
+		for (var a=1; a<=arr_type.length; a++)
+		{
+			if ((document.getElementById("tab"+a)) &&
+					document.getElementById("tab"+a) != "null" &&
+						document.getElementById("tab"+a) != "undefined") {
+				document.getElementById("tab"+a).className="TabMenuLevel";
+			}
+		}
+		document.getElementById("tab"+p_selected_element).className="TabMenuLevelClick";
+	
+		l_group	= p_type;
+		l_defTxn= p_def_txn;
+	
+		document.frmmain.fldDefTxnId.value	= p_def_txn;
+		document.frmmain.fldGroup.value		= l_subgroup [p_type] [0];
+		document.frmmain.fldBaseGroup.value	= p_type ;
+		document.frmmain.fldRequestId.value	= defAppId + "MNU02";
+		document.frmmain.fldDataId.value	= parent.dataid;
+		document.frmmain.target				= "frame_menu";
+		document.frmmain.fldLanding.value	= "false";
+		document.frmmain.submit ();
+	
+//		document.frmTxn.fldRequestId.value	= defAppId + p_def_txn + "01";
+//		document.frmTxn.fldRequestId.value	= arr_init_req_id [p_def_txn];
+//		document.frmTxn.fldServiceType.value	= p_def_txn;
+//		document.frmTxn.target			= "frame_txn";
+//		document.frmTxn.submit ();
+		document.frmmain.submit ();
+		return false;
+	}
+	//-------------------------------------------------------------------------
+	function quickLinkOpt()
+	{
+		//if(document.getElementById("quicklinkssel").selectedIndex == 0)
+		//return;
+		var l_val = document.frmmain.quicklinkssel[document.frmmain.quicklinkssel.options.selectedIndex].value;
+		var l_val_length = l_val.length;
+		var l_lastChar = l_val.substring(l_val_length-1);
+		var l_cnt = l_val.substring(0,l_val_length-1);
+	
+		if(l_lastChar=="F"){
+		   //fireMenuTxn (l_favtokenarr[l_cnt], l_favtxnarr[l_cnt], l_cnt);
+			fireMenuTxnLanding (l_favtokenarr[l_cnt], l_favtxnarr[l_cnt], l_favtokenarr[l_cnt], l_favgrouparr[l_cnt]);
+		}else{
+			selIndex= document.frmmain.quicklinkssel.selectedIndex-l_favtxnarr.length;
+			if(selIndex > 0){
+			  //selIndex= document.getElementById("quicklinkssel").selectedIndex-l_favtxnarr.length;
+				var p_type = arr_type [selIndex];
+				var p_def_txn = arr_type_txn_map [p_type] [0];
+				var p_selected_element = selIndex;
+				fireMenuTxn (p_type, p_def_txn, p_selected_element)
+			}
+		}
+	}
+	//-------------------------------------------------------------------------
+	function fireprint ()
+	{
+		parent.frame_txn.focus();
+		parent.frame_txn.print();
+	}
+	//-------------------------------------------------------------------------
+	// Added method refreshSelf to refresh frame for language change effect.
+	function refreshSelf () {
+		document.frmSelf.fldDataId.value       = parent.dataid;
+		document.frmSelf.fldSectionId.value    = "RRLGN01";
+		document.frmSelf.fldRequestId.value    = "";
+		SendFrmRequest (document.frmSelf,'MNU05');
+		return false;
+	}
+	//-------------------------------------------------------------------------
+	function setAsFavourite () {
+		var choise = confirm("Do you want to add this transaction to Favourite Transation List?");
+		if (choise == true) {
+			document.frmTxn.fldDataId.value	= parent.dataid;
+			
+			document.frmTxn.fldServiceType.value = parent.currTxnId.substring (0, 3);
+			document.frmTxn.fldfavtxn.value	= parent.currTxnId.substring (0, 3);
+			document.frmTxn.fldaddToFavourite.value = "true";
+			SendFrmRequest (document.frmTxn,'UPS05')
+		}
+	}
+	//-------------------------------------------------------------------------
+	function setLandingPage (){
+		var choise = confirm("Do you want to set this transaction as Landing Page?");
+		if (choise == true) {
+			//document.frmTxn.fldRequestId.value	= defAppId + parent.currTxnId + "01";
+			document.frmTxn.fldDataId.value	= parent.dataid;
+			
+			document.frmTxn.fldServiceType.value = parent.currTxnId.substring (0, 3);
+			document.frmTxn.fldlandingtxn.value	= parent.currTxnId.substring (0, 3);
+			document.frmTxn.fldsetlandingpage.value = "true";
+			SendFrmRequest (document.frmTxn,'UPS05')
+		}
+	}
+	//-------------------------------------------------------------------------
+	function setuserprefvalues(){
+		document.frmmain.fldMenuChange.value ="true";
+		document.frmmain.fldMenuChangeOnly.value ="true";
+		document.frmmain.fldMenuTxn.value = 'UPS';
+	}
+	//-------------------------------------------------------------------------
+	function setblank(){
+		document.frmmain.fldMenuChange.value ="";
+		document.frmmain.fldMenuChangeOnly.value ="";
+	}
+	//-------------------------------------------------------------------------
+</script></head><body onload="fireDefaults ();" id="TopArea" marginwidth="0" marginheight="0"><form target="frame_menu" method="post" action="http://10.184.214.177:7005/tw/internet" name="frmmain" autocomplete="off"><table class="header_bgcolor" cellspacing="0" cellpadding="0" border="0" width="100%"><tbody><tr><td width="80%" rowspan="1"><img border="0" height="34" width="112" src="./header_01.gif"></td><td background="./header_03.gif" width="7%">&nbsp;</td><td width="15%" background="./header_05.gif">&nbsp;</td></tr><tr><td colspan="3" valign="middle" class="header_mid"><div style="float:left"><div style="float:left; padding-top:3px;padding-left:10px;"><b>Last Login :</b>2018-08-17 22:56:16&nbsp;&nbsp;&nbsp;<b>Last Failed Login :</b>2018-08-02 21:24:05&nbsp;&nbsp;&nbsp;</div><script langauge="JavaScript">
+		   var l_count  = 0;
+		   var l_o_name   = "";
+		   var l_n_name   = "";
+		</script><div style="float:right" class="quicklinks">&nbsp;&nbsp;&nbsp;My Favorite
+			<select id="nodetails_quicklinkssel" name="quicklinkssel" onchange="quickLinkOpt();"><script language="JavaScript">
+					var l_s_name = "Select";
+					
+					document.write("<option value='' >"
+						+ 	l_s_name
+						+ 	"</option>"
+						);
+					
+					if(l_favtxnarr.length > 0){
+						l_n_name = "Favourites";
+						if (l_o_name != l_n_name) {
+							if (l_count > 0) {
+								document.write ("</optgroup>");
+							}
+							document.write ("<optgroup label='" + l_n_name + "'>")
+							l_o_name = l_n_name;
+						}
+						for(var j=0;j < l_favtxnarr.length; j++){
+							document.write("<option id='tab1"
+							+ 	j
+							+ 	"' nowrap='true' value='"
+							//+	"\""
+							+ 	j+'F'
+							+ 	"\' alt='"
+							+ 	l_favdescarr [j]
+							+ 	"'>"
+							+ 	l_favdescarr [j]
+							+ 	"</option>"
+							);
+						}
+					}
+					l_n_name = "Quick Links";
+					if (l_o_name != l_n_name) {
+						if (l_count > 0) {
+							document.write ("</optgroup>");
+						}
+						document.write ("<optgroup label='" + l_n_name + "'>")
+						l_o_name = l_n_name;
+					}
+
+					for (var j=1; j <= arr_type.length; j++) {
+						if ((arr_type_txn_map [arr_type [j]] != undefined) &&
+								(arr_type_txn_map [arr_type [j]] != null) &&
+									(arr_type_txn_map [arr_type [j]].length != 0)) {
+							document.write("<option id='opt"
+							+ 	j
+							+ 	"' nowrap='true' value='"
+							+	"\""
+							+ 	j
+							+ 	"\")' alt='"
+							+ 	arr_type_desc [j]
+							+ 	"'>"
+							+ 	arr_type_desc [j]
+							+ 	"</option>"
+							);
+						}
+					}
+				</script><option value="">Select</option><optgroup label="Quick Links"><option id="opt1" nowrap="true" value="&quot;1&quot;)" alt="Cash Management">Cash Management</option><option id="opt2" nowrap="true" value="&quot;2&quot;)" alt="Loan Management">Loan Management</option><option id="opt3" nowrap="true" value="&quot;3&quot;)" alt="Trade Finance">Trade Finance</option><option id="opt4" nowrap="true" value="&quot;4&quot;)" alt="Stock Agent">Stock Agent</option><option id="opt5" nowrap="true" value="&quot;5&quot;)" alt="E-Factoring">E-Factoring</option><option id="opt6" nowrap="true" value="&quot;6&quot;)" alt="Authorization">Authorization</option><option id="opt7" nowrap="true" value="&quot;7&quot;)" alt="Customer Service">Customer Service</option><option id="opt8" nowrap="true" value="&quot;8&quot;)" alt="Other Service">Other Service</option></optgroup></select></div></div></td></tr><tr><td class="header_menu" colspan="3"><table cellspacing="0" cellpadding="0" width="100%"><tbody><tr><script language="JavaScript">
+					for (var j=1; j <= arr_type.length; j++) {
+						if ((arr_type_txn_map [arr_type [j]] != undefined) &&
+								(arr_type_txn_map [arr_type [j]] != null) &&
+									(arr_type_txn_map [arr_type [j]].length != 0)) {
+							document.write("<td id=\"tab"
+							+ 	j
+							+ 	"\" nowrap=\"true\" class=\"TabMenuLevel\" onclick=\"return fireMenuTxn ('"
+							+ 	arr_type [j]
+							+ 	"', '"
+							+ 	arr_type_txn_map [arr_type [j]] [0]
+							+	"', '"
+							+ 	j
+							+ 	"')\" onmouseover=\"javascript: if(this.className!='TabMenuLevelClick') this.className='TabMenuLevelH'\" onmouseout=\"javascript: if(this.className!='TabMenuLevelClick') this.className='TabMenuLevel'\" style=\"cursor:pointer\"  alt=\""
+							+ 	arr_type_desc [j]
+							+ 	"\">"
+							+ 	arr_type_desc [j]
+							+ 	"</td>"
+							);
+						}
+					}
+				</script><td id="tab1" nowrap="true" class="TabMenuLevelClick" onclick="return fireMenuTxn (&#39;A&#39;, &#39;ACQ&#39;, &#39;1&#39;)" onmouseover="javascript: if(this.className!=&#39;TabMenuLevelClick&#39;) this.className=&#39;TabMenuLevelH&#39;" onmouseout="javascript: if(this.className!=&#39;TabMenuLevelClick&#39;) this.className=&#39;TabMenuLevel&#39;" style="cursor:pointer" alt="Cash Management">Cash Management</td><td id="tab2" nowrap="true" class="TabMenuLevel" onclick="return fireMenuTxn (&#39;B&#39;, &#39;LDI&#39;, &#39;2&#39;)" onmouseover="javascript: if(this.className!=&#39;TabMenuLevelClick&#39;) this.className=&#39;TabMenuLevelH&#39;" onmouseout="javascript: if(this.className!=&#39;TabMenuLevelClick&#39;) this.className=&#39;TabMenuLevel&#39;" style="cursor:pointer" alt="Loan Management">Loan Management</td><td id="tab3" nowrap="true" class="TabMenuLevel" onclick="return fireMenuTxn (&#39;C&#39;, &#39;ILC&#39;, &#39;3&#39;)" onmouseover="javascript: if(this.className!=&#39;TabMenuLevelClick&#39;) this.className=&#39;TabMenuLevelH&#39;" onmouseout="javascript: if(this.className!=&#39;TabMenuLevelClick&#39;) this.className=&#39;TabMenuLevel&#39;" style="cursor:pointer" alt="Trade Finance">Trade Finance</td><td id="tab4" nowrap="true" class="TabMenuLevel" onclick="return fireMenuTxn (&#39;D&#39;, &#39;IAI&#39;, &#39;4&#39;)" onmouseover="javascript: if(this.className!=&#39;TabMenuLevelClick&#39;) this.className=&#39;TabMenuLevelH&#39;" onmouseout="javascript: if(this.className!=&#39;TabMenuLevelClick&#39;) this.className=&#39;TabMenuLevel&#39;" style="cursor:pointer" alt="Stock Agent">Stock Agent</td><td id="tab5" nowrap="true" class="TabMenuLevel" onclick="return fireMenuTxn (&#39;E&#39;, &#39;EFE&#39;, &#39;5&#39;)" onmouseover="javascript: if(this.className!=&#39;TabMenuLevelClick&#39;) this.className=&#39;TabMenuLevelH&#39;" onmouseout="javascript: if(this.className!=&#39;TabMenuLevelClick&#39;) this.className=&#39;TabMenuLevel&#39;" style="cursor:pointer" alt="E-Factoring">E-Factoring</td><td id="tab6" nowrap="true" class="TabMenuLevel" onclick="return fireMenuTxn (&#39;F&#39;, &#39;VAT&#39;, &#39;6&#39;)" onmouseover="javascript: if(this.className!=&#39;TabMenuLevelClick&#39;) this.className=&#39;TabMenuLevelH&#39;" onmouseout="javascript: if(this.className!=&#39;TabMenuLevelClick&#39;) this.className=&#39;TabMenuLevel&#39;" style="cursor:pointer" alt="Authorization">Authorization</td><td id="tab7" nowrap="true" class="TabMenuLevel" onclick="return fireMenuTxn (&#39;G&#39;, &#39;TOV&#39;, &#39;7&#39;)" onmouseover="javascript: if(this.className!=&#39;TabMenuLevelClick&#39;) this.className=&#39;TabMenuLevelH&#39;" onmouseout="javascript: if(this.className!=&#39;TabMenuLevelClick&#39;) this.className=&#39;TabMenuLevel&#39;" style="cursor:pointer" alt="Customer Service">Customer Service</td><td id="tab8" nowrap="true" class="TabMenuLevel" onclick="return fireMenuTxn (&#39;H&#39;, &#39;CU2&#39;, &#39;8&#39;)" onmouseover="javascript: if(this.className!=&#39;TabMenuLevelClick&#39;) this.className=&#39;TabMenuLevelH&#39;" onmouseout="javascript: if(this.className!=&#39;TabMenuLevelClick&#39;) this.className=&#39;TabMenuLevel&#39;" style="cursor:pointer" alt="Other Service">Other Service</td></tr></tbody></table></td></tr></tbody></table><input value="Cash Management" name="TabTitle" type="hidden"><input value="WJMJGYQHQALHCFRUXW" name="fldSessionId" type="hidden"><input name="fldRequestId" type="hidden" value="RRMNU02"><input name="fldGroup" type="hidden" value="A.01"><input name="fldBaseGroup" type="hidden" value="A"><input name="fldDefTxnId" type="hidden" value="ACQ"><input value="RRLGN01" name="fldSectionId" type="hidden"><input name="fldDataId" type="hidden" value="WJMJGYQHQALHCFRUXWBKEZLBRZXHD"><input name="fldLanding" type="hidden" value="false"><input name="fldMenuChange" type="hidden"><input name="fldMenuChangeOnly" type="hidden"><input name="fldMenuTxn" type="hidden"><input name="fldptype" type="hidden" value="C"><input name="fldpdeftxn" type="hidden" value="LCI"><input name="fldpselectedelement" type="hidden" value="C"></form><form method="post" action="http://10.184.214.177:7005/tw/internet" name="frmTxn" autocomplete="off"><input name="fldServiceType" type="hidden" value="LCI"><input name="fldRequestId" type="hidden"><input value="WJMJGYQHQALHCFRUXW" name="fldSessionId" type="hidden"><input name="fldlandingtxn" type="hidden"><input name="fldfavtxn" type="hidden"><input name="fldaddToFavourite" type="hidden"><input name="fldsetlandingpage" type="hidden"><input name="fldDataId" type="hidden"><input value="RRLGN01" name="fldSectionId" type="hidden"></form><form target="frame_top" method="post" action="http://10.184.214.177:7005/tw/internet" name="frmSelf" autocomplete="off"><input name="fldDataId" type="hidden"><input value="RRLGN01" name="fldSectionId" type="hidden"><input name="fldServiceType" type="hidden"><input name="fldRequestId" type="hidden"><input value="" name="fldSessionId" type="hidden"></form><form method="post" action="http://10.184.214.177:7005/tw/help.jsp" name="frmhelp" autocomplete="off"></form><form target="breadCrumbs" method="GET" action="http://10.184.214.177:7005/tw/BreadCrumbs.jsp" name="frmbc" autocomplete="off"><input value="eng" name="idlang" type="hidden"><input value="01" name="iddevice" type="hidden"></form></body></html>

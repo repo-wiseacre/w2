@@ -1,0 +1,466 @@
+/*-----------------------------------------------------------------------------
+This source is part of the FLEXCUBE@ Java App Server Software System and is
+copyrighted by i-flex Solutions Limited.
+
+All rights reserved.  No part of this work may be reproduced, stored in a
+retrieval system, adopted or transmitted in any form or by any means,
+electronic, mechanical, photographic, graphic, optic recording or otherwise,
+translated in any language or computer language, without the prior written
+permission of i-flex Solutions Limited.
+
+i-flex Solutions Limited.
+10-11, SDF I, SEEPZ, Andheri (East),
+Mumbai - 400 096.
+India
+
+Copyright 2004 i-flex Solutions Limited.
+
+Modification History
+
+Date			Version		Author			Description
+__________	___________	_______________ ________________________________________
+10/11/2006	1			Rupesh N		Initial Version	
+01/03/2007	2			Rupesh N		Added disablekeyboardnavigation
+14/05/2008	3			Sagar P			Added enableForm
+20/05/2008	4			Tarun			Added functions trim,validateInp
+14/12/2008	5			Saroj K Nayak	AddedsetVisibility to support closs browser style visibility
+28/05/2008	6			Mandar Naik		Modified enableForm and disableForm
+------------------------------------------------------------------------------*/
+
+//---------------------------Onload code---------------------------------
+document.oncontextmenu= returnFalse ;
+document.onkeydown = disablekeyboardnavigation;
+if (document.layers) {
+	document.captureEvents(Event.KEYDOWN);
+}
+document.keydown = disablekeyboardnavigation;
+//----------------------------------------------------------------------
+var disabledFormElements = new Array ();
+//----------------------------------------------------------------------
+
+
+function validateAndSet(p_form) {
+	var obj = null;
+	var tmpObj = null;
+	var regObj = null;
+	
+	for (i=0; i < p_form.elements.length; i++ ) {
+		obj = p_form.elements[i];			
+		if ((!obj.disabled) && (obj.type == 'select-one' || obj.type == 'text')) {			
+			if (obj.id!="") {
+				tmpObj = obj.id.split("#");
+
+				if (tmpObj.length > 1) {
+					regObj  =  new RegExp(tmpObj[1]);
+					if (!regObj.test(obj.value)) {
+						alert ("Please Enter "+tmpObj[0]);
+						obj.focus();
+						return false;
+					}
+				}
+			}
+		}
+
+		if (obj.type == 'select-one'){
+			if ((tmpObj = p_form.elements[obj.name+'text'])!=null) {
+				tmpObj.value=obj.options[obj.selectedIndex].text;
+			}
+		}
+
+	}
+	return true;
+}
+//----------------------------------------------------------------------
+function SendRequest (p_snbr) {		
+	//alert(document.frmmain.getElementById('request1').style.display);
+	if (!validateAndSet(document.frmmain)) {return false};
+	document.frmmain.fldSessionId.value = parent.idsession;
+	document.frmmain.fldRequestId.value = 
+			"RR"+document.frmmain.fldServiceType.value+p_snbr;
+	//document.frmmain.getElementById('requestdetails').style.display = "block";			
+	document.frmmain.submit ();
+	disableForm(document.frmmain);
+	return true;
+}
+//----------------------------------------------------------------------
+function SendTxnRequest (p_snbr, p_txnid) {
+	
+	if (!validateAndSet(document.frmmain)) {return false};
+
+	document.frmmain.fldSessionId.value = parent.idsession;
+	document.frmmain.fldRequestId.value = 
+			"RR"+p_txnid+p_snbr;	
+	document.frmmain.submit ();
+	disableForm(document.frmmain);
+	return true;
+}
+//----------------------------------------------------------------------
+function SendFrmRequest (p_frm, p_request) {
+	//if (!validateAndSet(p_frm)) {return false};
+	p_frm.fldSessionId.value = parent.idsession;
+	p_frm.fldRequestId.value = "RR"+p_request;	
+	p_frm.submit ();
+	disableForm(document.frmmain);
+	return true;
+}
+//----------------------------------------------------------------------
+/*
+Currently only disables button & select box; 
+Add Form controls that needs to be disabled
+*/
+function disableForm(p_form) {
+	
+	var obj = null;
+	var tmpObj = null;
+	var regObj = null;
+	var currentDisabledElements = new Array ();
+	var disableElemCount = 0;
+	
+	for (i=0; i < p_form.elements.length; i++ ) {
+		if (p_form.elements[i].type == 'select-one' || p_form.elements[i].type == 'button' || p_form.elements[i].type == 'checkbox') {
+			if (p_form.elements[i].disabled) {
+				currentDisabledElements [p_form.elements[i].name] = "true";
+			}
+			p_form.elements[i].disabled=true;
+		}
+	}
+	disabledFormElements [p_form.name] = currentDisabledElements;
+	return true;
+}
+//----------------------------------------------------------------------
+
+function returnFalse () {return false}
+
+//----------------------------------------------------------------------
+
+//Not FoolProof. Not all browser support this requirement.
+function disablekeyboardnavigation(e) {
+	//alert ("key down");
+	//alert (event.keyCode);
+	if (navigator.appName == 'Microsoft Internet Explorer') {
+		if (event.keyCode == 8)
+		{
+			if ((event.keyCode == 8) && (event.srcElement.tagName != "INPUT"))
+			{
+				if (event.srcElement.tagName != "TEXTAREA")
+				//alert("Keyboard Navigation Disabled"); //put an appropriate message in the alert, message for IE only
+				return false;
+			}
+		}
+		if ((event.keyCode == 13) && (event.srcElement.tagName == "INPUT"))
+		{
+			return false;
+		}
+	}
+	else if (navigator.appName == 'Netscape')
+	{
+		//alert (e.which);
+		if (e.which == 93 || e.which == 0 || e.which == 3 || ((e.which ==	37 || e.which == 39) && e.altKey) || (e.which == 82 && e.ctrlKey )) {
+			alert("Keyboard Navigation Disabled."); //can be removed return false; //code for netscape to be added here
+			return false;
+		}
+	}
+
+    if  (navigator.appName == "Microsoft Internet Explorer")
+	{
+		//alert (event.srcElement.tagName);
+		if ((event.altKey) && (event.srcElement.tagName == "INPUT")) {
+			//alert ("not allowed");
+			 //return false;
+		}
+		if ((event.keyCode == 96) || (event.keyCode == 97) || (event.keyCode == 98)) {
+			 //alert ("not allowed");
+			 //return false;
+		}
+		if (event.keyCode == 93  || event.keyCode == 116
+			|| event.keyCode == 122 || (event.keyCode == 121 && event.shiftKey)
+				|| ((event.keyCode == 36 || event.keyCode == 37 || event.keyCode == 39)
+					&& event.altKey) || ((event.keyCode == 82 || event.keyCode == 78) && event.ctrlKey)
+							|| (event.keyCode == 122 && event.shiftKey))
+		{
+			if (event.keyCode == 116 || event.keyCode == 121 || event.keyCode == 122)
+			{
+				event.keyCode = 0;
+			}
+
+			if((event.keyCode != 93) || (event.keyCode == 93 && event.srcElement.tagName != "INPUT"))
+			{
+				alert("This operation is not allowed.");
+				return false;
+			}
+			/*if ((event.keyCode == 8 && event.altKey && (event.srcElement.tagName == "BODY"))) {
+				alert ("tag name : " + event.srcElement.tagName);
+				alert("This operation is not allowed.");
+				return true;
+			}*/
+		}
+		if (event.keyCode == 18 && event.keyCode == 8
+			&& event.srcElement.tagName != "INPUT" && event.srcElement.tagName != "TEXTAREA") {
+			alert("This operation is not allowed.");
+			return false;
+		}
+	}
+
+	return true;
+}
+//----------------------------------------------------------------------
+function displayResult (errmsgarr, warningmsgarr, successmsgarr, infomsgarr) {
+	if(window.parent.frames['messageFrame']) {
+		window.parent.frames['messageFrame'].displayMessages(errmsgarr, warningmsgarr, infomsgarr, successmsgarr); 
+	}
+}
+//----------------------------------------------------------------------
+function sendEmail (nbrScr, emaildesc) {	
+	winhandle = window.open ('sendemail.html','mywin','width=300,height=20,dependant=0,directories=0,location=0,menubar=0,titlebar=0,toolbar=0,resizable=0,scrollbars=0,top=400,left=500');
+	winhandle.focus();	
+	if(parseInt(nbrScr.length) == 1) {
+		 nbrScr = "0"+nbrScr;
+	}
+	if(winhandle) {
+		winhandle.document.write('<html>'+
+		'<head><META http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Send Email</title>'+
+		'<link REL="STYLESHEET" TYPE="text/css" HREF="css/default.css"/><link type="text/css" href="stylesheet_content.css" rel="stylesheet"/>'+
+		'<script language="JavaScript" type="text/JavaScript" src=\'jsdir/common.js\'></script>'+
+ 		'<script language="javascript">'+
+		'var reqid = "'+nbrScr+'";'+
+		'function sendmail()'+
+		'{'+
+		'document.frmmain.fldSessionId.value = window.opener.top.parent.idsession;'+
+		'document.frmmain.fldServiceType.value =  window.opener.top.frames[\'frame_txn\'].document.frmmain.fldServiceType.value;'+
+		'document.frmmain.fldDataId.value =  window.opener.top.frames[\'frame_txn\'].document.frmmain.fldDataId.value;'+	
+		'document.frmmain.fldSectionId.value =  window.opener.top.frames[\'frame_txn\'].document.frmmain.fldSectionId.value;'+			
+		'document.frmmain.fldRequestId.value = "RR"+document.frmmain.fldServiceType.value+reqid;'+
+		'document.frmmain.submit ();'+
+		'}'+
+	   '</script>'+		 
+		 '</head><body class="WorkArea"><form action="internet" method="post" name="frmmain">'+
+			'<table cellspacing="0" cellpadding="0" border="0" width="90%" height="100%" align="center" id="MainTable">'+
+		'<tr>'+
+		'<td class="DataRightAligned" width="30%">Send To:</td>'+
+		'<td class="DataRightAligned" width="35%">'+
+			'<input type="text" name="fldemailaddress" maxlength="35" size="35"/>'+
+			'<input type="hidden" name="fldemaildesc" value="'+emaildesc+'"/>'+
+		'</td>'+ 
+		
+		'<td >'+
+			'<input alt="submit" name="fldsubmit" value="Submit" class="buttons"  type="button" onclick="return sendmail()" />'+
+		'</td>'	+
+		'</tr>'+
+		'</table><input type="hidden" name="fldRequestId" value=""/><input type="hidden" name="fldSessionId" value=""/><input type="hidden" name="fldServiceType" value=""/>'+
+		'<input type="hidden" name="fldSectionId" value=""/><input type="hidden" name="fldDataId" value=""/></form></body></html>');
+	}
+}
+//-----------------------------------------------------------------------------
+	//Function to restrict enter key on button and textbox
+	function restrictEnterKey (evt) {
+	  var evt = (evt) ? evt : ((event) ? event : null);
+	  var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+	  if ((evt.keyCode == 13) && (node.type=="text") || (evt.keyCode == 13) && (node.type=="button") )  {
+		 return false;
+		}
+	}
+	window.document.onkeypress = restrictEnterKey;
+//-----------------------------------------------------------------------------
+/*
+Currently only enables button & select box
+*/
+function enableForm(p_form) {
+	
+	var obj = null;
+	var tmpObj = null;
+	var regObj = null;
+	var disableElemsArray = disabledFormElements [p_form.name];
+	
+	for (i=0; i < p_form.elements.length; i++ ) {
+		if (p_form.elements[i].type == 'select-one' || p_form.elements[i].type == 'button' || p_form.elements[i].type == 'checkbox') {
+			if (disableElemsArray [p_form.elements[i].name] != "true") {
+				p_form.elements[i].disabled=false;
+			}
+		}
+	}
+	return true;
+}
+//----------------------------------------------------------------------
+function trim (
+	str
+) {
+	var resultStr = "";
+
+	resultStr = trimLeft (str);
+	resultStr = trimRight (resultStr);
+
+	return resultStr;
+}
+//------------------------------------------------------------------------------
+function trimLeft (
+	str
+) {
+	var resultStr = "";
+	var i = len = 0;
+
+	// Return immediately if an invalid value was passed in
+	if ((str == undefined) || (str == null)) {
+		return null;
+	}
+	// Make sure the argument is a string
+	str += "";
+
+	if (str.length == 0) {
+		resultStr = "";
+	} else {
+
+  		// Loop through string starting at the beginning as long as there
+  		// are spaces.
+		len = str.length;
+
+  		while ( (i <= len) && (str.charAt(i) == " ") ) {
+  			i++;
+  		}
+
+   		// When the loop is done, we're sitting at the first non-space char,
+ 		// so return that char plus the remaining chars of the string.
+
+  		resultStr = str.substring(i, len);
+  	}
+
+  	return resultStr;
+} // end trimLeft
+//------------------------------------------------------------------------------
+function trimRight (
+	str
+) {
+	var resultStr = "";
+	var i = 0;
+
+	// Return immediately if an invalid value was passed in
+	if ((str == undefined) || (str == null))	{
+		return null;
+	}
+
+	// Make sure the argument is a string
+	str += "";
+
+	if (str.length == 0) {
+		resultStr = "";
+	} else {
+  		// Loop through string starting at the end as long as there
+  		// are spaces.
+  		i = str.length - 1;
+
+  		while ( (i >= 0) && (str.charAt(i) == " ") ) {
+ 			i--;
+ 		}
+
+ 		// When the loop is done, we're sitting at the last non-space char,
+ 		// so return that char plus all previous chars of the string.
+
+  		resultStr = str.substring(0, i + 1);
+  	}
+
+  	return resultStr;
+}
+//-----------------------------------------------------------------------------
+function validateInp (p_input, p_mode) {
+
+	var l_length	= p_input.length;
+
+	for (var i = 0 ; i < l_length ; i++)
+	{
+		if ((p_input.charCodeAt(i) < 44) || (p_input.charCodeAt(i) > 122) ||
+			((p_input.charCodeAt(i) > 57) && (p_input.charCodeAt(i) < 65)) ||
+			((p_input.charCodeAt(i) > 90) && (p_input.charCodeAt(i) < 97)))
+		{
+			if ((p_input.charCodeAt(i) != 32) &&
+				(p_input.charCodeAt(i) != 39) &&
+				(p_input.charCodeAt(i) != 38) &&
+				(p_input.charCodeAt(i) != 64) &&
+				(p_input.charCodeAt(i) != 95)
+			 ) {
+				return false;
+			}
+		}
+
+		if (p_mode == 'id') {
+			if ((p_input.charCodeAt(i) == 32) ||
+				(p_input.charCodeAt(i) == 39) ||
+				(p_input.charCodeAt(i) == 64) ||
+				(p_input.charCodeAt(i) == 95)) {
+
+				return false;
+			}
+			if ((p_input.charCodeAt(i) < 47)) {
+				return false;
+			}
+		}
+
+		if (p_mode == 'userid') {
+			if ((p_input.charCodeAt(i) == 32) ||
+				(p_input.charCodeAt(i) == 39) ||
+				(p_input.charCodeAt(i) == 95)) {
+
+				return false;
+			}
+			if ((p_input.charCodeAt(i) < 47)) {
+				return false;
+			}
+		}
+
+		if (p_mode == "name") {
+			if ((p_input.charCodeAt(i) == 38) ||
+				(p_input.charCodeAt(i) == 44) ||
+				(p_input.charCodeAt(i) == 45) ||
+				(p_input.charCodeAt(i) == 46) ||
+				(p_input.charCodeAt(i) == 47) ||
+				(p_input.charCodeAt(i) == 64) ||
+				(p_input.charCodeAt(i) == 95)) {
+
+				return false;
+			}
+		}
+
+		//44 indicates ',' is removed from desc.
+		//46 indicates '.' is  removed from desc.
+
+		if (p_mode == "desc") {
+			if ((p_input.charCodeAt(i) == 45) ||
+				(p_input.charCodeAt(i) == 47) ||
+				(p_input.charCodeAt(i) == 64)) {
+
+				return false;
+			}
+		}
+
+		if (p_mode == 'email') {
+			if ((p_input.charCodeAt(i) == 38) ||
+				(p_input.charCodeAt(i) == 45) ||
+				(p_input.charCodeAt(i) == 47) ||
+				(p_input.charCodeAt(i) == 44)) {
+				return false;
+			}
+		}
+	}
+	return true;
+}
+//-----------------------------------------------------------------------------
+//state can be block or nore
+function setVisibility(p_layer_ref,p_state) { 
+	if (document.all) { //IS IE 4 or 5 (or 6 beta) 
+		eval( "document.all." + p_layer_ref + ".style.display = '"+p_state+"'"); 
+	} 
+	if (document.layers) { //IS NETSCAPE 4 or below 
+		document.layers[p_layer_ref].display = p_state; 
+	} 
+	if (document.getElementById &&!document.all) { 
+		l_hza = document.getElementById(p_layer_ref); 
+		l_hza.style.display = p_state; 
+	} 
+}
+//-----------------------------------------------------------------------------
+function checkAddressLength  (p_length,p_obj){
+	if(p_obj.length > p_length){ 
+		return false;
+	} else{
+		return true;
+	}
+}
+//-----------------------------------------------------------------------------

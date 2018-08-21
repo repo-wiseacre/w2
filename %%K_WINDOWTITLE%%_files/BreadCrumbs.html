@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0068)http://10.184.214.177:7005/tw/BreadCrumbs.jsp?idlang=eng&iddevice=01 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Bread Crumbs</title>
+<meta name="Generator" content="EditPlus">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<link rel="STYLESHEET" type="text/css" href="./breadcrumbs.css">
+<script language="JavaScript">
+	function fireprint ()
+	{
+		parent.frame_txn.focus();
+		parent.frame_txn.print();
+	}
+	function fireLogOut () {
+		parent.frame_top.fireLogOut ();
+	}
+	
+	//-------------------------------------------------------------------------
+	function fireHelp () 
+	{
+		var features = "directories=no,location=no,menubar=no,status=no,scrollbars=yes,"
+				+	"toolbar=no,dependant=no,resizable=no,top=75,left=100,"
+				+	"scrollbars=yes,width=820,height=550";
+		addlistWindow = window.open ("help/" + parent.userType + "/" + parent.langId + "/" + parent.currTxnId + ".htm", "help", features);
+
+		return;
+	}
+	//-------------------------------------------------------------------------
+	function setAsFavourite () {
+		parent.frame_top.setAsFavourite ();
+	
+	}
+	//-------------------------------------------------------------------------
+	function setLandingPage (){
+		parent.frame_top.setLandingPage ();
+	}
+	//-------------------------------------------------------------------------
+</script>
+</head>
+
+<body>
+	<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<tbody><tr>
+		<td width="155" class="MenuWorkArea" style="overflow-y:hidden">&nbsp;</td>
+		<td>
+			<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%" align="center" id="BreadCrumbsTable">
+				<tbody><tr>
+					<td nowrap="true" id="BreadCrumbs">Cash Management » On-Line Transaction » Internal Transfer</td>
+					<td align="right" nowrap="true">
+						<span class="BreadCrumbsNav" onclick="setAsFavourite ()"><img src="./dot_help.jpg" align="absMiddle"> Add to Favorites</span>
+						<span class="BreadCrumbsNav" onclick="setLandingPage ()"><img src="./details.gif" align="absMiddle"> Set as Landing</span>
+						<span class="BreadCrumbsNav" onclick="fireHelp ()"><img src="./help.gif" align="absMiddle"> Help</span>
+						<span class="BreadCrumbsNav" onclick="fireprint ()"><img src="./dot_print.jpg" align="absMiddle"> Print</span>
+						<span class="BreadCrumbsNav" onclick="fireLogOut ()"><img src="./dot_logout.jpg" align="absMiddle"> Logout</span>
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+	</tbody></table>
+
+
+
+</body></html>

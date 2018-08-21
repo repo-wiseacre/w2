@@ -1,0 +1,1228 @@
+
+<!-- saved from url=(0038)http://10.184.214.177:7005/tw/internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="no-cache"><link rel="stylesheet" href="./ECU_eng_01.css" type="text/css"><link rel="stylesheet" href="./ECU_eng_01.css" type="text/css"><link rel="stylesheet" href="./print.css" type="text/css" media="print"><title>Menu</title><script src="./common.js.download" language="JavaScript"></script><script language="JavaScript">
+	var WAIT_HTML_STR = "<!doctype html public \"-//W3C//DTD HTML 4.0 Transitional//EN\"><html><head><title> Loading... </title><link REL=\"STYLESHEET\" TYPE=\"text/css\" HREF=\"css/default.css\"/></head><body><table width=\"90%\"><tr><td>&nbsp;</td></tr><tr><td class=\"DataCenterAlignedBold\" style=\"FONT-SIZE: 16px;\">Request is being processed. </td></tr><tr><td class=\"DataCenterAlignedBold\" style=\"FONT-SIZE: 16px;\">Please wait...</td></tr><tr><td class=\"DataCenterAlignedBold\" style=\"FONT-SIZE: 10px;\">(Please do not press \"Refresh\" or \"Back\" button)</td></tr></table></body></html>";
+
+	var lang		=	"eng";
+	var currtxnid		= "";	
+	var defAppId		= "RR";	
+	var txnid		= "";	
+	var oldtoc		= "";
+	var arr_appid		= new Array ();
+	var arr_txnid		= new Array ();
+	var arr_txnnam  	= new Array();
+	var arr_token		= new Array ();	
+	var l_nos_msg		= "";
+	var l_mil_exists 	= false;
+	var appid		= new Array ();
+	var txnnam		= new Array ();
+	var token		= new Array ();
+	var l_token		= "";
+	var l_user_type		= "";
+	var arr_token2		= new Array ();
+	var arr_idx		= 0;
+	var l_group_base	= parent.frame_top.l_group;	
+	l_group_base = "A.03";
+	//alert('l_group_base  '+l_group_base);
+
+	var l_deftxn_base	= parent.frame_top.l_defTxn;	
+	//var tab_title_base	= parent.frame_top.document.getElementById('TabTitle').value;
+	
+	
+				txnid	= "ACQ";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"Account Overview";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"ACQ";
+					arr_txnnam [arr_idx]	=	"Account Overview";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.01";
+					arr_idx++;
+				}
+			
+				txnid	= "FTI";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"Internal Transfer";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"FTI";
+					arr_txnnam [arr_idx]	=	"Internal Transfer";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.03";
+					arr_idx++;
+				}
+			
+				txnid	= "BFU";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"Bulk File Upload";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"BFU";
+					arr_txnnam [arr_idx]	=	"Bulk File Upload";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.04";
+					arr_idx++;
+				}
+			
+				txnid	= "ASS";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"Account Summary";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"ASS";
+					arr_txnnam [arr_idx]	=	"Account Summary";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.01";
+					arr_idx++;
+				}
+			
+				txnid	= "IRT";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"Internal Remittance";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"IRT";
+					arr_txnnam [arr_idx]	=	"Internal Remittance";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.03";
+					arr_idx++;
+				}
+			
+				txnid	= "BVF";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"Bulk File View";
+					token [txnid]	    	= 	"3";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"BVF";
+					arr_txnnam [arr_idx]	=	"Bulk File View";
+					arr_token [arr_idx] 	= 	"3";
+					arr_token2[arr_idx] 	= 	"A.04";
+					arr_idx++;
+				}
+			
+				txnid	= "AAT";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"Account Activity";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"AAT";
+					arr_txnnam [arr_idx]	=	"Account Activity";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.01";
+					arr_idx++;
+				}
+			
+				txnid	= "CCO";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"Cheque Collection Inquiry";
+					token [txnid]	    	= 	"";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"CCO";
+					arr_txnnam [arr_idx]	=	"Cheque Collection Inquiry";
+					arr_token [arr_idx] 	= 	"";
+					arr_token2[arr_idx] 	= 	"A.02";
+					arr_idx++;
+				}
+			
+				txnid	= "LRT";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"LCY Remittance";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"LRT";
+					arr_txnnam [arr_idx]	=	"LCY Remittance";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.03";
+					arr_idx++;
+				}
+			
+				txnid	= "ATD";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"TD Account Summary";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"ATD";
+					arr_txnnam [arr_idx]	=	"TD Account Summary";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.01";
+					arr_idx++;
+				}
+			
+				txnid	= "FCO";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"Clean Bill Collection/ Purchase Inquiry";
+					token [txnid]	    	= 	"";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"FCO";
+					arr_txnnam [arr_idx]	=	"Clean Bill Collection/ Purchase Inquiry";
+					arr_token [arr_idx] 	= 	"";
+					arr_token2[arr_idx] 	= 	"A.02";
+					arr_idx++;
+				}
+			
+				txnid	= "FRT";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"FCY Remittance";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"FRT";
+					arr_txnnam [arr_idx]	=	"FCY Remittance";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.03";
+					arr_idx++;
+				}
+			
+				txnid	= "AEI";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"Alliance Express (MT101)";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"AEI";
+					arr_txnnam [arr_idx]	=	"Alliance Express (MT101)";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.03";
+					arr_idx++;
+				}
+			
+				txnid	= "MLT";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"LCY Remittance(Multiple)";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"MLT";
+					arr_txnnam [arr_idx]	=	"LCY Remittance(Multiple)";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.03";
+					arr_idx++;
+				}
+			
+				txnid	= "PAT";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"Private Account Transfer";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"PAT";
+					arr_txnnam [arr_idx]	=	"Private Account Transfer";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.03";
+					arr_idx++;
+				}
+			
+				txnid	= "FDI";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"FCY Demand Draft";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"FDI";
+					arr_txnnam [arr_idx]	=	"FCY Demand Draft";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.03";
+					arr_idx++;
+				}
+			
+				txnid	= "MRI";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"Inward Remittance Inquiry";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"MRI";
+					arr_txnnam [arr_idx]	=	"Inward Remittance Inquiry";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.02";
+					arr_idx++;
+				}
+			
+				txnid	= "OTD";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"Open Term Deposits";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"OTD";
+					arr_txnnam [arr_idx]	=	"Open Term Deposits";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.03";
+					arr_idx++;
+				}
+			
+				txnid	= "CTD";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"Term Deposits Closure";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"CTD";
+					arr_txnnam [arr_idx]	=	"Term Deposits Closure";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.03";
+					arr_idx++;
+				}
+			
+				txnid	= "ORI";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"Outward Remittance Inquiry";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"ORI";
+					arr_txnnam [arr_idx]	=	"Outward Remittance Inquiry";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.02";
+					arr_idx++;
+				}
+			
+				txnid	= "VTD";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"TD Details";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"VTD";
+					arr_txnnam [arr_idx]	=	"TD Details";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.01";
+					arr_idx++;
+				}
+			
+				txnid	= "VMI";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"Virtual account inquiry";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"VMI";
+					arr_txnnam [arr_idx]	=	"Virtual account inquiry";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.02";
+					arr_idx++;
+				}
+			
+				txnid	= "STS";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"Investment Product Summary";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"STS";
+					arr_txnnam [arr_idx]	=	"Investment Product Summary";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.01";
+					arr_idx++;
+				}
+			
+				txnid	= "STD";
+				if (appid [txnid] == undefined) {
+					appid [txnid]	    	= 	defAppId;	
+					txnnam [txnid]    	=	"Investment Product Details";
+					token [txnid]	    	= 	"1";
+					arr_appid [arr_idx]	= 	defAppId
+					arr_txnid [arr_idx]	= 	"STD";
+					arr_txnnam [arr_idx]	=	"Investment Product Details";
+					arr_token [arr_idx] 	= 	"1";
+					arr_token2[arr_idx] 	= 	"A.01";
+					arr_idx++;
+				}
+			
+	parent.sessionId	= "WJMJGYQHQALHCFRUXW";
+//------------------------------------------------------------------------------
+function menu_click (
+	p_txn_id,p_app_id,p_element_id
+) {
+	showBreadCrumbs (p_txn_id);
+	document.frmMenu.activeToc.value = setActive;
+	parent.currTxnId = p_txn_id;
+  	var oldtoc = document.frmMenu.activeToc.value;
+
+	if(document.getElementById(p_element_id).className=="MenuLevel2Click")
+	{
+	  document.getElementById(p_element_id).className="";
+	  document.getElementById(oldtoc+"link").className="MenuLevel2link";
+
+	}
+	if ((document.getElementById(oldtoc)) && 
+			document.getElementById(oldtoc) != "null" & 
+				document.getElementById(oldtoc) != "undefined") {
+
+		document.getElementById(oldtoc).className="MenuLevel2";
+		document.getElementById(oldtoc+"link").className="MenuLevel2link";
+		
+	}
+
+	document.getElementById(p_element_id).className		= "MenuLevel2Click";
+	document.getElementById(p_element_id+"link").className	= "MenuLevel2AClick";
+	document.frmMenu.activeToc.value = setActive	= p_element_id;	
+  	document.frmMenu.fldServiceType.value 			= p_txn_id;
+	//document.frmMenu.fldRequestId.value 			= defAppId + p_txn_id + "01";
+	document.frmMenu.fldRequestId.value	= arr_init_req_id [p_txn_id];
+	//document.frmMenu.fldDataId.value	= "";
+	
+	parent.txnid = p_txn_id;
+	currtxnid = p_txn_id;
+
+	if (p_txn_id == "LGF") {
+		document.frmMenu.target="_top";
+	} else {
+		document.frmMenu.target="frame_txn";
+	}
+
+	document.frmMenu.submit();
+	return false;
+
+}
+//------------------------------------------------------------------------------
+function define() {
+
+	document.write("<ilayer class=\"MenuLevel2\" id=\"ilayerCurr\" name=\"ilayerCurr\" size=\"2\">");
+	document.write("<layer top=\"0\" left=\"0\" id=\"layerCurr\" name=\"layerCurr\" size=\"2\">");
+	document.write(l_nos_msg+"   ");
+	document.write("</layer>");
+	document.write("</ilayer>");
+}
+//-------------------------------------------------------------------------------
+
+function openTransaction () 
+{
+	document.frmMenu.fldDataId.value=parent.dataid;
+	if (parent.frame_top.xslLoaded == true) {
+		var p_element_id = defAppId + l_deftxn_base;
+		var oldtoc = document.frmMenu.activeToc.value;
+
+		if(document.getElementById(p_element_id).className=="MenuLevel2Click")
+		{
+			document.getElementById(p_element_id).className="";
+			document.getElementById(p_element_id+"link").className="MenuLevel2link";
+		}
+		if ((document.getElementById(oldtoc)) && 
+				document.getElementById(oldtoc) != "null" & 
+					document.getElementById(oldtoc) != "undefined") {
+			document.getElementById(oldtoc).className="MenuLevel2";
+			document.getElementById(oldtoc+"link").className="MenuLevel2link";
+		}
+		document.getElementById(p_element_id).className="MenuLevel2Click";
+		document.getElementById(p_element_id+"link").className="MenuLevel2AClick";
+		document.frmMenu.activeToc.value= p_element_id;
+	} else {
+
+		document.frmMenu.fldAppId.value 	= defAppId;
+		document.frmMenu.fldTxnId.value 	= "MNU";
+		document.frmMenu.fldScrnSeqNbr.value 	= "01";
+		document.frmMenu.fldRequestId.value 	= "RRMNU01";
+		document.frmMenu.target			="self";
+		document.frmMenu.submit();
+	}
+	return false;
+}
+
+//-------------------------------------------------------------------------
+	function fireLogOut () 
+	{
+		parent.eos = "true";
+		document.frmmain.fldRequestId.value	= defAppId + "LGF01";
+		document.frmmain.target			= "_top";
+		document.frmmain.submit ();
+		return;
+	}
+//------------------------------------------------------------------------------
+// Added method to refresh frame for language change effect.
+function refreshRmenu ()
+	{
+		//alert("inside refreshRmenu()");
+		window.location.reload(true);
+	}
+//------------------------------------------------------------------------------
+</script><script src="./common.js.download" language="JavaScript" type="text/JavaScript"></script><script language="JavaScript">
+	var defAppId		= "RR";
+	var l_pref 		= false;
+	var l_group		= "";
+	var l_defTxn		= "";
+	var arr_txns		= null;
+	var namtoken		= "";
+	var xslLoaded		= false;
+	var arr_type		= new Array ();
+	var arr_type_desc	= new Array ();
+	var arr_type_txn_map= new Array ();
+	var arr_init_req_id	= new Array ();
+	var arr_bread_crumbs= new Array ();
+	var count = 1; 
+	var l_c1	= 0;	
+	var l_token1 	= "";	
+	
+		if (arr_type [count-1]!="A.01") {
+			arr_type [count] = "A.01";
+			arr_type_desc [count++] = "Account Information";
+		}
+	
+		if (arr_type [count-1]!="A.01") {
+			arr_type [count] = "A.01";
+			arr_type_desc [count++] = "Account Information";
+		}
+	
+		if (arr_type [count-1]!="A.01") {
+			arr_type [count] = "A.01";
+			arr_type_desc [count++] = "Account Information";
+		}
+	
+		if (arr_type [count-1]!="A.01") {
+			arr_type [count] = "A.01";
+			arr_type_desc [count++] = "Account Information";
+		}
+	
+		if (arr_type [count-1]!="A.01") {
+			arr_type [count] = "A.01";
+			arr_type_desc [count++] = "Account Information";
+		}
+	
+		if (arr_type [count-1]!="A.01") {
+			arr_type [count] = "A.01";
+			arr_type_desc [count++] = "Account Information";
+		}
+	
+		if (arr_type [count-1]!="A.01") {
+			arr_type [count] = "A.01";
+			arr_type_desc [count++] = "Account Information";
+		}
+	
+		if (arr_type [count-1]!="A.02") {
+			arr_type [count] = "A.02";
+			arr_type_desc [count++] = "Collection and Remittance";
+		}
+	
+		if (arr_type [count-1]!="A.02") {
+			arr_type [count] = "A.02";
+			arr_type_desc [count++] = "Collection and Remittance";
+		}
+	
+		if (arr_type [count-1]!="A.02") {
+			arr_type [count] = "A.02";
+			arr_type_desc [count++] = "Collection and Remittance";
+		}
+	
+		if (arr_type [count-1]!="A.02") {
+			arr_type [count] = "A.02";
+			arr_type_desc [count++] = "Collection and Remittance";
+		}
+	
+		if (arr_type [count-1]!="A.02") {
+			arr_type [count] = "A.02";
+			arr_type_desc [count++] = "Collection and Remittance";
+		}
+	
+		if (arr_type [count-1]!="A.03") {
+			arr_type [count] = "A.03";
+			arr_type_desc [count++] = "On-Line Transaction";
+		}
+	
+		if (arr_type [count-1]!="A.03") {
+			arr_type [count] = "A.03";
+			arr_type_desc [count++] = "On-Line Transaction";
+		}
+	
+		if (arr_type [count-1]!="A.03") {
+			arr_type [count] = "A.03";
+			arr_type_desc [count++] = "On-Line Transaction";
+		}
+	
+		if (arr_type [count-1]!="A.03") {
+			arr_type [count] = "A.03";
+			arr_type_desc [count++] = "On-Line Transaction";
+		}
+	
+		if (arr_type [count-1]!="A.03") {
+			arr_type [count] = "A.03";
+			arr_type_desc [count++] = "On-Line Transaction";
+		}
+	
+		if (arr_type [count-1]!="A.03") {
+			arr_type [count] = "A.03";
+			arr_type_desc [count++] = "On-Line Transaction";
+		}
+	
+		if (arr_type [count-1]!="A.03") {
+			arr_type [count] = "A.03";
+			arr_type_desc [count++] = "On-Line Transaction";
+		}
+	
+		if (arr_type [count-1]!="A.03") {
+			arr_type [count] = "A.03";
+			arr_type_desc [count++] = "On-Line Transaction";
+		}
+	
+		if (arr_type [count-1]!="A.03") {
+			arr_type [count] = "A.03";
+			arr_type_desc [count++] = "On-Line Transaction";
+		}
+	
+		if (arr_type [count-1]!="A.03") {
+			arr_type [count] = "A.03";
+			arr_type_desc [count++] = "On-Line Transaction";
+		}
+	
+		if (arr_type [count-1]!="A.04") {
+			arr_type [count] = "A.04";
+			arr_type_desc [count++] = "Bulk Payment";
+		}
+	
+		if (arr_type [count-1]!="A.04") {
+			arr_type [count] = "A.04";
+			arr_type_desc [count++] = "Bulk Payment";
+		}
+				   
+		arr_init_req_id ["AAT"] = "RRAAT01";
+				   
+		arr_init_req_id ["ACQ"] = "RRACQ01";
+				   
+		arr_init_req_id ["ASS"] = "RRASS01";
+				   
+		arr_init_req_id ["ATD"] = "RRATD01";
+				   
+		arr_init_req_id ["STD"] = "RRSTD01";
+				   
+		arr_init_req_id ["STS"] = "RRSTS01";
+				   
+		arr_init_req_id ["VTD"] = "RRVTD01";
+				   
+		arr_init_req_id ["CCO"] = "RRCCO01";
+				   
+		arr_init_req_id ["FCO"] = "RRFCO01";
+				   
+		arr_init_req_id ["MRI"] = "RRMRI01";
+				   
+		arr_init_req_id ["ORI"] = "RRORI01";
+				   
+		arr_init_req_id ["VMI"] = "RRVMI01";
+				   
+		arr_init_req_id ["AEI"] = "RRAEI01";
+				   
+		arr_init_req_id ["CTD"] = "RRCTD01";
+				   
+		arr_init_req_id ["FDI"] = "RRFDI01";
+				   
+		arr_init_req_id ["FRT"] = "RRFRT01";
+				   
+		arr_init_req_id ["FTI"] = "RRFTI01";
+				   
+		arr_init_req_id ["IRT"] = "RRIRT01";
+				   
+		arr_init_req_id ["LRT"] = "RRLRT01";
+				   
+		arr_init_req_id ["MLT"] = "RRMLT01";
+				   
+		arr_init_req_id ["OTD"] = "RROTD01";
+				   
+		arr_init_req_id ["PAT"] = "RRPAT01";
+				   
+		arr_init_req_id ["BFU"] = "RRBFU01";
+				   
+		arr_init_req_id ["BVF"] = "RRBVF01";
+				   
+		arr_init_req_id ["CPW"] = "RRCPW01";
+	
+			namtoken = "A.01";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "ACQ";
+			}
+		
+			namtoken = "A.03";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "FTI";
+			}
+		
+			namtoken = "A.04";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "BFU";
+			}
+		
+			namtoken = "A.01";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "ASS";
+			}
+		
+			namtoken = "A.03";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "IRT";
+			}
+		
+			namtoken = "A.04";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "BVF";
+			}
+		
+			namtoken = "A.01";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "AAT";
+			}
+		
+			namtoken = "A.02";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "CCO";
+			}
+		
+			namtoken = "A.03";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "LRT";
+			}
+		
+			namtoken = "A.01";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "ATD";
+			}
+		
+			namtoken = "A.02";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "FCO";
+			}
+		
+			namtoken = "A.03";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "FRT";
+			}
+		
+			namtoken = "A.03";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "AEI";
+			}
+		
+			namtoken = "A.03";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "MLT";
+			}
+		
+			namtoken = "A.03";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "PAT";
+			}
+		
+			namtoken = "A.03";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "FDI";
+			}
+		
+			namtoken = "A.02";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "MRI";
+			}
+		
+			namtoken = "A.03";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "OTD";
+			}
+		
+			namtoken = "A.03";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "CTD";
+			}
+		
+			namtoken = "A.02";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "ORI";
+			}
+		
+			namtoken = "A.01";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "VTD";
+			}
+		
+			namtoken = "A.02";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "VMI";
+			}
+		
+			namtoken = "A.01";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "STS";
+			}
+		
+			namtoken = "A.01";
+			if ((arr_type_txn_map [namtoken] == null) || 
+					(arr_type_txn_map [namtoken] == undefined)) {
+
+				arr_type_txn_map [namtoken]	= new Array ();
+				arr_txns	= arr_type_txn_map [namtoken];
+				arr_type_txn_map [namtoken] [arr_txns.length] = "STD";
+			}
+					   
+		arr_bread_crumbs ["AAT"] = "Cash Management &raquo; Account Information &raquo; Account Activity";
+				   
+		arr_bread_crumbs ["ACQ"] = "Cash Management &raquo; Account Information &raquo; Account Overview";
+				   
+		arr_bread_crumbs ["ASS"] = "Cash Management &raquo; Account Information &raquo; Account Summary";
+				   
+		arr_bread_crumbs ["ATD"] = "Cash Management &raquo; Account Information &raquo; TD Account Summary";
+				   
+		arr_bread_crumbs ["STD"] = "Cash Management &raquo; Account Information &raquo; Investment Product Details";
+				   
+		arr_bread_crumbs ["STS"] = "Cash Management &raquo; Account Information &raquo; Investment Product Summary";
+				   
+		arr_bread_crumbs ["VTD"] = "Cash Management &raquo; Account Information &raquo; TD Details";
+				   
+		arr_bread_crumbs ["CCO"] = "Cash Management &raquo; Collection and Remittance &raquo; Cheque Collection Inquiry";
+				   
+		arr_bread_crumbs ["FCO"] = "Cash Management &raquo; Collection and Remittance &raquo; Clean Bill Collection/ Purchase Inquiry";
+				   
+		arr_bread_crumbs ["MRI"] = "Cash Management &raquo; Collection and Remittance &raquo; Inward Remittance Inquiry";
+				   
+		arr_bread_crumbs ["ORI"] = "Cash Management &raquo; Collection and Remittance &raquo; Outward Remittance Inquiry";
+				   
+		arr_bread_crumbs ["VMI"] = "Cash Management &raquo; Collection and Remittance &raquo; Virtual account inquiry";
+				   
+		arr_bread_crumbs ["AEI"] = "Cash Management &raquo; On-Line Transaction &raquo; Alliance Express (MT101)";
+				   
+		arr_bread_crumbs ["CTD"] = "Cash Management &raquo; On-Line Transaction &raquo; Term Deposits Closure";
+				   
+		arr_bread_crumbs ["FDI"] = "Cash Management &raquo; On-Line Transaction &raquo; FCY Demand Draft";
+				   
+		arr_bread_crumbs ["FRT"] = "Cash Management &raquo; On-Line Transaction &raquo; FCY Remittance";
+				   
+		arr_bread_crumbs ["FTI"] = "Cash Management &raquo; On-Line Transaction &raquo; Internal Transfer";
+				   
+		arr_bread_crumbs ["IRT"] = "Cash Management &raquo; On-Line Transaction &raquo; Internal Remittance";
+				   
+		arr_bread_crumbs ["LRT"] = "Cash Management &raquo; On-Line Transaction &raquo; LCY Remittance";
+				   
+		arr_bread_crumbs ["MLT"] = "Cash Management &raquo; On-Line Transaction &raquo; LCY Remittance(Multiple)";
+				   
+		arr_bread_crumbs ["OTD"] = "Cash Management &raquo; On-Line Transaction &raquo; Open Term Deposits";
+				   
+		arr_bread_crumbs ["PAT"] = "Cash Management &raquo; On-Line Transaction &raquo; Private Account Transfer";
+				   
+		arr_bread_crumbs ["BFU"] = "Cash Management &raquo; Bulk Payment &raquo; Bulk File Upload";
+				   
+		arr_bread_crumbs ["BVF"] = "Cash Management &raquo; Bulk Payment &raquo; Bulk File View";
+	
+	
+	//-------------------------------------------------------------------------
+	function fireDefaults  ()
+	{
+		document.frmMenu.fldDataId.value=parent.dataid;	
+
+		if (document.frmmain.fldGroup.value != "") {
+			for (var i=0; i < arr_type.length; i++)
+			{
+				if ((document.getElementById("tab"+i)) && 
+						(document.getElementById("tab"+i) != null) && 
+							(document.getElementById("tab"+i) != undefined) &&
+								(document.frmmain.fldGroup.value == arr_type [i])
+				) {
+					fireMenuTxn (
+						document.frmmain.fldGroup.value
+					,	arr_type_txn_map [document.frmmain.fldGroup.value] [0]
+					,	i
+					,	false
+					);
+					break;
+				}
+			}
+			
+		} else {
+			for (var i=1; i <= arr_type.length; i++)
+			{
+				if ((document.getElementById("tab"+i)) && 
+						(document.getElementById("tab"+i) != null) && 
+							(document.getElementById("tab"+i) != undefined)) {
+					fireMenuTxn (arr_type [i], arr_type_txn_map [arr_type [i]] [0], i, false);
+					break;
+				}
+			}
+		}
+		xslLoaded = true;
+//		openTransaction();
+		return;
+	}
+	//-------------------------------------------------------------------------
+	function fireTxn (
+		p_txn
+	) {
+		if (p_txn == "CPW") {
+			document.frmmain.fldRequestId.value	= "RRCPW01";
+		} else {
+			document.frmmain.fldRequestId.value	= arr_init_req_id [p_txn];
+		}
+
+		//document.frmmain.fldRequestId.value	= defAppId + p_txn + "01";
+		//document.frmmain.fldRequestId.value	= arr_init_req_id [p_txn];
+		document.frmmain.target			= "frame_txn";
+		document.frmmain.submit();
+		return;
+	}
+	//-------------------------------------------------------------------------
+	function fireLogOut () 
+	{
+
+		parent.eos = "true";
+		document.frmmain.fldRequestId.value	= defAppId + "LGF01";
+		document.frmmain.target			= "_top";
+		document.frmmain.submit ();
+
+		return;
+	}
+	//-------------------------------------------------------------------------
+	function fireHelp () 
+	{
+		var features = "directories=no,location=no,menubar=no,status=no,scrollbars=yes,"
+					+	"toolbar=no,dependant=no,resizable=no,top=75,left=100,"
+					+	"scrollbars=yes,width=820,height=550";
+		addlistWindow = window.open ("help.htm", "details", features);
+
+		return;
+	}
+	//-------------------------------------------------------------------------
+	function fireMenuTxn (
+		p_type
+	,	p_def_txn
+	,	p_selected_element
+	,	p_fire_self
+	) {
+	//	showBreadCrumbs (p_def_txn);		 //Menu level change
+		document.frmmain.TabTitle.value= arr_type_desc [p_selected_element];
+		parent.currTxnId = p_def_txn;
+	
+        var l_landing = document.frmmain.fldLanding.value;
+		var l_menuchange = document.frmmain.fldMenuChange.value;
+		var p_element_id = defAppId+ document.frmmain.fldpdeftxn.value;
+		
+		/*for (var a=1; a<=arr_type.length; a++)
+		{
+			if ((document.getElementById("tab"+a)) && 
+					document.getElementById("tab"+a) != "null" && 
+						document.getElementById("tab"+a) != "undefined") {
+				document.getElementById("tab"+a).className="MenuLevel1";
+			}
+		}*/
+		
+		l_group	= p_type;
+		l_defTxn= p_def_txn;
+		currtxnid = p_def_txn;
+
+		if (p_fire_self) {
+			//document.frmmain.fldDefTxnId.value	= p_def_txn; //Menu level change
+			document.frmmain.fldGroup.value		= p_type ;
+			document.frmmain.fldRequestId.value	= defAppId + "MNU02";
+			document.frmmain.fldDataId.value	= parent.dataid;
+			document.frmmain.submit ();
+		}
+
+		if(document.frmmain.fldMenuChangeOnly.value == "true"){
+            showBreadCrumbs (document.frmmain.fldpdeftxn.value);
+		    document.frmmain.fldLanding.value ="";
+			document.frmTxn.fldRequestId.value	= arr_init_req_id [document.frmmain.fldpdeftxn.value];
+			parent.currTxnId = document.frmmain.fldpdeftxn.value;
+			
+			document.frmTxn.fldServiceType.value	= document.frmmain.fldpdeftxn.value;
+			//document.frmTxn.target			= "frame_txn"; //Menu level change
+			
+			document.getElementById(p_element_id).className="MenuLevel2Click";
+            document.getElementById(p_element_id+"link").className	 ="MenuLevel2AClick";
+            
+            if (p_element_id != setActive) {
+				document.getElementById(setActive).className="MenuLevel2";
+				document.getElementById(setActive+"link").className	 ="MenuLevel2link";
+	        }
+			document.frmMenu.activeToc.value = setActive = p_element_id;
+			document.frmmain.fldMenuChange.value = "";
+			document.frmmain.fldMenuChangeOnly.value = "";
+		}
+        else if(l_landing=="true"){
+            showBreadCrumbs (document.frmmain.fldpdeftxn.value);
+		    document.frmmain.fldLanding.value ="";
+			document.frmTxn.fldRequestId.value	= arr_init_req_id [document.frmmain.fldpdeftxn.value];
+			parent.currTxnId = document.frmmain.fldpdeftxn.value;
+			
+			document.frmTxn.fldServiceType.value	= document.frmmain.fldpdeftxn.value;
+			document.frmTxn.target			= "frame_txn";
+			document.frmTxn.submit ();
+			//document.getElementById(defAppId+p_def_txn).className="MenuLevel2";
+		    //document.getElementById(defAppId+p_def_txn+"link").className="MenuLevel2link";
+			document.getElementById(p_element_id).className="MenuLevel2Click";
+            document.getElementById(p_element_id+"link").className	 ="MenuLevel2AClick";
+            
+            if (p_element_id != setActive) {
+				document.getElementById(setActive).className="MenuLevel2";
+				document.getElementById(setActive+"link").className	 ="MenuLevel2link";
+	        }
+			document.frmMenu.activeToc.value = setActive = p_element_id;
+			//document.getElementById("tab" +p_selected_element).className="MenuLevel1Click";  
+		}
+		else{
+		    if(l_menuchange=="true"){
+			//	showBreadCrumbs (document.frmmain.fldpdeftxn.value); //Menu level change
+				document.frmmain.fldMenuChange.value ="";
+				//document.frmmain.TabTitle.value= arr_type_desc [p_selected_element];
+				//document.getElementById(defAppId+p_def_txn).className="MenuLevel2";
+				//document.getElementById(defAppId+p_def_txn+"link").className="MenuLevel2link";
+				document.getElementById(p_element_id).className="MenuLevel2Click";
+				document.getElementById(p_element_id+"link").className	= "MenuLevel2AClick";
+				if (p_element_id != setActive) {
+					document.getElementById(setActive).className="MenuLevel2";
+					document.getElementById(setActive+"link").className	 ="MenuLevel2link";
+				}
+				document.frmMenu.activeToc.value = setActive = p_element_id;
+				//document.frmmain.submit ();
+			}else{
+				//document.frmTxn.fldRequestId.value	= defAppId + p_def_txn + "01";
+			/*	document.frmTxn.fldRequestId.value	= arr_init_req_id [p_def_txn];
+				document.frmTxn.fldServiceType.value	= p_def_txn;
+				document.frmTxn.target			= "frame_txn";
+				document.frmTxn.submit ();
+				document.getElementById("tab"+p_selected_element).className="MenuLevel1Click";  
+				*/ //Menu level change
+			}
+		}
+		return false;
+	}
+	//-------------------------------------------------------------------------
+	function showBreadCrumbs (p_txn_id) {
+	var l_menuchange = document.frmmain.fldMenuChange.value;
+		if(l_menuchange!="true"){
+		   parent.frames["frame_txn"].document.write (WAIT_HTML_STR);
+		}		
+		parent.frames["breadCrumbs"].document.getElementById ("BreadCrumbs").innerHTML = arr_bread_crumbs [p_txn_id];
+	}
+	//-------------------------------------------------------------------------
+var flag = 0;
+var setActive;
+var popup;
+function showTimeout(){
+//alert("RMenu show timeout111");
+	var l_reqStr = new Array();
+		
+		var left = (window.screen.width / 2) - ((500 / 2) + 10);
+    	var top = (window.screen.height / 2) - ((200 / 2) + 50);
+		
+	var features	=	"dependant=no,directories=no,location=no,menubar=no"
+					+	",resizable=no,scrollbars=no,titlebar=no,toolbar=no"
+					+	",height=200,width=500,top="+top+",left="+left+",status=no";
+					
+						
+	
+	popup=window.open ("sessiontimeoutpopup.html", "timeout", features);
+	close();
+	popup=window.open ("sessiontimeoutpopup.html", "timeout", features);
+	document.frmmain.target = "txnsession";
+	//document.frmmain.fldSessionId.value = parent.idsession;
+	document.frmmain.fldRequestId.value="RRMNU06";
+	
+	document.frmmain.fldSectionId.value="RRMNU06";
+	
+	//document.frmmain.fldServiceType.value="MNU";
+	setTimeout ("loadbenepopup ()", 500);
+	//setTimeout("SendToPopup()", 1000);
+	//SendToPopup();
+	//loadbenepopup ();
+
+}
+function SendToPopup() {
+            if (popup != null && !popup.closed) {
+                var txt = popup.document.getElementById("txt");
+                
+                txt.value = warningPeriod;
+                var str = warningmsg;
+				
+				var warningmsglbl = popup.document.getElementById("warningmsg");
+				warningmsglbl.innerHTML = str;
+                popup.startCount();
+                popup.focus();
+            } else {
+                alert("Popup has been closed.");
+            }
+        }
+function loadbenepopup () {
+	if (!popup.top.frames ["txnsession"].loaded) {
+		console.log("inside not condition-------");
+		setTimeout ("loadbenepopup ()", 100);
+	} else {
+		console.log("inside exact condition-------");
+		document.frmmain.submit ();
+	}
+}
+function okay(){
+	//alert("Okay from RMenu");
+	parent.okay();
+}
+function logoff(){
+	alert("cancel from RMenu");
+	parent.logoff();
+}
+
+function close(){
+	//alert("inside close function ");
+	if (popup != null && !popup.closed) {
+		popup.close();
+		console.log("close pop up");
+	}
+}
+</script></head><body style="overflow-y:auto" scroll="auto" onload="return fireDefaults ();" class="MenuWorkArea" marginwidth="0" marginheight="0"><form method="post" action="http://10.184.214.177:7005/tw/internet" name="frmmain" autocomplete="off"><div id="WelcomeText"><b>Welcome,</b></div><div id="WelcomeText">Corp&nbsp;Test</div><div class="MenuDisplay"><table border="0" cellspacing="0" cellpadding="0" width="100%"><script language="JavaScript">
+							for (var j=1; j <= arr_type.length; j++) {
+								if ((arr_type_txn_map [arr_type [j]] != undefined) &&
+										(arr_type_txn_map [arr_type [j]] != null) &&
+											(arr_type_txn_map [arr_type [j]].length != 0)) {
+											
+									document.write("<tr>"+
+										"<td id=\"tab"
+									+ 	j 
+									+ 	"\" size=\"50\" class=\"MenuLevel1\" onclick=\"return fireMenuTxn ('"
+									+ 	arr_type [j] 
+									+ 	"', '"
+									+ 	arr_type_txn_map [arr_type [j]] [0]
+									+	"', '"
+									+ 	j
+									+ 	"', true)\" onmouseover=\"javascript: if(this.className!='MenuLevel1Click') this.className='MenuLevel1H'\" onmouseout=\"javascript: if(this.className!='MenuLevel1Click') this.className='MenuLevel1'\" alt=\""
+									+ 	arr_type_desc [j]
+									+ 	"\">"
+									+ 	arr_type_desc [j]
+									+ 	"</td> </tr>"
+									);
+										 if(l_group_base == arr_type [j]) {
+								// document.write("<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">");
+
+									for (l_c1 = 0; l_c1 < arr_txnid.length; l_c1++) {
+										l_token1 	= arr_token [l_c1];
+										l_group	= arr_token2[l_c1];
+									
+											if (l_group == arr_type [j] )  {
+												//alert('txn_id  '+arr_txnid[l_c1]);
+												document.write("<tr >");
+												if(flag == 0 ) {
+													/*defClass="MenuLevel2Click";
+													divClass = "MenuLevel2AClick";*/
+													defClass="MenuLevel2";
+													divClass = "MenuLevel2link";
+													setActive = arr_appid [l_c1] + arr_txnid[l_c1] ;
+													flag = 1;
+												} else {
+													defClass="MenuLevel2";
+													divClass = "MenuLevel2link";
+												}
+												document.write("<td class=\""+defClass+"\" id=\"" + arr_appid [l_c1] + arr_txnid[l_c1] + "\" >");
+												document.write(
+													"<div href=\"JavaScript:void(0)\" id=\"" + arr_appid [l_c1] + arr_txnid[l_c1] + "link\" class=\""+divClass+"\" onClick=\"return menu_click('"
+													+ arr_txnid[l_c1] + "' , '" + arr_appid [l_c1] + "' , '" + arr_appid [l_c1] + arr_txnid[l_c1]
+																			+ "')\">");
+												document.write(arr_txnnam[l_c1]);
+												if (arr_txnid[l_c1] == "MIL") {
+														if (top.is_nav6up || top.is_ie5up || top.is_ie4)  {
+															document.write("<input type=\"text\" name=\"fldnoemails\" value=\""+l_nos_msg+"\" maxlength=\"5\" nowrap=\"false\" tabindex=\"-1\" size=\"5\" readonly=\"true\" onmouseover=\"javascript: if(this.className!=\"MenuLevel2Click\") this.className='MenuLevel2'\" onmouseout=\"javascript: if(this.className!='MenuLevel2Click') this.className='MenuLevel2'\" />");
+														} else {
+															define();
+														}
+														l_mil_exists	= true;
+												}
+												document.write("</div>");
+												document.write("</td>");
+												document.write("</tr>");
+											}
+									} 
+									//document.write ("</table>");
+									}
+								}
+							}
+						</script><tbody><tr><td id="tab1" size="50" class="MenuLevel1" onclick="return fireMenuTxn (&#39;A.01&#39;, &#39;ACQ&#39;, &#39;1&#39;, true)" onmouseover="javascript: if(this.className!=&#39;MenuLevel1Click&#39;) this.className=&#39;MenuLevel1H&#39;" onmouseout="javascript: if(this.className!=&#39;MenuLevel1Click&#39;) this.className=&#39;MenuLevel1&#39;" alt="Account Information">Account Information</td> </tr><tr><td id="tab2" size="50" class="MenuLevel1" onclick="return fireMenuTxn (&#39;A.02&#39;, &#39;CCO&#39;, &#39;2&#39;, true)" onmouseover="javascript: if(this.className!=&#39;MenuLevel1Click&#39;) this.className=&#39;MenuLevel1H&#39;" onmouseout="javascript: if(this.className!=&#39;MenuLevel1Click&#39;) this.className=&#39;MenuLevel1&#39;" alt="Collection and Remittance">Collection and Remittance</td> </tr><tr><td id="tab3" size="50" class="MenuLevel1" onclick="return fireMenuTxn (&#39;A.03&#39;, &#39;FTI&#39;, &#39;3&#39;, true)" onmouseover="javascript: if(this.className!=&#39;MenuLevel1Click&#39;) this.className=&#39;MenuLevel1H&#39;" onmouseout="javascript: if(this.className!=&#39;MenuLevel1Click&#39;) this.className=&#39;MenuLevel1&#39;" alt="On-Line Transaction">On-Line Transaction</td> </tr><tr><td class="MenuLevel2Click" id="RRFTI"><div href="JavaScript:void(0)" id="RRFTIlink" class="MenuLevel2AClick" onclick="return menu_click(&#39;FTI&#39; , &#39;RR&#39; , &#39;RRFTI&#39;)">Internal Transfer</div></td></tr><tr><td class="MenuLevel2" id="RRIRT"><div href="JavaScript:void(0)" id="RRIRTlink" class="MenuLevel2link" onclick="return menu_click(&#39;IRT&#39; , &#39;RR&#39; , &#39;RRIRT&#39;)">Internal Remittance</div></td></tr><tr><td class="MenuLevel2" id="RRLRT"><div href="JavaScript:void(0)" id="RRLRTlink" class="MenuLevel2link" onclick="return menu_click(&#39;LRT&#39; , &#39;RR&#39; , &#39;RRLRT&#39;)">LCY Remittance</div></td></tr><tr><td class="MenuLevel2" id="RRFRT"><div href="JavaScript:void(0)" id="RRFRTlink" class="MenuLevel2link" onclick="return menu_click(&#39;FRT&#39; , &#39;RR&#39; , &#39;RRFRT&#39;)">FCY Remittance</div></td></tr><tr><td class="MenuLevel2" id="RRAEI"><div href="JavaScript:void(0)" id="RRAEIlink" class="MenuLevel2link" onclick="return menu_click(&#39;AEI&#39; , &#39;RR&#39; , &#39;RRAEI&#39;)">Alliance Express (MT101)</div></td></tr><tr><td class="MenuLevel2" id="RRMLT"><div href="JavaScript:void(0)" id="RRMLTlink" class="MenuLevel2link" onclick="return menu_click(&#39;MLT&#39; , &#39;RR&#39; , &#39;RRMLT&#39;)">LCY Remittance(Multiple)</div></td></tr><tr><td class="MenuLevel2" id="RRPAT"><div href="JavaScript:void(0)" id="RRPATlink" class="MenuLevel2link" onclick="return menu_click(&#39;PAT&#39; , &#39;RR&#39; , &#39;RRPAT&#39;)">Private Account Transfer</div></td></tr><tr><td class="MenuLevel2" id="RRFDI"><div href="JavaScript:void(0)" id="RRFDIlink" class="MenuLevel2link" onclick="return menu_click(&#39;FDI&#39; , &#39;RR&#39; , &#39;RRFDI&#39;)">FCY Demand Draft</div></td></tr><tr><td class="MenuLevel2" id="RROTD"><div href="JavaScript:void(0)" id="RROTDlink" class="MenuLevel2link" onclick="return menu_click(&#39;OTD&#39; , &#39;RR&#39; , &#39;RROTD&#39;)">Open Term Deposits</div></td></tr><tr><td class="MenuLevel2" id="RRCTD"><div href="JavaScript:void(0)" id="RRCTDlink" class="MenuLevel2link" onclick="return menu_click(&#39;CTD&#39; , &#39;RR&#39; , &#39;RRCTD&#39;)">Term Deposits Closure</div></td></tr><tr><td id="tab4" size="50" class="MenuLevel1" onclick="return fireMenuTxn (&#39;A.04&#39;, &#39;BFU&#39;, &#39;4&#39;, true)" onmouseover="javascript: if(this.className!=&#39;MenuLevel1Click&#39;) this.className=&#39;MenuLevel1H&#39;" onmouseout="javascript: if(this.className!=&#39;MenuLevel1Click&#39;) this.className=&#39;MenuLevel1&#39;" alt="Bulk Payment">Bulk Payment</td> </tr></tbody></table></div><input value="On-Line Transaction" name="TabTitle" type="hidden"><input value="WJMJGYQHQALHCFRUXW" name="fldSessionId" type="hidden"><input name="fldRequestId" type="hidden"><input value="A.03" name="fldGroup" type="hidden"><input value="A" name="fldBaseGroup" type="hidden"><input name="fldDefTxnId" type="hidden"><input value="RRLGN01" name="fldSectionId" type="hidden"><input name="fldDataId" type="hidden"><input value="false" name="fldLanding" type="hidden"><input value="C" name="fldptype" type="hidden"><input value="LCI" name="fldpdeftxn" type="hidden"><input value="C" name="fldpselectedelement" type="hidden"><input value="" name="fldMenuChange" type="hidden"><input value="" name="fldMenuChangeOnly" type="hidden"><input value="" name="fldMenuTxn" type="hidden"><input value="19-08-2018" name="fldSessionDate" type="hidden"><input value="2018" name="fldSessionYear" type="hidden"><input value="08" name="fldSessionMonth" type="hidden"><input value="19" name="fldSessionDay" type="hidden"></form><form action="http://10.184.214.177:7005/tw/internet" method="post" name="frmMenu" autocomplete="off" target="frame_txn"><input value="RRFTI" id="activeToc" name="activeToc" type="hidden"><input value="WJMJGYQHQALHCFRUXW" name="fldSessionId" type="hidden"><input name="fldAppId" type="hidden"><input name="fldRequestId" type="hidden" value="RRFTI01"><input name="fldServiceType" type="hidden" value="FTI"><input value="WJMJGYQHQALHCFRUXWBKEZLBRZXHD" name="fldDataId" type="hidden"><input value="19-08-2018" name="fldSessionDate" type="hidden"><input value="2018" name="fldSessionYear" type="hidden"><input value="08" name="fldSessionMonth" type="hidden"><input value="19" name="fldSessionDay" type="hidden"></form><form method="post" action="http://10.184.214.177:7005/tw/internet" name="frmTxn" autocomplete="off"><input name="fldServiceType" type="hidden"><input name="fldRequestId" type="hidden"><input value="WJMJGYQHQALHCFRUXW" name="fldSessionId" type="hidden"><input value="" name="fldDataId" type="hidden"><input value="19-08-2018" name="fldSessionDate" type="hidden"><input value="2018" name="fldSessionYear" type="hidden"><input value="08" name="fldSessionMonth" type="hidden"><input value="19" name="fldSessionDay" type="hidden"></form></body></html>

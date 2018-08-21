@@ -1,0 +1,456 @@
+/*-----------------------------------------------------------------------------
+This source is part of the FLEXCUBE@ Java App Server Software System and is
+copyrighted by i-flex Solutions Limited.
+
+All rights reserved.  No part of this work may be reproduced, stored in a
+retrieval system, adopted or transmitted in any form or by any means,
+electronic, mechanical, photographic, graphic, optic recording or otherwise,
+translated in any language or computer language, without the prior written
+permission of i-flex Solutions Limited.
+
+i-flex Solutions Limited.
+10-11, SDF I, SEEPZ, Andheri (East),
+Mumbai - 400 096.
+India
+
+Copyright 2004 i-flex Solutions Limited.
+
+Modification History
+
+Date			Version		Author			Description
+__________	___________	_______________ ________________________________________
+25/03/2008	1			Saroj K Nayak		Initial Version	
+------------------------------------------------------------------------------*/
+/**
+This function dose followings
+	1> It builds a structured string for all the udf fileds(name=fldudf).
+		and set the value to the field 'fldudfdetails'.
+	2> Capture all the select box values(with all options) in a 
+		structured  manner and set that value to the field fldudfselectboxes.
+	3> Capture all the legends in a structured  manner and set 
+		that value to the field fldudflegend.
+	4> This function capture all the field labels in a structured  manner and set 
+		that value to the field fldudflabel.
+**/
+function buildUDF(){
+//LEGEND#]HTMLTYPE##LABEL::ID#:VALUE1
+//		~TYPE##LABEL::VALUE1,VALUE2
+//			~TYPE##LABEL::VALUE1
+	var l_udftable = document.getElementsByTagName('table');
+	for(var l_k =0 ; l_k < l_udftable.length ; l_k++){
+		if(l_udftable[l_k].getAttribute('name') == 'fldudftable'){
+			var l_udfs		= getAllFormElementsByName(l_udftable [l_k],'fldudf');
+			var l_udflabel	= getInputElementsByName(l_udftable [l_k],'fldudflabel');
+			var l_udfdetails= getInputElementsByName(l_udftable [l_k],'fldudfdetails');
+			var l_udfsbs	= getInputElementsByName(l_udftable [l_k],'fldudfselectboxes');
+			var l_udflegend = getInputElementsByName(l_udftable [l_k],'fldudflegend');
+			var	l_udf_arr	= new Array();
+			var	l_udfsb_arr	= new Array();
+			for(var l_i=0; l_i < l_udfs.length ; l_i++){
+				l_udf_arr.push(
+					l_udfs[l_i].type
+					+ '##'
+					+ l_udflabel[l_i].value
+					+ '#:'
+					+l_udfs[l_i].id
+					+ '::'
+					+getValueFromUDF(l_udfs[l_i])
+				)
+				if(l_udfs[l_i].type == 'select-one' || l_udfs[l_i].type == 'select-multiple'){
+					var l_options = new Array ();
+					//ID#]CODE::DESC#:CODE::DESC#:
+					for(var l_opt =0; l_opt < l_udfs[l_i].options.length ; l_opt++){
+						l_options.push(
+							l_udfs[l_i].options[l_opt].value
+						+	'::'
+						+	l_udfs[l_i].options[l_opt].text
+						)
+					}
+					l_udfsb_arr.push(l_udfs[l_i].id+'#]'+l_options.join('#:'))
+				}
+				
+			}
+			if(l_udfdetails.length != 0 && l_udflegend.length != 0){
+				l_udfdetails[0].value = l_udflegend[0].value+'#]'+l_udf_arr.join('~');
+			}
+			if(l_udfsbs.length != 0){
+				l_udfsbs[0].value = l_udfsb_arr.join('~');
+			}
+			//alert(l_udf_arr);
+		}
+	}
+}
+//------------------------------------------------------------------------------
+function getValueFromUDF(p_fld){
+	//validate value for '##' or '#:' or '::' or '#]'
+	if(p_fld.type=='text' || p_fld.type=='hidden' || p_fld.type=='textarea'){
+		return p_fld.value;
+	}else if(p_fld.type=='select-one'){
+		return 
+				p_fld.options[p_fld.selectedIndex].value
+		//	+	'#$'
+		//	+	p_fld.options[p_fld.selectedIndex].text
+		;
+	}else if(p_fld.type=='select-multiple'){
+		var	l_opt_arr	= new Array();
+		for(var l_i=0; l_i < p_fld.options.length ; l_i++){
+			if(p_fld.options[l_i].selected){
+				l_opt_arr.push(
+					p_fld.options[l_i].value
+			//	+	'#$'
+			//	+	p_fld.options[l_i].text
+				);
+			}
+		}
+		return l_opt_arr.join(' ,');
+	}else if(p_fld.type=='checkbox' || p_fld.type=='radio'){
+		if(p_fld.checked){
+			return '0';
+		}else{
+			return '1';
+		}
+	}
+}
+//------------------------------------------------------------------------------
+/**
+This method populates the udf field values from the p_udfs map passed as argument.
+MAP.key = idudf
+MAP.value = CODE##DESC#:CODE##DESC
+It Searchs for a field in the document with the name MAP.key and sets with the value
+from the MAP.value
+This method is called to populate UDF filed from the extended response UDF DTO
+**/
+function populateUDFValues(p_udfs){
+	
+	var L_CODE_DESC_DELIMA = '##';
+	var L_MULTI_DATA_DELIMA = '#:'
+
+	var l_all_flds	=	getAllFormElements(document);
+	for(var l_j=0; l_j < l_all_flds.length ; l_j++){
+		if(p_udfs[l_all_flds[l_j].id] == undefined){
+			continue;
+		}
+		var l_udf_value = p_udfs[l_all_flds[l_j].id];
+
+		if(l_all_flds[l_j].type == 'text' 
+			|| l_all_flds[l_j].type=='hidden' 
+			|| l_all_flds[l_j].type=='textarea'
+		){
+			var l_vals;
+			if(l_udf_value.indexOf(L_MULTI_DATA_DELIMA) == -1){
+				l_vals = l_udf_value.split(L_CODE_DESC_DELIMA);
+			}else{
+				var l_tmp = l_udf_value.split(L_MULTI_DATA_DELIMA)[0];
+				l_vals = l_tmp.split(L_CODE_DESC_DELIMA);
+			}
+			if(l_vals.length > 0 ){
+				l_all_flds[l_j].value = l_vals[0]
+			}
+		}else if(l_all_flds[l_j].type=='checkbox' || l_all_flds[l_j].type =='radio'){
+			var l_vals;
+			if(l_udf_value.indexOf(L_MULTI_DATA_DELIMA) == -1){
+				l_vals = l_udf_value.split(L_CODE_DESC_DELIMA);
+			}else{
+				var l_tmp = l_udf_value.split(L_MULTI_DATA_DELIMA)[0];
+				l_vals = l_tmp.split(L_CODE_DESC_DELIMA);
+			}
+			if(l_vals.length > 0){
+				if(l_vals[0] == 'true' || l_vals[0] == '0'){
+					l_all_flds[l_j].checked = true;
+				}else{
+					l_all_flds[l_j].checked = false;
+				}
+			}else{
+				l_all_flds[l_j].checked = false;
+			}
+		}else if(l_all_flds[l_j].type=='select-one' || l_all_flds[l_j].type =='select-multiple'){
+			var l_vals = l_udf_value.split(L_MULTI_DATA_DELIMA);
+
+			for(var l_k=0; l_k < l_vals.length ; l_k++){
+				var l_doc = l_all_flds[l_j].ownerDocument;
+				if (!l_doc){
+					l_doc = document;
+				}else if(l_doc == undefined){
+					l_doc = document;
+				}
+				var l_opt = l_doc.createElement('OPTION');
+				l_opt.value = l_vals[l_k].split(L_CODE_DESC_DELIMA)[0];
+				if(l_vals[l_k].split(L_CODE_DESC_DELIMA).length > 1){
+					l_opt.text = l_vals[l_k].split(L_CODE_DESC_DELIMA)[1];
+				}else{
+					//Select Box option.text is manadatory
+					continue;
+				}
+				l_all_flds[l_j].options.add(l_opt, l_k);
+			}
+		}
+	}
+}
+//------------------------------------------------------------------------------
+/**
+This method populates the udf field values from the field 'fldudfdetails'.
+p_udfdtls is an array containing all structured udf details string.It dose 
+the reverse of buildUDF().
+**/
+function resetUDFValues(p_udfdtls){
+	//LEGEND#]TYPE##LABEL#:ID::VALUE1~TYPE##LABEL#:ID::VALUE1,VALUE2~TYPE##LABEL#:ID::VALUE1
+
+	var L_TYPE_LABEL_DELIMA = '##';
+	var L_LABEL_ID_DELIMA = '#:';
+	var L_LEGEND_DELIMA = '#]';
+	var L_ID_VALUE_DELIMA = '::';
+	var L_FLD_DELIMA = '~';
+	
+	if(p_udfdtls == undefined || p_udfdtls.length == undefined){
+		return;
+	}
+	var l_fldudf			= getIDElementMapByName(document,'fldudf');
+	for(var l_i=0; l_i < p_udfdtls.length ; l_i++){
+		var l_udfdtl = p_udfdtls[l_i].split(L_LEGEND_DELIMA);
+		if(l_udfdtl.length ==2){
+			var l_details = l_udfdtl[1];
+			var l_udf = l_details.split(L_FLD_DELIMA);
+			for(var l_k=0; l_k < l_udf.length ; l_k++){
+				var l_type	= l_udf[l_k].substring(
+								0
+							,	l_udf[l_k].indexOf(L_TYPE_LABEL_DELIMA)
+							);
+				var l_value = l_udf[l_k].substring(
+								l_udf[l_k].indexOf(L_ID_VALUE_DELIMA)+2
+							);
+				var l_id	= l_udf[l_k].substring(
+								l_udf[l_k].indexOf(L_LABEL_ID_DELIMA)+2
+							,	l_udf[l_k].indexOf(L_ID_VALUE_DELIMA)
+							);
+				if(l_fldudf[l_id] == undefined || l_fldudf[l_id].type != l_type){
+					continue;
+				}
+				if(l_type=='text' || l_type=='hidden' || l_type=='textarea'){
+					l_fldudf[l_id].value = l_value;
+				}else if(l_type=='select-one'){
+					for(var l_j=0; l_j < l_fldudf[l_id].options.length ; l_j++){
+						if(l_fldudf[l_id].options[l_j].value == l_value){
+							l_fldudf[l_id].options[l_j].selected = true;
+							break;
+						}
+					}
+				}else if(l_type=='select-multiple'){
+
+					var l_m_tokens = l_value.split(',');
+					for(var l_c=0; l_c < l_m_tokens.length ; l_c++){
+						for(var l_j=0; l_j < l_fldudf[l_id].options.length ; l_j++){
+							if(l_fldudf[l_id].options[l_j].value == l_m_tokens[l_c]){
+								l_fldudf[l_id].options[l_j].selected = true;
+							}
+						}
+					}
+				}else if(l_type=='checkbox' || l_type =='radio'){
+					if(l_value == '0' || l_value=='true'){
+						l_fldudf[l_id].checked = true;
+					}else{
+						l_fldudf[l_id].checked = false;
+					}
+				}
+			}
+		}	
+	}
+}
+//-----------------------------------------------------------------------------
+/**
+@p_sbdtls an Array containing select box contains each select box details as 
+a array member
+each muber must confirm to following format [//SELECTBOXID#]CODE::DESC#:CODE::DESC#:]
+
+This method is called to populate select boxes from the structured value of field 
+fldudfselectboxes.
+**/
+function rePopulateSelectBoxes(p_sbdtls){
+	var L_TYPE_LABEL_DELIMA = '##';
+	var L_OPTIONS_DELIMA = '#:';
+	var L_ID_DELIMA = '#]';
+	var L_CODE_DESC_DELIMA = '::';
+	var L_FLD_DELIMA = '~';
+	if(p_sbdtls == undefined || p_sbdtls.length == undefined){
+		return;
+	}
+	for (var l_p = 0; l_p < p_sbdtls.length; l_p++){
+		if(p_sbdtls[l_p] == ''){
+			continue;
+		}		
+		var l_sbs = p_sbdtls[l_p].split(L_FLD_DELIMA);
+		for (var l_i = 0; l_i < l_sbs.length; l_i++){
+			var l_id = l_sbs[l_i].substring(0,l_sbs[l_i].indexOf(L_ID_DELIMA));
+			var l_sb = document.getElementById(l_id);
+			if(l_sb != undefined && (l_sb.type == 'select-one' || l_sb.type == 'select-multiple')){
+				removeAllOptions(l_sb);
+				var l_opt_str	= l_sbs[l_i].substring(
+									l_sbs[l_i].indexOf(L_ID_DELIMA)+2
+								);
+				var l_options	= l_opt_str.split(L_OPTIONS_DELIMA);
+				for (var l_j = 0; l_j < l_options.length; l_j++){
+					var l_opt = document.createElement('OPTION');
+					l_opt.value = l_options[l_j].split(L_CODE_DESC_DELIMA)[0];
+					if(l_options[l_j].split(L_CODE_DESC_DELIMA).length > 1){
+						l_opt.text = l_options[l_j].split(L_CODE_DESC_DELIMA)[1];
+						if(l_opt.text != ''){
+							l_sb.options.add(l_opt);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+//-----------------------------------------------------------------------------
+function removeAllOptions(p_sb){
+	for(var l_i=p_sb.options.length-1;l_i>=0;l_i--){
+		p_sb.remove(l_i);
+	}
+}
+//------------------------------------------------------------------------------
+/**
+This method populates the udf field values from the p_udfs map passed as argument.
+MAP.key = idudf
+MAP.value = VALUE
+This method is basically called on View Screen for UDF value population.
+**/
+function populateUDFsAsText(p_udfs){
+
+	var l_all_flds	=	getAllFormElements(document);
+	for(var l_j=0; l_j < l_all_flds.length ; l_j++){
+		if(p_udfs[l_all_flds[l_j].id] == undefined){
+			continue;
+		}
+		var l_udf_value = p_udfs[l_all_flds[l_j].id];
+
+		if(l_all_flds[l_j].type == 'text' 
+			|| l_all_flds[l_j].type=='hidden' 
+			|| l_all_flds[l_j].type=='textarea'
+		){
+			l_all_flds[l_j].value = l_udf_value;
+
+		}else if(l_all_flds[l_j].type=='checkbox' || l_all_flds[l_j].type =='radio'){
+
+			if(l_udf_value == 'true'){
+				l_all_flds[l_j].checked = true;
+			}else{
+				l_all_flds[l_j].checked = false;
+			}
+		}
+	}
+}
+//-----------------------------------------------------------------------------
+function getAllFormElements( p_parent ) {
+	if( p_parent == undefined ) {
+		p_parent = document;
+	}
+	var l_out = new Array();
+	l_ip = p_parent.getElementsByTagName("input");
+	for (var i = 0; i < l_ip.length; i++){
+		l_out.push( l_ip.item(i) );
+	}
+	l_ip = p_parent.getElementsByTagName("textarea");
+	for (var i = 0; i < l_ip.length; i++){
+		l_out.push( l_ip.item(i) );
+	}
+	l_ip = p_parent.getElementsByTagName("select");
+	for (var i = 0; i < l_ip.length; i++){
+		l_out.push( l_ip.item(i) );
+	}
+	l_ip = p_parent.getElementsByTagName("button");
+	for (var i = 0; i < l_ip.length; i++){
+		l_out.push( l_ip.item(i) );
+	}
+	return l_out;
+}
+//-----------------------------------------------------------------------------
+function getAllFormElementsByName( p_parent ,p_name) {
+	if( p_parent == undefined ) {
+		p_parent = document;
+	}
+	var l_out = new Array();
+	l_ip = p_parent.getElementsByTagName("input");
+	for (var i = 0; i < l_ip.length; i++){
+		if(l_ip[i].name != p_name){
+			continue;
+		}
+		l_out.push( l_ip.item(i) );
+	}
+	l_ip = p_parent.getElementsByTagName("textarea");
+	for (var i = 0; i < l_ip.length; i++){
+		if(l_ip[i].name != p_name){
+			continue;
+		}
+		l_out.push( l_ip.item(i) );
+	}
+	l_ip = p_parent.getElementsByTagName("select");
+	for (var i = 0; i < l_ip.length; i++){
+		if(l_ip[i].name != p_name){
+			continue;
+		}
+		l_out.push( l_ip.item(i) );
+	}
+	l_ip = p_parent.getElementsByTagName("button");
+	for (var i = 0; i < l_ip.length; i++){
+		if(l_ip[i].name != p_name){
+			continue;
+		}
+		l_out.push( l_ip.item(i) );
+	}
+	return l_out;
+}
+//-----------------------------------------------------------------------------
+/**
+This function return an map of matched elements, with the element id as the key.
+**/
+function getIDElementMapByName( p_parent ,p_name) {
+	var l_out = new Object ();
+	if( p_parent == undefined ) {
+		return l_out;
+	}
+
+	l_ip = p_parent.getElementsByTagName("input");
+	for (var i = 0; i < l_ip.length; i++){
+		if(l_ip[i].name != p_name){
+			continue;
+		}
+		l_out[l_ip[i].id] = l_ip.item(i);
+	}
+	l_ip = p_parent.getElementsByTagName("textarea");
+	for (var i = 0; i < l_ip.length; i++){
+		if(l_ip[i].name != p_name){
+			continue;
+		}
+		l_out[l_ip[i].id] = l_ip.item(i);
+	}
+	l_ip = p_parent.getElementsByTagName("select");
+	for (var i = 0; i < l_ip.length; i++){
+		if(l_ip[i].name != p_name){
+			continue;
+		}
+		l_out[l_ip[i].id] = l_ip.item(i);
+	}
+	l_ip = p_parent.getElementsByTagName("button");
+	for (var i = 0; i < l_ip.length; i++){
+		if(l_ip[i].name != p_name){
+			continue;
+		}
+		l_out[l_ip[i].id] = l_ip.item(i);
+	}
+	return l_out;
+}
+//-----------------------------------------------------------------------------
+function getInputElementsByName(p_parent,p_name){
+	var l_val = new Array ();
+	if( p_parent == undefined ){
+		l_val;
+	}
+	var l_ips = p_parent.getElementsByTagName("input");
+	for(var l_n =0 ; l_n < l_ips.length ; l_n++){
+		if(l_ips[l_n].name==p_name){
+			l_val.push(l_ips[l_n])
+		}
+	}
+	return l_val;
+}
+//-----------------------------------------------------------------------------
